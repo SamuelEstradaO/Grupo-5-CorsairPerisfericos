@@ -3,7 +3,7 @@ Nuestra oferta sera por medio de una web que sea llamativa, simple, con los mejo
 
 El equipo está conformado por:
 Mario Sebastian Martinez
-Jimena Böhm L
+Jimena Böhm
 Samuel Yair Estrada Omaña
 Joaquin Somoza
 
