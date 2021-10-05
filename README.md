@@ -15,3 +15,5 @@ https://www.bestbuy.com/
 https://www.mercadolibre.com.ar/
 
 Elegimos estos sitios tanto por su estetica, funcionamiento en las ventas, porque compartimos intereses de productos y tenemos publico objetivo en común.
+
+link del repo: https://github.com/JoaquinSomoza/Grupo-5-CorsairOficial.git
