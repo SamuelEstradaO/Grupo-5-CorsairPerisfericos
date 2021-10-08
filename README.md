@@ -25,3 +25,5 @@ Elegimos estos sitios tanto por su estetica, funcionamiento en las ventas, porqu
 ---
 
 link del [repo](https://github.com/JoaquinSomoza/Grupo-5-CorsairOficial.git)
+
+link del [Trello](https://trello.com/b/JeF7AbJ1/sprint-2)
