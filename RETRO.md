@@ -7,7 +7,7 @@
 La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprint resolvimos aquello que hay que:
 
 1. Comenzar a hacer: 
-    -Plantear una agenda de encuentros semanales. 
+    - Plantear una agenda de encuentros semanales. 
     - Generar las novedades propias dentro del grupo de whatsapp, dando una breve resenia de la misma, a modo de Daily.
 
 2. Hacer más: 
