@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +9,36 @@
     <link rel="stylesheet" href="/css/login.css">
     <title>Perisfericos login</title>
 </head>
+
 <body>
 
-    <div class="box-login">
-        <a href="/"><img src="/images/logo.png" alt="Corsair logo"></a>
+    <div class="box">
+        <a class="logo-container" href="/"><img class="logo" src="/images/logo.png" alt="Corsair logo"></a>
+        <div class="box-login">
 
-        <h2>
-            Iniciar sesión
-        </h2>
+            <h2>Iniciar sesión</h2>
 
-        <form action="">
-            <div class="email-box">
-                <label for="user-email">Correo</label>
-                <input type="email" name="user-email" id="user-email" required placeholder="Escriba aquí su correo">
-            </div>
-    
-            <div class="password">
-                <label for="user-password">Contraseña</label>
-                <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
-                <input type="password" name="user-password" id="user-password" required placeholder="Ingrese su contraseña">
-            </div>
-    
-            <input type="submit" value="Inciar sesión">
-        </form>
+            <form action="">
+                <div class="email-box">
+                    <label class="l-email" for="user-email">Correo</label>
+                    <input class="text-input" type="email" name="user-email" id="user-email" required
+                        placeholder="Escriba aquí su correo">
+                </div>
 
-        <h5>¿Eres un usuario nuevo? <a href="/signUp">Crear cuenta</a></h5>
+                <div class="password-box">
+                    <label class="l-password" for="user-password">Contraseña</label>
+                    <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
+                    <input class="text-input" type="password" name="user-password" id="user-password" required
+                        placeholder="Ingrese su contraseña">
+                </div>
 
+                <input class="button-submit" type="submit" value="Inciar sesión">
+            </form>
+
+            <h5>¿Eres un usuario nuevo? <a href="/signUp">Crear cuenta</a></h5>
+        </div>
     </div>
-    
+
 </body>
+
 </html>
