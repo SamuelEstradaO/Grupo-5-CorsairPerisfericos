@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Perisfericos register</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <a class="logo-container" href="/"><img class="logo" src="/images/logo.png" alt="Corsair logo"></a>
+        <div class="box-login">
+
+            <h2>Crear cuenta</h2>
+
+            <form action="">
+
+                <div class="full-name">
+
+                    <div class="name">
+                        <label class="l-name" for="user-name">Nombre(s)</label>
+                    <input class="text-input" type="text" name="user-name" id="user-name" required
+                        placeholder="Escriba su nombre(s)">
+                    </div>
+
+                    <div class="last-name">
+                        <label class="l-name" for="user-last-name">Apellido</label>
+                    <input class="text-input" type="text" name="user-last-name" id="user-last-name" required
+                        placeholder="Escriba su apellido">
+                    </div>
+
+                </div>
+                <div class="email-box">
+                    <label class="l-email" for="user-email">Correo</label>
+                    <input class="text-input" type="email" name="user-email" id="user-email" required
+                        placeholder="Escriba aquí su correo">
+                </div>
+
+                <div class="password-box">
+                    <label class="l-password" for="user-password">Contraseña</label>
+                    <input class="text-input" type="password" name="user-password" id="user-password" required
+                        placeholder="Ingrese su contraseña">
+                </div>
+
+                <div class="confirm-password-box">
+                    <label class="l-password" for="confirm-user-password">Confirmar contraseña</label>
+                    <input class="text-input" type="password" name="confirm-user-password" id="confirm-user-password" required
+                        placeholder="Vuelva a ingresar su contraseña">
+                </div>
+
+                <input class="button-submit" type="submit" value="Crear cuenta">
+            </form>
+
+            <a class="login" href="/login">¿Ya tienes una cuenta?</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
