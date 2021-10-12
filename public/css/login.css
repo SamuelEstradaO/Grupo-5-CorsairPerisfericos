@@ -93,6 +93,17 @@ div.password-box a {
                 inset -4px -4px 8px #ffffff;
 }
 
+div.keep-login {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .button-submit {
     cursor: pointer;
     width: 50%;
