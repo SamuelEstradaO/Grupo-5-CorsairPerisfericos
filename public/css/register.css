@@ -38,6 +38,10 @@ body {
 
 .logo-container {
     text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-top: 4vh;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -110,11 +114,17 @@ div.password-box a {
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow:  4px 4px 8px #bababa,
                 -4px -4px 8px #ffffff;
+    transition: all 450ms;
+}
+
+.button-submit:hover {
+    background: linear-gradient(145deg, #ffe400, #e6c000);
+    color: #fff;
 }
 
 .login {
     text-align: left;
     position: absolute;
-    bottom: -20px;
+    bottom: -25px;
     left: 0px;
 }

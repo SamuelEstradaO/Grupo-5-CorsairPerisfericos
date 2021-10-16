@@ -38,6 +38,10 @@ body {
 
 .logo-container {
     text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-top: 4vh;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -100,6 +104,10 @@ div.keep-login {
     text-align: left;
 }
 
+div.keep-login label {
+    cursor: pointer;
+}
+
 input[type="checkbox"] {
     margin-right: 10px;
     margin-left: 10px;
@@ -116,11 +124,17 @@ input[type="checkbox"] {
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     box-shadow:  4px 4px 8px #bababa,
                 -4px -4px 8px #ffffff;
+    transition: all 450ms;
 }
 
-h5 {
+.button-submit:hover {
+    background: linear-gradient(145deg, #ffe400, #e6c000);
+    color: #fff;
+}
+
+p {
     text-align: left;
     position: absolute;
-    bottom: -20px;
+    bottom: -25px;
     left: 0px;
 }

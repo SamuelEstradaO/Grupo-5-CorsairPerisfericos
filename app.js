@@ -30,5 +30,5 @@ app.get('/productCart', ( req, res) => {
 });
 
 app.listen(PUERTO, () => {
-    console.log("Servidor de Corsair corriendo en 3030");
+    console.log(`Servidor de Corsair corriendo en ${PUERTO}`);
 });
