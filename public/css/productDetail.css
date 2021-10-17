@@ -178,7 +178,23 @@ h4{
     border: none;
     padding: 5px;
 }
-
+.item-details .btn {
+    background-color: white;
+    border: 1PX solid #69c2bd;
+    color: #69c2bd;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    font-size: 1.07rem;
+}
+.btn.focus, .btn:focus{
+    box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
+}
+.item-details .btn:hover {
+    background-color: #80e9e4;
+    border: 1px solid #80e9e4;
+    color: white;
+    border-radius: 0.5rem;
+  }
 .product-image{
     width: 80%;
 }
