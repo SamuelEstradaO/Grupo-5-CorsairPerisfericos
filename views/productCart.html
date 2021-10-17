@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/productCart.css" />
     <title>Product Cart</title>
 </head>
 
@@ -51,13 +51,15 @@
     <main>
         <h1>Carrito de compras</h1>
 
-        <article>
-            <div>
-                <img src="" alt=""> <!-- imagen del producto -->
+        <article class="box-cart">
+            <div class="img-prod-cart">
+                <img src="\images\teclado2.png" alt="keyboard">
             </div>
             <div>
-                <h3></h3>
-                <p>descripcion</p>
+                <h3>Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red — Blanco</h3>
+                <p>El teclado mecánico para juegos CORSAIR K65 RGB MINI 60% combina rendimiento de alto nivel con
+                    portabilidad [...]
+                </p>
                 <div>
                     <ul>
                         <li><a href="#">Borrar</a></li>
@@ -82,68 +84,54 @@
             </div>
         </article>
 
-        <article>
-            <div>
-                <img src="" alt=""> <!-- imagen del producto -->
-            </div>
-            <div>
-                <h3></h3>
-                <p></p>
-                <div>
-                    <ul>
-                        <li><a href="#">Borrar</a></li>
-                        <li><a href="#">Ir a local</a></li>
-                        <li><a href="#">Guardar</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <input type="text" name="" id="" placeholder="Cantidad">
-                    <p>4 Disponibles</p>
-                </div>
-                <div>
-                    <p>$3000</p>
-                </div>
-            </div>
-        </article>
-
-        <article>
+        <article class="box-resumen">
             <h3>Resumen</h3>
+            <p>1 Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red — Blanco</p>
             <div>
-                <h3>+Calc. envío</h3>
+                <h4>+ Calc. envío</h4>
+                <label for="codigoPostal">Codigo postal
+                <input type="text" id="codigoPostal">
+                </label>
+                <h4>Total:   $3000</h4>
             </div>
             <div>
-                <p>Total:</p>
-                <p>$7000</p>
+                <button class="continuar">Continuar compra</button>
             </div>
         </article>
 
-        <div>
-            <button>Continuar compra</button>
-        </div>
+        
 
         <h2>Productos similares</h2>
-        <!-- Inicio del carousel -->
-        <article>
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="#" alt="First slide" />
+        <div class="box-pd">
+            <div class="similar-items">
+                <h3>Productos similares</h3>
+                <a href="/productDetail">
+                    <img src="/images/auricular1.jpg" alt="">
+                    <div class="details">
+                        <h5>Auricular Void Elite</h5>
+                        <p>$15.000</p>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="#" alt="Second slide" />
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="#" alt="Third slide" />
-                    </div>
-                </div>
-
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                <a href="/productDetail">
+                    <img src="/images/auricular1.jpg" alt="">
+                    <div class="details">
+                        <h5>Auricular Void Elite</h5>
+                        <p>$15.000</p>
+                    </div>
+                </a>
+                <a href="/productDetail">
+                    <img src="/images/auricular1.jpg" alt="">
+                    <div class="details">
+                        <h5>Auricular Void Elite</h5>
+                        <p>$15.000</p>
+                    </div>
+                </a>
+                <a href="/productDetail">
+                    <img src="/images/auricular1.jpg" alt="">
+                    <div class="details">
+                        <h5>Auricular Void Elite</h5>
+                        <p>$15.000</p>
+                    </div>
                 </a>
             </div>
         </article>
