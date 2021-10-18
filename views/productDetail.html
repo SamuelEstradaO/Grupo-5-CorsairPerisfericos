@@ -2,160 +2,172 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f25a1c0806.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/productDetail.css">
-    <title>Product Detail</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/f25a1c0806.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/productDetail.css" />
+  <title>Product Detail</title>
 </head>
 
 <body>
-    <!-- Inicio de header -->
-    <header>
-        <section class="flex__header--768px">
-            <div>
-                <a href="/"><img class="logo" src="/images/corsair-logo.svg" alt="logo"></a>
-            </div>
-            <div class="flex__header">
-                <div class="search__header">
-                    <input class="form-control" type="search" name="Buscador" id="">
-                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="header__loginCart">
-                    <a href="/login">
-                        <button class="btn btnLogin">Login</button>
-                    </a>
-                    <a href="/productCart"><i class="fas fa-dolly"></i></a>
-                </div>
-            </div>
-        </section>
-        <!-- Inicio de la nav -->
-        <section>
-            <nav>
-                <ul>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contactos</a></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
-    <!-- Inicio del detalle de producto -->
-    <main>
-        <div class="box-pd">
-            <div class="similar-items">
-                <h3>Productos similares</h3>
-                <a href="/productDetail">
-                    <img src="/images/auricular1.jpg" alt="">
-                    <div class="details">
-                        <h5>Auricular Void Elite</h5>
-                        <p>$19.000</p>
-                    </div>
-                </a>
-                <a href="/productDetail">
-                    <img src="/images/mouse2.png" alt="">
-                    <div class="details">
-                        <h5>Mouse M65</h5>
-                        <p>$9.500</p>
-                    </div>
-                </a>
-                <a href="/productDetail">
-                    <img src="/images/mousepad2.png" alt="">
-                    <div class="details">
-                        <h5>Mouse pad</h5>
-                        <p>$5.000</p>
-                    </div>
-                </a>
-                <a href="/productDetail">
-                    <img src="/images/silla1.png" alt="">
-                    <div class="details">
-                        <h5>Silla TC60 FABRIC</h5>
-                        <p>$68.770</p>
-                    </div>
-                </a>
-            </div>
-
-            <article class="item">
-                <div class="product-image">
-                    <img src="\images\teclado2.png" alt="teclado2">
-
-                </div>
-                <div class="item-details">
-                    <h3>Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red — Blanco</h3>
-                    <p>El teclado mecánico para juegos CORSAIR K65 RGB MINI 60% combina rendimiento de alto nivel con
-                        portabilidad, incluye la tecnología de hiperprocesamiento AXON, interruptores de teclas
-                        mecánicos CHERRY MX Red y una capacidad de personalización excepcional en un diseño compacto.
-                    </p>
-                    <h4>$3.000</h4>
-                    <button class="add-item btn" name="anadirAlCarro">Agregar<i
-                            class="fas fa-shopping-cart"></i></button>
-                </div>
-            </article>
-
-            <section class="specifications">
-                <h3>Características</h3>
-                <img src="/images/keyboard2.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis tenetur, laborum ipsa eum,
-                    facilis placeat nam iure amet autem a ipsam! Quia deleniti quo explicabo accusamus ipsam sit id!
-                    Consectetur quo soluta ea accusamus saepe quisquam quae quasi, ducimus, totam nemo unde beatae
-                    dolorem minima illum, eum voluptas delectus dicta libero laboriosam maiores ut magnam excepturi
-                    eaque quia. Expedita?
-                    Minima tenetur accusantium exercitationem neque, perferendis doloribus aperiam cupiditate nostrum
-                    sit pariatur ad omnis corporis saepe iusto temporibus, quia alias accusamus? Suscipit nemo pariatur
-                    sint hic, deserunt cumque tenetur cum!</p>
-            </section>
+  <!-- Inicio de header -->
+  <header>
+    <section class="flex__header--768px">
+      <div>
+        <a href="/"><img class="logo" src="/images/corsair-logo.svg" alt="logo" /></a>
+      </div>
+      <div class="flex__header">
+        <div class="search__header">
+          <input class="form-control" type="search" name="Buscador" id="" />
+          <button class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
-    </main>
+        <div class="header__loginCart">
+          <a href="/login">
+            <button class="btn btnLogin">Login</button>
+          </a>
+          <a href="/productCart"><i class="fas fa-dolly"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- Inicio de la nav -->
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <!-- Inicio del detalle de producto -->
+  <main>
+    <div class="box-pd">
+      <div class="similar-items">
+        <h3>Productos similares</h3>
+        <a href="/productDetail">
+          <img src="/images/auricular1.jpg" alt="" />
+          <div class="details">
+            <h5>Auricular Void Elite</h5>
+            <p>$19.000</p>
+          </div>
+        </a>
+        <a href="/productDetail">
+          <img src="/images/mouse2.png" alt="" />
+          <div class="details">
+            <h5>Mouse M65</h5>
+            <p>$9.500</p>
+          </div>
+        </a>
+        <a href="/productDetail">
+          <img src="/images/mousepad2.png" alt="" />
+          <div class="details">
+            <h5>Mouse pad</h5>
+            <p>$5.000</p>
+          </div>
+        </a>
+        <a href="/productDetail">
+          <img src="/images/silla1.png" alt="" />
+          <div class="details">
+            <h5>Silla TC60 FABRIC</h5>
+            <p>$68.770</p>
+          </div>
+        </a>
+      </div>
 
-    <!-- Inicio del footer -->
-    <footer class="flexFooter">
-        <div>
-            <h3>Redes Sociales</h3>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/CorsairLATAM" target="_blank"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/corsair/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/CORSAIR" target="_blank"><i class=" fab fa-twitter"></i></a>
-                </li>
-            </ul>
+      <article class="item">
+        <div class="product-image">
+          <img src="\images\teclado2.png" alt="teclado2" />
         </div>
-        <div>
-            <h3>¿Quienes somos?</h3>
-            <p>Somos los representantes de Corsair en Latam</p>
+        <div class="item-details">
+          <h3>
+            Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red —
+            Blanco
+          </h3>
+          <p>
+            El teclado mecánico para juegos CORSAIR K65 RGB MINI 60% combina
+            rendimiento de alto nivel con portabilidad, incluye la tecnología
+            de hiperprocesamiento AXON, interruptores de teclas mecánicos
+            CHERRY MX Red y una capacidad de personalización excepcional en un
+            diseño compacto.
+          </p>
+          <h4>$3.000</h4>
+          <button class="add-item btn" name="anadirAlCarro">
+            Agregar<i class="fas fa-dolly"></i>
+          </button>
         </div>
-        <div>
-            <h3>Metodos de pagos</h3>
-            <div class="footer__flex--pagos">
-                <i class="far fa-credit-card"></i>
-                <i class="fas fa-dollar-sign"></i>
-            </div>
-        </div>
-        <div>
-            <div class="footer__flex--img">
-                <img src="/images/logo.png" width="100" alt="logo" />
-            </div>
-            <p>Copyright © 2021 PerisfericosCorsair S.R.L</p>
-            <p>Av. 9 de Julio s/n, C1043 CABA</p>
-        </div>
-    </footer>
+      </article>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+      <section class="specifications">
+        <h3>Características</h3>
+        <img src="/images/keyboard2.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis
+          tenetur, laborum ipsa eum, facilis placeat nam iure amet autem a
+          ipsam! Quia deleniti quo explicabo accusamus ipsam sit id!
+          Consectetur quo soluta ea accusamus saepe quisquam quae quasi,
+          ducimus, totam nemo unde beatae dolorem minima illum, eum voluptas
+          delectus dicta libero laboriosam maiores ut magnam excepturi eaque
+          quia. Expedita? Minima tenetur accusantium exercitationem neque,
+          perferendis doloribus aperiam cupiditate nostrum sit pariatur ad
+          omnis corporis saepe iusto temporibus, quia alias accusamus?
+          Suscipit nemo pariatur sint hic, deserunt cumque tenetur cum!
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Inicio del footer -->
+  <footer class="flexFooter">
+    <div>
+      <h3>Redes Sociales</h3>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/CorsairLATAM" target="_blank"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/corsair/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/CORSAIR" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>¿Quienes somos?</h3>
+      <p>Somos los representantes de Corsair en Latam</p>
+    </div>
+    <div>
+      <h3>Metodos de pagos</h3>
+      <div class="footer__flex--pagos">
+        <i class="far fa-credit-card"></i>
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+    </div>
+    <div>
+      <div class="footer__flex--img">
+        <img src="/images/logo.png" width="100" alt="logo" />
+      </div>
+      <p>Copyright © 2021 PerisfericosCorsair S.R.L</p>
+      <p>Av. 9 de Julio s/n, C1043 CABA</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

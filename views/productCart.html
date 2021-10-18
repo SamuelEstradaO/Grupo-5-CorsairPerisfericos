@@ -2,174 +2,212 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f25a1c0806.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/productCart.css" />
-    <title>Product Cart</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/f25a1c0806.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="/css/index.css" /> -->
+  <link rel="stylesheet" href="/css/productCart.css" />
+  <title>Product Cart</title>
 </head>
 
 <body>
-    <!-- Inicio de header -->
-    <header>
-        <section class="flex__header--768px">
-            <div>
-                <a href="/"><img class="logo" src="/images/corsair-logo.svg" alt="logo"></a>    
-            </div>
-            <div class="flex__header">
-                <div class="search__header">
-                    <input class="form-control" type="search" name="Buscador" id="">
-                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="header__loginCart">
-                    <a href="/login">
-                        <button class="btn btnLogin">Login</button>
-                    </a>
-                    <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Inicio de NavBar -->
-        <section>
-            <nav>
-                <ul>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contactos</a></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
-
-    <!-- Inicio de main -->
-    <main>
-        <h1>Carrito de compras</h1>
-
-        <article class="box-cart">
-            <div class="img-prod-cart">
-                <img src="\images\teclado2.png" alt="keyboard">
-            </div>
-            <div>
-                <h3>Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red — Blanco</h3>
-                <p>El teclado mecánico para juegos CORSAIR K65 RGB MINI 60% combina rendimiento de alto nivel con
-                    portabilidad [...]
-                </p>
-                <div>
-                    <ul>
-                        <li><a href="#">Borrar</a></li>
-                        <li><a href="#">Ir a local</a></li>
-                        <li><a href="#">Guardar</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <select name="" id="">
-                        <option value="" disabled selected>Cantidad</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <p>4 Disponibles</p>
-                </div>
-                <div>
-                    <p>$3000</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="box-resumen">
-            <h3>Resumen</h3>
-            <p>1 Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red — Blanco</p>
-            <div>
-                <h4>+ Calc. envío</h4>
-                <label for="codigoPostal">Codigo postal
-                <input type="text" id="codigoPostal">
-                </label>
-                <h4>Total:   $3000</h4>
-            </div>
-            <div>
-                <button class="continuar">Continuar compra</button>
-            </div>
-        </article>
-
-        
-
-        <h2>Productos similares</h2>
-        <div class="box-pd">
-            <div class="similar-items">
-                <h3>Productos similares</h3>
-                <a href="/productDetail">
-                    <img src="/images/auricular1.jpg" alt="">
-                    <div class="details">
-                        <h5>Auricular Void Elite</h5>
-                        <p>$15.000</p>
-                    </div>
-                </a>
-                <a href="/productDetail">
-                    <img src="/images/auricular1.jpg" alt="">
-                    <div class="details">
-                        <h5>Auricular Void Elite</h5>
-                        <p>$15.000</p>
-                    </div>
-                </a>
-                <a href="/productDetail">
-                    <img src="/images/auricular1.jpg" alt="">
-                    <div class="details">
-                        <h5>Auricular Void Elite</h5>
-                        <p>$15.000</p>
-                    </div>
-                </a>
-                <a href="/productDetail">
-                    <img src="/images/auricular1.jpg" alt="">
-                    <div class="details">
-                        <h5>Auricular Void Elite</h5>
-                        <p>$15.000</p>
-                    </div>
-                </a>
-            </div>
-        </article>
-    </main>
-
-    <!-- Inicio del footer -->
-    <footer class="flexFooter">
-        <div>
-            <h3>Redes Sociales</h3>
-            <ul>
-                <li>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-            </ul>
+  <!-- Inicio de header -->
+  <header>
+    <section class="flex__header--768px">
+      <div>
+        <a href="/"><img class="logo" src="/images/corsair-logo.svg" alt="logo" /></a>
+      </div>
+      <div class="flex__header">
+        <div class="search__header">
+          <input class="form-control" type="search" name="Buscador" id="" />
+          <button class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
-        <div>
-            <h3>¿Quienes somos?</h3>
-            <p>Somos los representantes de Corsair en Latam</p>
+        <div class="header__loginCart">
+          <a href="/login">
+            <button class="btn btnLogin">Login</button>
+          </a>
+          <a href="/productCart"><i class="fas fa-dolly"></i></a>
         </div>
+      </div>
+    </section>
+
+    <!-- Inicio de NavBar -->
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <!-- Inicio de main -->
+  <main>
+    <h1>Carrito de compras</h1>
+
+    <article class="box-cart">
+      <div class="main__article--img">
+        <img src="\images\teclado2.png" alt="keyboard" />
+      </div>
+      <div class="main__article--description">
+        <h4>Teclado mecánico para juegos.</h4>
+        <p>El teclado mecánico K65 RGB [...]</p>
         <div>
-            <h3>Metodos de pagos</h3>
-            <div class="d-flex justify-content-around">
-                <i class="far fa-credit-card"></i>
-                <i class="fas fa-dollar-sign"></i>
-            </div>
+          <ul class="main__article--list">
+            <li><a href="#">Borrar</a></li>
+            <li><a href="#">Ir a local</a></li>
+            <li><a href="#">Guardar</a></li>
+          </ul>
         </div>
+      </div>
+      <div class="main__article--option">
+        <select name="" id="">
+          <option value="" disabled selected>Cantidad</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <p>4 Disponibles</p>
+        <p>$17.000</p>
+      </div>
+    </article>
+
+    <article class="box-cart">
+      <div class="main__article--img">
+        <img src="\images\mouse2.png" alt="keyboard" />
+      </div>
+      <div class="main__article--description">
+        <h4>Mouse M65 RGB ULTRA </h4>
+        <p>Presenta una estructura de aluminio duradero y ofrece precisión milimétrica [...]</p>
         <div>
-            <img class="d-flex m-auto" src="/images/logo.png" width="100" alt="logo" />
-            <p>Copyright © 2021 PerisfericosCorsair S.R.L</p>
-            <p>Av. 9 de Julio s/n, C1043 CABA</p>
+          <ul class="main__article--list">
+            <li><a href="#">Borrar</a></li>
+            <li><a href="#">Ir a local</a></li>
+            <li><a href="#">Guardar</a></li>
+          </ul>
         </div>
-    </footer>
+      </div>
+      <div class="main__article--option">
+        <select name="" id="">
+          <option value="" disabled selected>Cantidad</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <p>5 Disponibles</p>
+        <p>$9.500</p>
+      </div>
+    </article>
+
+    <article class="box-resumen">
+      <h3>Resumen</h3>
+      <div>
+        <p>
+          1 Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red —
+          Blanco
+        </p>
+        <hr>
+        <p>
+          1 Mouse M65 RGB ULTRA
+        </p>
+      </div>
+      <hr>
+      <div class="flex__resumen--total">
+        <p>Total: $26.500</p>
+      </div>
+    </article>
+    <div class="flex__boton--postal">
+      <form action="#" method="POST">
+        <input type="text" id="codigoPostal" placeholder="Codigo Postal" />
+        <button class="btn">Calc. envío</button>
+      </form>
+    </div>
+    <div class="flex__boton--continuar">
+      <button class="btn continuar">Continuar compra</button>
+    </div>
+
+    <article class="box-pd">
+      <div class="similar-items">
+        <h3>Productos similares</h3>
+        <a href="/productDetail">
+          <img src="/images/auricular1.jpg" alt="" />
+          <div class="details">
+            <h5>Auricular Void Elite</h5>
+            <p>$19.000</p>
+          </div>
+        </a>
+        <a href="/productDetail">
+          <img src="/images/mouse2.png" alt="" />
+          <div class="details">
+            <h5>Mouse M65</h5>
+            <p>$9.500</p>
+          </div>
+        </a>
+        <a href="/productDetail">
+          <img src="/images/mousepad2.png" alt="" />
+          <div class="details">
+            <h5>Mouse pad</h5>
+            <p>$5.000</p>
+          </div>
+        </a>
+        <a href="/productDetail">
+          <img src="/images/silla1.png" alt="" />
+          <div class="details">
+            <h5>Silla TC60 FABRIC</h5>
+            <p>$68.770</p>
+          </div>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Inicio del footer -->
+  <footer class="flexFooter">
+    <div>
+      <h3>Redes Sociales</h3>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/CorsairLATAM" target="_blank"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/corsair/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/CORSAIR" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>¿Quienes somos?</h3>
+      <p>Somos los representantes de Corsair en Latam</p>
+    </div>
+    <div>
+      <h3>Metodos de pagos</h3>
+      <div class="footer__flex--pagos">
+        <i class="far fa-credit-card"></i>
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+    </div>
+    <div>
+      <div class="footer__flex--img">
+        <img src="/images/logo.png" width="100" alt="logo" />
+      </div>
+      <p>Copyright © 2021 PerisfericosCorsair S.R.L</p>
+      <p>Av. 9 de Julio s/n, C1043 CABA</p>
+    </div>
+  </footer>
 </body>
 
 </html>
