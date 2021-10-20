@@ -27,7 +27,7 @@ body {
 .search__header {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 60%;
   padding: 0 10px;
   margin-right: 10px;
 }
@@ -40,7 +40,6 @@ header .btn {
   border: 1PX solid #e6b900;
   color: #e6b900;
   transition: 0.5s;
-  letter-spacing: 2px;
   font-size: 1.07rem;
   
 }
@@ -54,13 +53,13 @@ header .btn:hover{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 30%;
+  width: 50%;
   margin-left: 10px;
 }
 .header__loginCart a i{
   font-size: 25px;
   padding-top: 5px;
-  margin-left: 10px;
+  margin-left: 2px;
 }
 
 
@@ -205,6 +204,12 @@ p {
   .search__header {
     display: flex;
     width: 45%;
+  }
+  header .btn{
+    letter-spacing: 2px;
+  }
+  .header__loginCart a i{
+    margin-left: 10px;
   }
 
   .productosDestacados__main {
