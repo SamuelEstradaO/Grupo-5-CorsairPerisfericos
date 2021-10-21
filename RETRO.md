@@ -26,3 +26,25 @@ La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprin
     - Mirar Netflix! :P
 
 ---
+
+## SPRINT 2:
+
+1. Comenzar a hacer: 
+    - Agendarse dos dias en la semana de juntada grupal, fijado de manera informal.
+    - Plantear mejoras sobre lo ya trabajado.
+
+2. Hacer más: 
+    - Dar aviso de los cambios a realizar de manera anticipada.
+
+3. Continuar haciendo: 
+    - Generar las novedades propias dentro del grupo de whatsapp, dando una breve resenia de la misma, a modo de Daily.
+    - Encuentros semanales de por lo menos dos integrantes.
+    - Revisar los commits realizados.
+
+4. Hacer menos: 
+    - Trabajo en solitario.
+
+5. Dejar de hacer: 
+    - Plantear una agenda de encuentros semanales pre fijados.
+
+---
