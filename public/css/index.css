@@ -277,8 +277,19 @@ p {
     margin-top: 30px;
   }
 
+  .flex__header{
+   display: flex; 
+   justify-content: space-around; 
+   flex-wrap: nowrap; 
+   align-items: center; 
+  }
+
   .search__header {
     margin: auto;
+  }
+
+  .header__loginCart {
+    margin-top: 0;
   }
 
   nav a:hover {
