@@ -10,11 +10,7 @@ body {
 
 /* Css de header */
 .flex__header {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
   width: 90%;
 }
 
@@ -26,8 +22,9 @@ body {
 }
 .search__header {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  width: 60%;
+  width: 100%;
   padding: 0 10px;
   margin-right: 10px;
 }
@@ -53,13 +50,20 @@ header .btn:hover{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 50%;
+  width: 100%;
   margin-left: 10px;
+  margin-top: 30px;
 }
 .header__loginCart a i{
   font-size: 25px;
   padding-top: 5px;
   margin-left: 2px;
+}
+.header__loginCart a button{
+  display: none;
+}
+.header__loginCart a i{
+  color: #e6b900;
 }
 
 
@@ -200,17 +204,21 @@ p {
     margin: 0 auto;
     margin-top: 30px;
   }
-
-  .search__header {
-    display: flex;
-    width: 45%;
-  }
+  /* .flex__header{
+   display: flex; 
+   justify-content: space-around; 
+   flex-wrap: nowrap; 
+   align-items: center; 
+  } */
+  
   header .btn{
     letter-spacing: 2px;
   }
   .header__loginCart a i{
     margin-left: 10px;
   }
+  
+  
 
   .productosDestacados__main {
     display: flex;
@@ -278,7 +286,12 @@ p {
     text-shadow: 0px 0px 2px #000000;
     color: #000000;
   }
-
+  .header__loginCart a button{
+    display: block;
+  }
+  .header__loginCart .fa-user, .header__loginCart .fa-address-book{
+    display: none;
+  }
   .carousel__main {
     display: block;
     height: 75%;
