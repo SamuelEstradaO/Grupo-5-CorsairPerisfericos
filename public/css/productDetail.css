@@ -7,11 +7,7 @@
 
 /* Css de header */
 .flex__header {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
   width: 90%;
 }
 
@@ -23,23 +19,25 @@
 }
 .search__header {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  width: 60%;
+  width: 100%;
   padding: 0 10px;
   margin-right: 10px;
 }
-header .form-control:focus {
+header .form-control:focus{
   box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
   border-color: #e6b900;
 }
 header .btn {
   background-color: white;
-  border: 1px solid #e6b900;
+  border: 1PX solid #e6b900;
   color: #e6b900;
   transition: 0.5s;
   font-size: 1.07rem;
+  
 }
-header .btn:hover {
+header .btn:hover{
   background-color: #e6b900;
   border: 1px solid #e6b900;
   color: white;
@@ -49,14 +47,22 @@ header .btn:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 50%;
+  width: 100%;
   margin-left: 10px;
+  margin-top: 30px;
 }
-.header__loginCart a i {
-  font-size: 25px;
+.header__loginCart a i{
+  font-size: 30px;
   padding-top: 5px;
   margin-left: 2px;
 }
+.header__loginCart a button{
+  display: none;
+}
+.header__loginCart a i{
+  color: #e6b900;
+}
+
 
 nav ul {
   display: flex;
@@ -69,6 +75,7 @@ nav ul a {
   text-decoration: none;
   color: #000000;
 }
+
 /* Css del main */
 a {
   text-decoration-line: none;
@@ -257,16 +264,13 @@ p {
     margin-top: 30px;
   }
 
-  .search__header {
-    display: flex;
-    width: 45%;
-  }
   header .btn{
     letter-spacing: 2px;
   }
   .header__loginCart a i{
     margin-left: 10px;
   }
+  
   .specifications img {
     width: 30%;
     max-width: 600px;
@@ -303,9 +307,14 @@ p {
     align-items: center;
     margin-top: 30px;
   }
+  .flex__header{
+    display: flex;
+    margin: 0 auto;
+  }
 
   .search__header {
-    margin: auto;
+    margin:auto;
+    margin-top:30px ;
   }
 
   nav a:hover {
@@ -313,6 +322,13 @@ p {
     text-shadow: 0px 0px 2px #000000;
     color: #000000;
   }
+  .header__loginCart a button{
+    display: block;
+  }
+  .header__loginCart .fa-user, .header__loginCart .fa-address-book{
+    display: none;
+  }
+ 
   .item {
     max-width: 1150px;
     flex-direction: row;

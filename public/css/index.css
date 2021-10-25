@@ -55,7 +55,7 @@ header .btn:hover{
   margin-top: 30px;
 }
 .header__loginCart a i{
-  font-size: 25px;
+  font-size: 30px;
   padding-top: 5px;
   margin-left: 2px;
 }
@@ -204,13 +204,7 @@ p {
     margin: 0 auto;
     margin-top: 30px;
   }
-  /* .flex__header{
-   display: flex; 
-   justify-content: space-around; 
-   flex-wrap: nowrap; 
-   align-items: center; 
-  } */
-  
+
   header .btn{
     letter-spacing: 2px;
   }
@@ -276,9 +270,14 @@ p {
     align-items: center;
     margin-top: 30px;
   }
+  .flex__header{
+    display: flex;
+    margin: 0 auto;
+  }
 
   .search__header {
-    margin: auto;
+    margin:auto;
+    margin-top:30px ;
   }
 
   nav a:hover {
