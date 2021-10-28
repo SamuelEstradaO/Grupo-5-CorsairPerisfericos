@@ -16,40 +16,7 @@
 
 <body>
     <!-- Inicio de header -->
-    <header>
-        <section class="flex__header--768px">
-            <div>
-                <a href="/"><img class="logo" src="/images/corsair-logo.svg" alt="logo"></a>
-            </div>
-            <div class="flex__header">
-                <div class="search__header">
-                    <input class="form-control" type="search" name="Buscador" id="">
-                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="header__loginCart">
-                    <a href="/users/login">
-                        <button class="btn ">Login</button><i class="fas fa-user"></i>
-                    </a>
-                    <a href="/users/signUp">
-                        <button class="btn">Register</button><i class="fas fa-address-book"></i>
-                    </a>
-                    <a href="/products/productCart"><i class="fas fa-dolly"></i></a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Inicio de NavBar -->
-        <section>
-            <nav>
-                <ul>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contactos</a></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
+    <%- include('./partials/header') %> 
 
     <!-- Inicio de main -->
     <main>
@@ -77,82 +44,11 @@
         <!-- Productos a mostrar -->
         <section class="productosDestacados__main">
             <h2>Productos destacados</h2>
-            <article class="article__hover">
-                <a href="/products/productDetail">
-                    <div>
-                        <img class="article1" src="/images/auricular1.jpg" alt="teclado" />
-                    </div>
-                    <h3>Auricular Void Elite</h3>
-                    <div class="article_description">
-                        <p>$19.000</p>
-                </a>
-                <button class="btn">Agregar<i class="fas fa-dolly d-inline"></i></button>
-                </div>
-            </article>
-            <article class="article__hover">
-                <a href="/products/productDetail">
-                    <div>
-                        <img class="article2" src="/images/mouse2.png" alt="teclado" />
-                    </div>
-                    <h3>Mouse M65 RGB ULTRA</h3>
-                    <div class="article_description">
-                        <p>$9.500</p>
-                </a>
-                <button class="btn">Agregar<i class="fas fa-dolly"></i></button>
-                </div>
+            <% for(let i = 0; i < 6; i++){ %> 
 
-            </article>
-            <article class="article__hover">
-                <a href="/products/productDetail">
-                    <div>
-                        <img class="article3" src="/images/mousepad2.png" alt="teclado" />
-                    </div>
-                    <h3>Mouse pad</h3>
-                    <div class="article_description">
-                        <p>$5.000</p>
-                </a>
-                <button class="btn">Agregar<i class="fas fa-dolly"></i></button>
-                </div>
-
-            </article>
-            <article class="article__hover">
-                <a href="/products/productDetail">
-                    <div>
-                        <img class="article4" src="/images/teclado2.png" alt="teclado" />
-                    </div>
-                    <h3>Teclado K65 RGB MINI 60% </h3>
-                    <div class="article_description">
-                        <p>$17.000</p>
-                </a>
-                <button class="btn">Agregar<i class="fas fa-dolly"></i></button>
-                </div>
-
-            </article>
-            <article class="article__hover">
-                <a href="/products/productDetail">
-                    <div>
-                        <img class="article5" src="images/silla1.png" alt="teclado" />
-                    </div>
-                    <h3>Silla TC60 FABRIC</h3>
-                    <div class="article_description">
-                        <p>$68.770</p>
-                </a>
-                <button class="btn">Agregar<i class="fas fa-dolly"></i></button>
-                </div>
-
-            </article>
-            <article class="article__hover">
-                <a href="/products/productDetail">
-                    <div>
-                        <img class="article6" src="/images/remera.jpg" alt="teclado" />
-                    </div>
-                    <h3>Accesorio remera m/l</h3>
-                    <div class="article_description">
-                        <p>$4.000</p>
-                </a>
-                <button class="btn btn-success">Agregar <i class="fas fa-dolly"></i></button>
-                </div>
-            </article>
+                <%- include('./partials/product.ejs') %> 
+                
+            <% } %> 
 
             <!-- Section con video -->
             <section class="videoProducto__main">
@@ -166,40 +62,7 @@
     </main>
 
     <!-- Inicio del footer -->
-    <footer class="flexFooter">
-        <div>
-            <h3>Redes Sociales</h3>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/CorsairLATAM" target="_blank"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/corsair/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/CORSAIR" target="_blank"><i class=" fab fa-twitter"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h3>¿Quienes somos?</h3>
-            <p>Somos los representantes de Corsair en Latam</p>
-        </div>
-        <div>
-            <h3>Metodos de pagos</h3>
-            <div class="footer__flex--pagos">
-                <i class="far fa-credit-card"></i>
-                <i class="fas fa-dollar-sign"></i>
-            </div>
-        </div>
-        <div>
-            <div class="footer__flex--img">
-                <img src="/images/logo.png" width="100" alt="logo" />
-            </div>
-            <p>Copyright © 2021 PerisfericosCorsair S.R.L</p>
-            <p>Av. 9 de Julio s/n, C1043 CABA</p>
-        </div>
-    </footer>
+    <%- include('./partials/footer.ejs') %> 
 
 
 
