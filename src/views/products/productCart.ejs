@@ -1,122 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head') %>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/f25a1c0806.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <!-- <link rel="stylesheet" href="/css/index.css" /> -->
-  <link rel="stylesheet" href="/css/productCart.css" />
-  <title>Product Cart</title>
-</head>
+  <body>
+    <!-- Inicio de header -->
+    <%- include('../partials/header') %>
 
-<body>
-  <!-- Inicio de header -->
-  <%- include('../partials/header') %> 
+    <!-- Inicio de main -->
+    <main>
+      <h1>Carrito de compras</h1>
 
-  <!-- Inicio de main -->
-  <main>
-    <h1>Carrito de compras</h1>
-
-    <article class="box-cart">
-      <div class="main__article--img">
-        <img src="\images\teclado2.png" alt="keyboard" />
-      </div>
-      <div class="main__article--description">
-        <h4>Teclado mecánico para juegos.</h4>
-        <p>El teclado mecánico K65 RGB [...]</p>
-        <div>
-          <ul class="main__article--list">
-            <li><a href="#">Borrar</a></li>
-            <li><a href="#">Ir a local</a></li>
-            <li><a href="#">Guardar</a></li>
-          </ul>
+      <article class="box-cart">
+        <div class="main__article--img">
+          <img src="\images\teclado2.png" alt="keyboard" />
         </div>
-      </div>
-      <div class="main__article--option">
-        <select name="" id="">
-          <option value="" disabled selected>Cantidad</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <p>4 Disponibles</p>
-        <p>$17.000</p>
-      </div>
-    </article>
-
-    <article class="box-cart">
-      <div class="main__article--img">
-        <img src="\images\mouse2.png" alt="keyboard" />
-      </div>
-      <div class="main__article--description">
-        <h4>Mouse M65 RGB ULTRA </h4>
-        <p>Presenta una estructura de aluminio duradero y ofrece precisión milimétrica [...]</p>
-        <div>
-          <ul class="main__article--list">
-            <li><a href="#">Borrar</a></li>
-            <li><a href="#">Ir a local</a></li>
-            <li><a href="#">Guardar</a></li>
-          </ul>
+        <div class="main__article--description">
+          <h4>Teclado mecánico para juegos.</h4>
+          <p>El teclado mecánico K65 RGB [...]</p>
+          <div>
+            <ul class="main__article--list">
+              <li><a href="#">Borrar</a></li>
+              <li><a href="#">Ir a local</a></li>
+              <li><a href="#">Guardar</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="main__article--option">
+          <select name="" id="">
+            <option value="" disabled selected>Cantidad</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <p>4 Disponibles</p>
+          <p>$17.000</p>
+        </div>
+      </article>
+
+      <article class="box-cart">
+        <div class="main__article--img">
+          <img src="\images\mouse2.png" alt="keyboard" />
+        </div>
+        <div class="main__article--description">
+          <h4>Mouse M65 RGB ULTRA</h4>
+          <p>
+            Presenta una estructura de aluminio duradero y ofrece precisión
+            milimétrica [...]
+          </p>
+          <div>
+            <ul class="main__article--list">
+              <li><a href="#">Borrar</a></li>
+              <li><a href="#">Ir a local</a></li>
+              <li><a href="#">Guardar</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="main__article--option">
+          <select name="" id="">
+            <option value="" disabled selected>Cantidad</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <p>5 Disponibles</p>
+          <p>$9.500</p>
+        </div>
+      </article>
+
+      <article class="box-resumen">
+        <h3>Resumen</h3>
+        <div>
+          <p>
+            1 Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red —
+            Blanco
+          </p>
+          <hr />
+          <p>1 Mouse M65 RGB ULTRA</p>
+        </div>
+        <hr />
+        <div class="flex__resumen--total">
+          <p>Total: $26.500</p>
+        </div>
+      </article>
+      <div class="flex__boton--postal">
+        <form action="#" method="POST">
+          <input type="text" id="codigoPostal" placeholder="Codigo Postal" />
+          <button class="btn">Calc. envío</button>
+        </form>
       </div>
-      <div class="main__article--option">
-        <select name="" id="">
-          <option value="" disabled selected>Cantidad</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <p>5 Disponibles</p>
-        <p>$9.500</p>
+      <div class="flex__boton--continuar">
+        <button class="btn continuar">Continuar compra</button>
       </div>
-    </article>
 
-    <article class="box-resumen">
-      <h3>Resumen</h3>
-      <div>
-        <p>
-          1 Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red —
-          Blanco
-        </p>
-        <hr>
-        <p>
-          1 Mouse M65 RGB ULTRA
-        </p>
-      </div>
-      <hr>
-      <div class="flex__resumen--total">
-        <p>Total: $26.500</p>
-      </div>
-    </article>
-    <div class="flex__boton--postal">
-      <form action="#" method="POST">
-        <input type="text" id="codigoPostal" placeholder="Codigo Postal" />
-        <button class="btn">Calc. envío</button>
-      </form>
-    </div>
-    <div class="flex__boton--continuar">
-      <button class="btn continuar">Continuar compra</button>
-    </div>
+      <article class="box-pd">
+        <%- include('../partials/similarItems.ejs') %>
+      </article>
+    </main>
 
-    <article class="box-pd">
-      
-      <%- include('../partials/similarItems.ejs') %> 
-
-    </article>
-  </main>
-
-  <!-- Inicio del footer -->
-  <%- include('../partials/footer') %> 
-
-</body>
-
+    <!-- Inicio del footer -->
+    <%- include('../partials/footer') %>
+  </body>
 </html>
