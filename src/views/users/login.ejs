@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/login.css">
-    <title>Perisfericos login</title>
-</head>
+<!-- Inicio del head -->
+<%- include('../partials/head') %>
 
-<body>
+    <body>
+        <!-- Inicio de header -->
+        <%- include('../partials/header') %>
 
-    <div class="box">
-        <a class="logo-container" href="/"><img class="logo" src="/images/corsair-logo.svg" alt="Corsair logo"></a>
-        <div class="box-login">
+            <!-- Inicio de div principal -->
+            <div class="box">
+                <!-- <a class="logo-container" href="/"><img class="logo" src="/images/corsair-logo.svg"
+                        alt="Corsair logo"></a> -->
+                <div class="box-login">
 
-            <h2>Iniciar sesión</h2>
+                    <h2>Iniciar sesión</h2>
 
-            <form action="">
-                <div class="email-box">
-                    <label class="l-email" for="user-email">Correo</label>
-                    <input class="text-input" type="email" name="user-email" id="user-email" required
-                        placeholder="Escriba aquí su correo">
+                    <form action="">
+                        <div class="email-box">
+                            <label class="l-email" for="user-email">Correo</label>
+                            <input class="text-input" type="email" name="user-email" id="user-email" required
+                                placeholder="Escriba aquí su correo">
+                        </div>
+
+                        <div class="password-box">
+                            <label class="l-password" for="user-password">Contraseña</label>
+                            <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
+                            <input class="text-input" type="password" name="user-password" id="user-password" required
+                                placeholder="Ingrese su contraseña">
+                        </div>
+
+                        <div class="keep-login">
+                            <label><input type="checkbox" name="remember-me" id="remember-me">Mantener sesión
+                                iniciada</label>
+                        </div>
+
+                        <input class="button-submit" type="submit" value="Inciar sesión">
+                    </form>
+
+                    <p class="new-user">¿Eres un usuario nuevo? <a href="/users/register">Crear cuenta</a></p>
                 </div>
+            </div>
 
-                <div class="password-box">
-                    <label class="l-password" for="user-password">Contraseña</label>
-                    <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
-                    <input class="text-input" type="password" name="user-password" id="user-password" required
-                        placeholder="Ingrese su contraseña">
-                </div>
-
-                <div class="keep-login">
-                    <label><input type="checkbox" name="remember-me" id="remember-me">Mantener sesión iniciada</label>
-                </div>
-
-                <input class="button-submit" type="submit" value="Inciar sesión">
-            </form>
-
-            <p>¿Eres un usuario nuevo? <a href="/users/signUp">Crear cuenta</a></p>
-        </div>
-    </div>
-
-</body>
+            <!-- Inicio del footer -->
+            <%- include('../partials/footer.ejs') %>
+    </body>
 
 </html>

@@ -132,7 +132,7 @@ input[type="checkbox"] {
     color: #fff;
 }
 
-p {
+.new-user {
     text-align: left;
     position: absolute;
     bottom: -25px;

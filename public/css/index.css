@@ -183,9 +183,9 @@ article:hover .btn {
 footer h3 {
   margin-top: 40px;
 }
-footer h3,
-p {
+footer h3, p{
   text-align: center;
+  
 }
 .footer__flex--pagos{
   display: flex;

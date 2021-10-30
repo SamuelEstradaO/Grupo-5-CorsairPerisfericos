@@ -15,6 +15,7 @@ app.use(express.static(publicPath));
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+/* app.use("/productsAdmin", productsRouter); */
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
