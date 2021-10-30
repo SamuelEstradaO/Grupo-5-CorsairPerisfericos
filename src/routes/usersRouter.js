@@ -8,6 +8,6 @@ const usersController = require("../controllers/usersController");
 // router.get('/signUp', (req, res) => {
 //     res.render('./users/register')});
 router.get("/login", usersController.login);
-router.get("/signUp", usersController.register);
+router.get("/register", usersController.register);
 
 module.exports = router;

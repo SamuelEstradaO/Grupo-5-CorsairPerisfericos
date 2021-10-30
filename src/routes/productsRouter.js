@@ -8,6 +8,7 @@ const productsController = require("../controllers/productsController");
 // router.get('/productCart', (req, res) => {
 //     res.render('./products/productCart');
 // });
+
 router.get("/productDetail", productsController.product);
 router.get("/productCart", productsController.cart);
 
