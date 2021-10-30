@@ -17,7 +17,7 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 app.set("view engine", "ejs");
-app.set("./views", path.join(__dirname, "index"));
+app.set("views", path.join(__dirname, "./views"));
 
 // app.get("/", (req, res) => {
 //   //   res.render("index");
