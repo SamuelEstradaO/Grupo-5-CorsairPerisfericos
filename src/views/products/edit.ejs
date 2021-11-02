@@ -15,13 +15,13 @@
 
                     <div class="box-login">
 
-                        <h2>Administrar productos</h2>
+                        <h2>Editar producto</h2>
 
                         <form action="">
                             <div class="email-box">
                                 <label class="l-email" for="nombreProducto">Nombre del producto</label>
                                 <input class="text-input" type="text" name="user-email" id="nombreProducto" required
-                                    placeholder="Escriba aquí el nombre de su producto">
+                                    value=<%= product.titulo  %> >
                             </div>
                             <div class="email-box">
                                 <label class="l-email" for="productDescription">Descripción del producto</label>
@@ -33,15 +33,13 @@
                                 <label class="l-email" for="imgProduct">Cargar imagenes</label>
                                 <input class="text-input" type="file" name="imgProduct" id="imgProduct">
                             </div>
-                            <div class="email-box">
-                                <label class="l-email" for="categoria">Categoría</label>
-                                <input class="text-input" type="text" name="categoria" id="categoria" required
-                                    placeholder="Escriba aquí a la categoría que pertenecería, ej: Teclado">
-                            </div>
+                            
+                            <%- include('../partials/category') %> 
+
                             <div class="email-box">
                                 <label class="l-email" for="price">Precio</label>
                                 <input class="text-input" type="text" name="price" id="price" required
-                                    placeholder="Escriba aquí el precio">
+                                value=<%= product.precio  %> >
                             </div>
                             <div class="email-box">
                                 <label class="l-email" for="conectividad">Conectividad</label>

@@ -4,7 +4,8 @@
   "description": "Nuestro sitio será el vendedor oficial de la marca **Corsair**, en el mismo podremos encontrar una amplia linea de gaming hardware, como teclados, mouse, alfombrillas, sillas y auriculares. El objetivo es apuntar al publico gamer y a personas que trabajan remoto que requieran equipos actuales, innovadores, comodos y de buena calidad.\r Nuestra oferta sera por medio de una web que sea llamativa, simple, con los mejores precios, buen servicio postventa, una descripcion detallada de cada producto y varios canales de comunicación directa con los vendedores.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
