@@ -36,22 +36,23 @@
                 <!-- Productos a mostrar -->
                 <section class="productosDestacados__main">
                     <h2>Productos destacados</h2>
-                    <% products.forEach(producto=> { %>
-                        <%- include('./partials/product', {producto})%>
+                    <% let productosDestacados=products.filter(producto=> producto.recomendado) %>
+                        <% productosDestacados.forEach(producto=> { %>
+                            <%- include('./partials/product', {producto})%>
+                                <% });%>
 
-                            <% });%>
-
-
-                                <!-- Section con video -->
-                                <section class="videoProducto__main">
-                                    <div>
-                                        <iframe class="iframe__main" width="560" height="315"
-                                            src="https://www.youtube.com/embed/jDU07ZtJiQo" title="YouTube video player"
-                                            frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen></iframe>
-                                    </div>
-                                </section>
+                                    <!-- Section con video -->
+                                    <section class="videoProducto__main">
+                                        <div>
+                                            <iframe class="iframe__main" width="560" height="315"
+                                                src="https://www.youtube.com/embed/jDU07ZtJiQo"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                    </section>
+                </section>
             </main>
 
             <!-- Inicio del footer -->

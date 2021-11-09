@@ -15,14 +15,12 @@ app.use(express.static(publicPath));
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
-/* app.use("/productsAdmin", productsRouter); */
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
-// app.get("/", (req, res) => {
-//   //   res.render("index");
-// });
+
 
 app.listen(PUERTO, () => {
   console.log(`Servidor de Corsair corriendo en ${PUERTO}`);

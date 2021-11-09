@@ -67,3 +67,4 @@ La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprin
     - Dejar pasar los primeros dias del Sprint sin encontrarnos.
 
 ---
+
