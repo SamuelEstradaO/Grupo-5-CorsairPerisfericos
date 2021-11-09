@@ -48,3 +48,22 @@ La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprin
     - Plantear una agenda de encuentros semanales pre fijados.
 
 ---
+
+## SPRINT 3:
+
+1. Comenzar a hacer: 
+    - Generar un espacio de estudio en grupo.
+
+2. Hacer más: 
+
+3. Continuar haciendo: 
+    - Generar las novedades propias dentro del grupo de whatsapp, dando una breve resenia de la misma, a modo de Daily.
+    - Encuentros semanales de por lo menos dos integrantes.
+    - Revisar los commits realizados.
+
+4. Hacer menos: 
+
+5. Dejar de hacer: 
+    - Dejar pasar los primeros dias del Sprint sin encontrarnos.
+
+---
