@@ -26,9 +26,7 @@ const productsController = {
     let product = products.find((product) => product.id === id);
     res.render("./products/edit", { product });
   },
-  newProduct: (req, res) => {
 
-  },
   update: (req, res) => {
 
   },

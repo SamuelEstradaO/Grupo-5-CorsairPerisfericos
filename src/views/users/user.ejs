@@ -10,52 +10,49 @@
 
             <!-- Inicio del div principal -->
             <div class="box">
-                <!-- <a class="logo-container" href="/"><img class="logo" src="/images/corsair-logo.svg"
-                        alt="Corsair logo"></a> -->
+
                 <div class="box-register">
 
-                    <h2>Crear cuenta</h2>
+                    <h2>Perfil</h2>
 
-                    <form action="/users/register" method="POST">
+                    <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST">
 
                         <div class="full-name">
 
                             <div class="name">
                                 <label class="l-name" for="user-name">Nombre(s)</label>
                                 <input class="text-input" type="text" name="firstName" id="user-name" required
-                                    placeholder="Escriba su nombre(s)">
+                                    value="<%= user.name %>">
                             </div>
 
                             <div class="last-name">
                                 <label class="l-name" for="user-last-name">Apellido</label>
                                 <input class="text-input" type="text" name="lastName" id="user-last-name" required
-                                    placeholder="Escriba su apellido">
+                                    value="<%= user.lastName %>">
                             </div>
 
-                        </div>
-                        <div class="email-box">
-                            <label class="l-email" for="user-email">Correo</label>
-                            <input class="text-input" type="email" name="email" id="user-email" required
-                                placeholder="Escriba aquí su correo">
                         </div>
 
                         <div class="password-box">
                             <label class="l-password" for="user-password">Contraseña</label>
-                            <input class="text-input" type="password" name="password" id="user-password" required
-                                placeholder="Ingrese su contraseña">
+                            <input class="text-input" type="password" name="password" id="user-password"
+                                placeholder="Ingrese su nueva contraseña">
                         </div>
 
                         <div class="confirm-password-box">
                             <label class="l-password" for="confirm-user-password">Confirmar contraseña</label>
                             <input class="text-input" type="password" name="confirm-user-password"
-                                id="confirm-user-password" required placeholder="Vuelva a ingresar su contraseña">
+                                id="confirm-user-password" placeholder="Vuelva a ingresar su nueva contraseña">
                         </div>
 
-                        <input class="button-submit" type="submit" value="Crear cuenta">
+                        <input class="button-submit" type="submit" value="Guardar cambios">
                     </form>
 
-                    <a class="login" href="/users/login">¿Ya tienes una cuenta?</a>
+                    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+                        <input class="button-submit" type="submit" value="Eliminar cuenta">
+                    </form>
                 </div>
+
             </div>
 
             <!-- Inicio del footer -->
