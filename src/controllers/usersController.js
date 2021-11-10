@@ -37,7 +37,7 @@ const usersController = {
   },
   update: (req, res) => {
     let updateId = req.params.id;
-    let index = users.indexOf(user => user.id == updateId);
+    let index = users.findIndex(user => user.id === parseInt(updateId));
     users[index].name = req.body.firstName;
     users[index].lastName = req.body.lastName;
     if (req.body.password != '') {
