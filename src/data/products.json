@@ -1,182 +1,182 @@
 [
-    {
-        "id": "891927722-2",
-        "titulo": "Teclado K65 RGB MINI 60%",
-        "descripcion": "nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius",
-        "precio": 3682.83,
-        "img": "mouse2.png",
-        "categoria": "teclado",
-        "recomendado": true
-    },
-    {
-        "id": "293121836-7",
-        "titulo": "Mouse Pad",
-        "descripcion": "eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
-        "precio": 3092.27,
-        "img": "mousepad2.png",
-        "categoria": "mouse",
-        "recomendado": true
-    },
-    {
-        "id": "662568900-9",
-        "titulo": "Accesorio remera m/l",
-        "descripcion": "varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac",
-        "precio": 3620.64,
-        "img": "remera.jpg",
-        "categoria": "silla",
-        "recomendado": false
-    },
-    {
-        "id": "813574032-8",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl",
-        "precio": 3631.93,
-        "img": "remera.jpg",
-        "categoria": "headset",
-        "recomendado": true
-    },
-    {
-        "id": "271058147-7",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque",
-        "precio": 3706.09,
-        "img": "mouse2.png",
-        "categoria": "alfombrilla",
-        "recomendado": false
-    },
-    {
-        "id": "265829764-5",
-        "titulo": "Silla TC60 FABRIC",
-        "descripcion": "fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor",
-        "precio": 3457.0,
-        "img": "mousepad2.png",
-        "categoria": "teclado",
-        "recomendado": false
-    },
-    {
-        "id": "488594648-4",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus",
-        "precio": 3297.81,
-        "img": "mouse2.png",
-        "categoria": "teclado",
-        "recomendado": true
-    },
-    {
-        "id": "853199084-X",
-        "titulo": "Teclado K65 RGB MINI 60%",
-        "descripcion": "sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
-        "precio": 2303.14,
-        "img": "teclado2.png",
-        "categoria": "alfombrilla",
-        "recomendado": false
-    },
-    {
-        "id": "085555898-9",
-        "titulo": "Silla TC60 FABRIC",
-        "descripcion": "ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at",
-        "precio": 2018.12,
-        "img": "mousepad2.png",
-        "categoria": "silla",
-        "recomendado": false
-    },
-    {
-        "id": "032002126-2",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at",
-        "precio": 3872.35,
-        "img": "mouse2.png",
-        "categoria": "teclado",
-        "recomendado": false
-    },
-    {
-        "id": "982646550-X",
-        "titulo": "Accesorio remera m/l",
-        "descripcion": "lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus",
-        "precio": 4510.2,
-        "img": "mouse2.png",
-        "categoria": "alfombrilla",
-        "recomendado": false
-    },
-    {
-        "id": "048432196-X",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat",
-        "precio": 4791.79,
-        "img": "silla1.png",
-        "categoria": "headset",
-        "recomendado": false
-    },
-    {
-        "id": "711868786-3",
-        "titulo": "Mouse M65",
-        "descripcion": "in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
-        "precio": 4386.64,
-        "img": "auricular1.jpg",
-        "categoria": "mouse",
-        "recomendado": false
-    },
-    {
-        "id": "448426105-7",
-        "titulo": "Silla TC60 FABRIC",
-        "descripcion": "est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus",
-        "precio": 1236.58,
-        "img": "auricular1.jpg",
-        "categoria": "headset",
-        "recomendado": true
-    },
-    {
-        "id": "626549300-0",
-        "titulo": "Accesorio remera m/l",
-        "descripcion": "purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl",
-        "precio": 2390.1,
-        "img": "mouse2.png",
-        "categoria": "alfombrilla",
-        "recomendado": false
-    },
-    {
-        "id": "681872423-X",
-        "titulo": "Mouse M65",
-        "descripcion": "vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt",
-        "precio": 4128.16,
-        "img": "teclado2.png",
-        "categoria": "mouse",
-        "recomendado": false
-    },
-    {
-        "id": "887918182-3",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis",
-        "precio": 3452.67,
-        "img": "silla1.png",
-        "categoria": "alfombrilla",
-        "recomendado": false
-    },
-    {
-        "id": "447507142-9",
-        "titulo": "Silla TC60 FABRIC",
-        "descripcion": "integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar",
-        "precio": 4432.36,
-        "img": "remera.jpg",
-        "categoria": "accesorio",
-        "recomendado": false
-    },
-    {
-        "id": "098822553-0",
-        "titulo": "Auricular Void Elite",
-        "descripcion": "justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut",
-        "precio": 3862.37,
-        "img": "teclado2.png",
-        "categoria": "mouse",
-        "recomendado": true
-    },
-    {
-        "id": "448448376-9",
-        "titulo": "Mouse Pad",
-        "descripcion": "suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in",
-        "precio": 2345.67,
-        "img": "silla1.png",
-        "categoria": "mouse",
-        "recomendado": false
-    }
+ {
+  "id": "891927722-2",
+  "titulo": "Teclado K65 RGB MINI 60%",
+  "descripcion": "nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius",
+  "precio": 3682.83,
+  "img": "mouse2.png",
+  "categoria": "teclado",
+  "recomendado": true
+ },
+ {
+  "id": "293121836-7",
+  "titulo": "Mouse Pad",
+  "descripcion": "eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
+  "precio": 3092.27,
+  "img": "mousepad2.png",
+  "categoria": "mouse",
+  "recomendado": true
+ },
+ {
+  "id": "662568900-9",
+  "titulo": "Accesorio remera m/l",
+  "descripcion": "varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac",
+  "precio": 3620.64,
+  "img": "remera.jpg",
+  "categoria": "silla",
+  "recomendado": false
+ },
+ {
+  "id": "813574032-8",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl",
+  "precio": 3631.93,
+  "img": "remera.jpg",
+  "categoria": "headset",
+  "recomendado": true
+ },
+ {
+  "id": "271058147-7",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque",
+  "precio": 3706.09,
+  "img": "mouse2.png",
+  "categoria": "alfombrilla",
+  "recomendado": false
+ },
+ {
+  "id": "265829764-5",
+  "titulo": "Silla TC60 FABRIC",
+  "descripcion": "fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor",
+  "precio": 3457,
+  "img": "mousepad2.png",
+  "categoria": "teclado",
+  "recomendado": false
+ },
+ {
+  "id": "488594648-4",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus",
+  "precio": 3297.81,
+  "img": "mouse2.png",
+  "categoria": "teclado",
+  "recomendado": true
+ },
+ {
+  "id": "853199084-X",
+  "titulo": "Teclado K65 RGB MINI 60%",
+  "descripcion": "sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
+  "precio": 2303.14,
+  "img": "teclado2.png",
+  "categoria": "alfombrilla",
+  "recomendado": false
+ },
+ {
+  "id": "085555898-9",
+  "titulo": "Silla TC60 FABRIC",
+  "descripcion": "ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at",
+  "precio": 2018.12,
+  "img": "mousepad2.png",
+  "categoria": "silla",
+  "recomendado": false
+ },
+ {
+  "id": "032002126-2",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at",
+  "precio": 3872.35,
+  "img": "mouse2.png",
+  "categoria": "teclado",
+  "recomendado": false
+ },
+ {
+  "id": "982646550-X",
+  "titulo": "Accesorio remera m/l",
+  "descripcion": "lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus",
+  "precio": 4510.2,
+  "img": "mouse2.png",
+  "categoria": "alfombrilla",
+  "recomendado": false
+ },
+ {
+  "id": "048432196-X",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat",
+  "precio": 4791.79,
+  "img": "silla1.png",
+  "categoria": "headset",
+  "recomendado": false
+ },
+ {
+  "id": "711868786-3",
+  "titulo": "Mouse M65",
+  "descripcion": "in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
+  "precio": 4386.64,
+  "img": "auricular1.jpg",
+  "categoria": "mouse",
+  "recomendado": false
+ },
+ {
+  "id": "448426105-7",
+  "titulo": "Silla TC60 FABRIC",
+  "descripcion": "est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus",
+  "precio": 1236.58,
+  "img": "auricular1.jpg",
+  "categoria": "headset",
+  "recomendado": true
+ },
+ {
+  "id": "626549300-0",
+  "titulo": "Accesorio remera m/l",
+  "descripcion": "purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl",
+  "precio": 2390.1,
+  "img": "mouse2.png",
+  "categoria": "alfombrilla",
+  "recomendado": false
+ },
+ {
+  "id": "681872423-X",
+  "titulo": "Mouse M65",
+  "descripcion": "vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt",
+  "precio": 4128.16,
+  "img": "teclado2.png",
+  "categoria": "mouse",
+  "recomendado": false
+ },
+ {
+  "id": "887918182-3",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis",
+  "precio": 3452.67,
+  "img": "silla1.png",
+  "categoria": "alfombrilla",
+  "recomendado": false
+ },
+ {
+  "id": "447507142-9",
+  "titulo": "Silla TC60 FABRIC",
+  "descripcion": "integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar",
+  "precio": 4432.36,
+  "img": "remera.jpg",
+  "categoria": "accesorio",
+  "recomendado": false
+ },
+ {
+  "id": "098822553-0",
+  "titulo": "Auricular Void Elite",
+  "descripcion": "justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut",
+  "precio": 3862.37,
+  "img": "teclado2.png",
+  "categoria": "mouse",
+  "recomendado": true
+ },
+ {
+    "id": "448448376-9",
+    "descripcion": "suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in",
+    "precio": "76457.1",
+    "img": "silla1.png",
+    "recomendado": false,
+    "titulo": "hadfhgfdg",
+    "categoria": "alfombrilla"
+   }
 ]

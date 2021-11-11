@@ -1,9 +1,6 @@
 <div class="email-box">
     <label>Categorías</label>
-    <label class="l-email" for="teclado"><input type="checkbox"  name="categoria" id="teclado">Teclado</label>
-    <label class="l-email" for="mouse"><input type="checkbox"  name="categoria" id="mouse">Mouse</label>
-    <label class="l-email" for="silla"><input type="checkbox"  name="categoria" id="silla">Silla</label>
-    <label class="l-email" for="headset"><input type="checkbox"  name="categoria" id="headset">Headset</label>
-    <label class="l-email" for="alfombrilla"><input type="checkbox"  name="categoria" id="alfombrilla">Alfombrilla</label>
-    <label class="l-email" for="accesorio"><input type="checkbox"  name="categoria" id="accesorio">Accesorio</label>
+    <% categorias.forEach(categoria => { %>
+        <label class="l-email"><input type="radio"  name="category" id="<%= categoria %>" value="<%= categoria %>"> <%= categoria %></label>
+    <% }); %> 
 </div>

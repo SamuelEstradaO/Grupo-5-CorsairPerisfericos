@@ -17,18 +17,19 @@
 
                         <h2>Editar producto</h2>
 
-                        <form action="">
+                        <form action="/products/<%= product.id %>?_method=PUT" method="POST">
                             <div class="email-box">
-                                <label class="l-email" for="nombreProducto">Nombre del producto</label>
-                                <input class="text-input" type="text" name="user-email" id="nombreProducto" required
-                                    value=<%= product.titulo  %> >
+                                <label class="l-email" for="productName">Nombre del producto</label>
+                                <input class="text-input" type="text" name="productName" id="productName" required
+                                    value="<%= product.titulo  %>" >
                             </div>
+
                             <div class="email-box">
                                 <label class="l-email" for="productDescription">Descripción del producto</label>
-                                <textarea class="text-input" name="productDescription" id="productDescription" cols="30"
-                                    rows="5" required placeholder="Escriba aquí su descripción del producto">
-                                    </textarea>
+                                <textarea class="text-input" name="productDescription" id="productDescription" 
+                                    rows="5" required><%= product.descripcion %></textarea>
                             </div>
+
                             <div class="email-box">
                                 <label class="l-email" for="imgProduct">Cargar imagenes</label>
                                 <input class="text-input" type="file" name="imgProduct" id="imgProduct">
@@ -39,17 +40,15 @@
                             <div class="email-box">
                                 <label class="l-email" for="price">Precio</label>
                                 <input class="text-input" type="text" name="price" id="price" required
-                                value=<%= product.precio  %> >
-                            </div>
-                            <div class="email-box">
-                                <label class="l-email" for="conectividad">Conectividad</label>
-                                <input class="text-input" type="text" name="conectividad" id="conectividad"
-                                    placeholder="Escriba la conectividad: Cable o inalambrico">
+                                value="<%= product.precio  %>" >
                             </div>
 
                             <input class="button-submit" type="submit" value="Confirmar cambios">
                         </form>
 
+                        <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                            <input class="button-submit" type="submit" value="Eliminar producto">
+                        </form>
 
                     </div>
                 </div>

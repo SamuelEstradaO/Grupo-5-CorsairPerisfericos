@@ -58,6 +58,7 @@ h2 {
 
 form {
     text-align: center;
+    width: 90%;
 }
 
 .email-box, .password-box, .full-name, .confirm-password-box {

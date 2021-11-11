@@ -4,6 +4,8 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const categorias = ['teclado', 'mouse', 'silla', 'headset', 'alfombrilla', 'accesorio'];
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
@@ -19,19 +21,32 @@ const productsController = {
     res.render("./products/cart");
   },
   create: (req, res) => {
-    res.render("./products/create");
+    res.render("./products/create", {categorias});
   },
   edit: (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     let product = products.find((product) => product.id === id);
-    res.render("./products/edit", { product });
+    res.render("./products/edit", { product, categorias });
   },
 
   update: (req, res) => {
-
+    const id = req.params.id;
+    console.log(req.body);
+    const { productName, price, category, productDescription } = req.body;
+    let index = products.findIndex( product => product.id == id);
+    products[index].titulo = productName;
+    products[index].precio = price;
+    products[index].categoria = category;
+    products[index].descripcion = productDescription;
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    res.redirect(`/products/edit/${id}`);
   },
   delete: (req, res) => {
-
+    const id = req.params.id;
+    let index = products.findIndex( product => product.id == id);
+    products.splice(index, 1);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    res.redirect('/products');
   },
 };
 
