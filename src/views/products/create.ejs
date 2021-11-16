@@ -17,17 +17,16 @@
 
                         <h2>Crear producto</h2>
 
-                        <form action="">
+                        <form action="/products" method="POST" >
                             <div class="email-box">
-                                <label class="l-email" for="nombreProducto">Nombre del producto</label>
-                                <input class="text-input" type="text" name="user-email" id="nombreProducto" required
+                                <label class="l-email" for="productName">Nombre del producto</label>
+                                <input class="text-input" type="text" name="productName" id="productName" required
                                     placeholder="Escriba aquí el nombre de su producto">
                             </div>
                             <div class="email-box">
                                 <label class="l-email" for="productDescription">Descripción del producto</label>
                                 <textarea class="text-input" name="productDescription" id="productDescription" cols="30"
-                                    rows="5" required placeholder="Escriba aquí su descripción del producto">
-                                    </textarea>
+                                    rows="5" required placeholder="Escriba aquí su descripción del producto"></textarea>
                             </div>
                             <div class="email-box">
                                 <label class="l-email" for="imgProduct">Cargar imagenes</label>
@@ -41,13 +40,12 @@
                                 <input class="text-input" type="text" name="price" id="price" required
                                     placeholder="Escriba aquí el precio">
                             </div>
+
                             <div class="email-box">
-                                <label class="l-email" for="conectividad">Conectividad</label>
-                                <input class="text-input" type="text" name="conectividad" id="conectividad"
-                                    placeholder="Escriba la conectividad: Cable o inalambrico">
+                                <label class="l-email" for="popular">Producto destacado<input type="checkbox" name="popular" id="popular"></label>
                             </div>
 
-                            <input class="button-submit" type="submit" value="Confirmar cambios">
+                            <input class="button-submit" type="submit" value="Guardar producto">
                         </form>
 
 

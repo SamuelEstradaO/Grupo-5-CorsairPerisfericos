@@ -14,15 +14,34 @@ const productsController = {
       products, toThousand
     });
   },
+
   product: (req, res) => {
     res.render("./products/detail");
   },
+
   cart: (req, res) => {
     res.render("./products/cart");
   },
+
   create: (req, res) => {
     res.render("./products/create", {categorias});
   },
+
+  newProduct: (req, res) => {
+    let { productName, productDescription, price, category, popular } = req.body;
+    let product = {
+      id: products.length + 1,
+      titulo: productName,
+      descripcion: productDescription,
+      precio: price,
+      categoria: category,
+      recomendado: popular==="on"
+    };
+    products.push(product);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    res.redirect(`/products/detail/${product.id}`);
+  },
+
   edit: (req, res) => {
     const id = req.params.id;
     let product = products.find((product) => product.id === id);
