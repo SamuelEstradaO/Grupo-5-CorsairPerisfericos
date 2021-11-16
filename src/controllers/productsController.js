@@ -1,22 +1,32 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, "../data/products.json");
+let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-const categorias = ['teclado', 'mouse', 'silla', 'headset', 'alfombrilla', 'accesorio'];
+const categorias = [
+  "teclado",
+  "mouse",
+  "silla",
+  "headset",
+  "alfombrilla",
+  "accesorio",
+];
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
   products: (req, res) => {
-    res.render('products/allProducts', {
-      products, toThousand
+    res.render("products/allProducts", {
+      products,
+      toThousand,
     });
   },
 
   product: (req, res) => {
-    res.render("./products/detail");
+    const id = req.params.id;
+    let product = products.find((product) => product.id === id);
+    res.render("./products/detail", { product });
   },
 
   cart: (req, res) => {
@@ -24,21 +34,22 @@ const productsController = {
   },
 
   create: (req, res) => {
-    res.render("./products/create", {categorias});
+    res.render("./products/create", { categorias });
   },
 
   newProduct: (req, res) => {
-    let { productName, productDescription, price, category, popular } = req.body;
+    let { productName, productDescription, price, category, popular } =
+      req.body;
     let product = {
       id: products.length + 1,
       titulo: productName,
       descripcion: productDescription,
       precio: price,
       categoria: category,
-      recomendado: popular==="on"
+      recomendado: popular === "on",
     };
     products.push(product);
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     res.redirect(`/products/detail/${product.id}`);
   },
 
@@ -52,26 +63,21 @@ const productsController = {
     const id = req.params.id;
     console.log(req.body);
     const { productName, price, category, productDescription } = req.body;
-    let index = products.findIndex( product => product.id == id);
+    let index = products.findIndex((product) => product.id == id);
     products[index].titulo = productName;
     products[index].precio = price;
     products[index].categoria = category;
     products[index].descripcion = productDescription;
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     res.redirect(`/products/edit/${id}`);
   },
   delete: (req, res) => {
     const id = req.params.id;
-    let index = products.findIndex( product => product.id == id);
+    let index = products.findIndex((product) => product.id == id);
     products.splice(index, 1);
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    res.redirect('/products');
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+    res.redirect("/products");
   },
 };
 
 module.exports = productsController;
-
-
-
-
-
