@@ -1,11 +1,18 @@
 <div class="similar-items">
+    <% let similar %>
+    <% if( locals && locals.category){ similar=products.filter(product=> product.categoria === category);} %>
     <h3>Productos similares</h3>
-    <% for(let i=0; i < 4; i++){ %>
-        <a href="/products/detail">
-            <img src="/images/auricular1.jpg" alt="" />
+    <% let length = similar.length >= 4 ? 4 : similar.length %>
+    <% for(let i=0; i < length; i++){ %>
+        <a href="/products/detail/<%= similar[i].id %>">
+            <img src="/images/<%= similar[i].img %>" alt="<%= similar[i].img %>" />
             <div class="details">
-                <h5>Auricular Void Elite</h5>
-                <p>$19.000</p>
+                <h5>
+                    <%= similar[i].titulo %>
+                </h5>
+                <p>
+                    $<%= similar[i].precio %>
+                </p>
             </div>
         </a>
     <% } %>

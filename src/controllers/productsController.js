@@ -26,7 +26,7 @@ const productsController = {
   product: (req, res) => {
     const id = req.params.id;
     let product = products.find((product) => product.id === id);
-    res.render("./products/detail", { product });
+    res.render("./products/detail", { product, products });
   },
 
   cart: (req, res) => {

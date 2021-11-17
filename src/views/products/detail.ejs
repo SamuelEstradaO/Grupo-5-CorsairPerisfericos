@@ -10,16 +10,16 @@
     <!-- Inicio del detalle de producto -->
     <main>
       <div class="box-pd">
-        <%- include('../partials/similarItems.ejs') %>
+        <%- include('../partials/similarItems.ejs', { category: product.categoria, products }) %>
 
         <article class="item">
           <div class="product-image">
-            <img src="/images/<%= product.img%>" alt="teclado2" />
+            <img src="/images/<%= product.img%>" alt="<%= product.img%>" />
           </div>
           <div class="item-details">
             <h3><%= product.titulo %></h3>
             <p><%= product.descripcion%></p>
-            <h4><%= product.precio%></h4>
+            <h4>$<%= product.precio%></h4>
             <button class="add-item btn" name="anadirAlCarro">
               Agregar<i class="fas fa-dolly"></i>
             </button>
@@ -28,18 +28,9 @@
 
         <section class="specifications">
           <h3>Características</h3>
-          <img src="/images/<%= product.img%>" alt="" />
+          <img src="/images/<%= product.img%>" alt="<%= product.img%>" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis
-            tenetur, laborum ipsa eum, facilis placeat nam iure amet autem a
-            ipsam! Quia deleniti quo explicabo accusamus ipsam sit id!
-            Consectetur quo soluta ea accusamus saepe quisquam quae quasi,
-            ducimus, totam nemo unde beatae dolorem minima illum, eum voluptas
-            delectus dicta libero laboriosam maiores ut magnam excepturi eaque
-            quia. Expedita? Minima tenetur accusantium exercitationem neque,
-            perferendis doloribus aperiam cupiditate nostrum sit pariatur ad
-            omnis corporis saepe iusto temporibus, quia alias accusamus?
-            Suscipit nemo pariatur sint hic, deserunt cumque tenetur cum!
+            <%= product.caracteristicas %>
           </p>
         </section>
       </div>
