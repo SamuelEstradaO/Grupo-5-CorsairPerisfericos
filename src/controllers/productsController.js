@@ -61,13 +61,13 @@ const productsController = {
 
   update: (req, res) => {
     const id = req.params.id;
-    console.log(req.body);
-    const { productName, price, category, productDescription } = req.body;
+    const { productName, price, category, productDescription, popular } = req.body;
     let index = products.findIndex((product) => product.id == id);
     products[index].titulo = productName;
     products[index].precio = price;
     products[index].categoria = category;
     products[index].descripcion = productDescription;
+    products[index].recomendado = popular === "on";
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     res.redirect(`/products/edit/${id}`);
   },
