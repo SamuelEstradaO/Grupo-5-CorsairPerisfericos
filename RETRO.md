@@ -68,3 +68,19 @@ La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprin
 
 ---
 
+## SPRINT 4:
+
+1. Comenzar a hacer: 
+    
+2. Hacer más: 
+    -Que participe o codee más aquel integrante que se le dificulte más, para poder practicar y adquirir fortaleza en ese tema.
+
+3. Continuar haciendo: 
+    - Generar las novedades propias dentro del grupo de whatsapp, dando una breve resenia de la misma, a modo de Daily.
+    - Encuentros semanales de por lo menos dos integrantes.
+    - Revisar los commits realizados.
+
+4. Hacer menos: 
+    
+5. Dejar de hacer: 
+    
