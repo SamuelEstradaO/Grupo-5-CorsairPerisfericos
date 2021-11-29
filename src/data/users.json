@@ -405,5 +405,37 @@
   "lastName": "asdq",
   "email": "asdq@gmail.com",
   "password": "asdqwe"
+ },
+ {
+  "id": 52,
+  "name": "joaquin",
+  "lastName": "somoza",
+  "email": "joaquinsomoza6@gmail.com",
+  "password": "123456",
+  "userImage": "1638203199571_img_.jfif"
+ },
+ {
+  "id": 53,
+  "name": "mario",
+  "lastName": "gallardo",
+  "email": "Mario@gmial.com",
+  "password": "123456",
+  "userImage": "default.svg"
+ },
+ {
+  "id": 54,
+  "name": "mari2",
+  "lastName": "mari2",
+  "email": "Mario@gmial.com",
+  "password": "123456",
+  "userImage": "1638203376166_img_.png"
+ },
+ {
+  "id": 55,
+  "name": "samuel",
+  "lastName": "somoza",
+  "email": "samu@gmail.com",
+  "password": "$2a$10$ZtDiLNbb1UZvOIJwdvAhe.CxhQN1PcEsBm2Zr5cHLEzFkGupria6O",
+  "userImage": "default.svg"
  }
 ]

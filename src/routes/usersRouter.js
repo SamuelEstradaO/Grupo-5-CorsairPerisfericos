@@ -8,7 +8,7 @@ const path = require("path");
 // Multer settings
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/images/avatars');
+        cb(null, './public/images/users');
     },
     filename: function (req, file, cb) {
         cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 router.get("/login", usersController.login);
+router.post("/login", usersController.newLogin);
 router.get("/register", usersController.register);
 router.post("/register", uploadFile.single('avatar'), usersController.newUser);
 router.delete("/:id", usersController.delete);

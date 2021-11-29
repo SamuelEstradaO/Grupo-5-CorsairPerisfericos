@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/JoaquinSomoza/Grupo-5-e-commerce#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "multer": "^1.4.3"
   }

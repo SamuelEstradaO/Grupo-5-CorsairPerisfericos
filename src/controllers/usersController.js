@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcryptjs');
+
+
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -11,14 +14,36 @@ const usersController = {
   register: (req, res) => {
     res.render("./users/register");
   },
-
+  newLogin: (req, res) => {
+    const { email, password } = req.body;
+    const user = users.find(user => user.email === email);
+    if (!user) {
+      return res.render("./users/login", {
+        error: "Usuario no encontrado"
+      });
+    }
+    if (!bcrypt.compareSync(password, user.password)) {
+      return res.render("./users/login", {
+        error: "Contraseña incorrecta"
+      });
+    }
+    req.session.user = user;
+    res.redirect("/");
+  },
   newUser: (req, res) => {
+    if (req.file != undefined) {
+      userImage = req.file.filename;
+    } else {
+      userImage = "default.svg";
+    }
+    let passEncriptada = bcrypt.hashSync(req.body.password, 10);
     const newUser = {
       id: users.length + 1,
       name: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      password: passEncriptada,
+      userImage: userImage,
     };
     users.push(newUser);
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));

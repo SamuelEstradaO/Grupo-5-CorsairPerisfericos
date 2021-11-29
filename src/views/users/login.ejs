@@ -16,22 +16,23 @@
 
                     <h2>Iniciar sesión</h2>
 
-                    <form action="">
+                    <form action="/users/login" method="POST">
                         <div class="email-box">
-                            <label class="l-email" for="user-email">Correo</label>
-                            <input class="text-input" type="email" name="user-email" id="user-email" required
+                            <label class="l-email" for="email">Correo</label>
+                            <input class="text-input" type="email" name="email" id="email" required
                                 placeholder="Escriba aquí su correo">
                         </div>
 
                         <div class="password-box">
-                            <label class="l-password" for="user-password">Contraseña</label>
+                            <label class="l-password" for="password">Contraseña</label>
                             <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
-                            <input class="text-input" type="password" name="user-password" id="user-password" required
+                            <input class="text-input" type="password" name="password" id="password" required
                                 placeholder="Ingrese su contraseña">
                         </div>
 
                         <div class="keep-login">
-                            <label><input type="checkbox" name="remember-me" id="remember-me">Mantener sesión
+                            <label><input type="checkbox" name="remember-me" id="remember-me"
+                                    value="remember-me">Mantener sesión
                                 iniciada</label>
                         </div>
 
