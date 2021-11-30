@@ -437,5 +437,21 @@
   "email": "samu@gmail.com",
   "password": "$2a$10$ZtDiLNbb1UZvOIJwdvAhe.CxhQN1PcEsBm2Zr5cHLEzFkGupria6O",
   "userImage": "default.svg"
+ },
+ {
+  "id": 56,
+  "name": "mario",
+  "lastName": "napopo",
+  "email": "Mario@gmial.com",
+  "password": "$2a$10$UJjFNhBAlHG19tZU9pONK.yfuQEPwltO.g1fhumeFZ3nOm8Yl3pRC",
+  "userImage": "default.svg"
+ },
+ {
+  "id": 57,
+  "name": "joaco",
+  "lastName": "somoza",
+  "email": "joaco@gmail.com",
+  "password": "$2a$10$TE2.Ub2RWFT4hx75MzvUHOqF9fawIgzTMv3WebNkBufZfWKdoc5cy",
+  "userImage": "default.svg"
  }
 ]

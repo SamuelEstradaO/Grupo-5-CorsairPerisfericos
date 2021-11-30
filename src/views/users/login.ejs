@@ -10,36 +10,47 @@
 
             <!-- Inicio de div principal -->
             <div class="box">
-                <!-- <a class="logo-container" href="/"><img class="logo" src="/images/corsair-logo.svg"
-                        alt="Corsair logo"></a> -->
                 <div class="box-login">
 
                     <h2>Iniciar sesión</h2>
-
-                    <form action="/users/login" method="POST">
-                        <div class="email-box">
-                            <label class="l-email" for="email">Correo</label>
-                            <input class="text-input" type="email" name="email" id="email" required
-                                placeholder="Escriba aquí su correo">
+                    <%if(locals && locals.errors){%>
+                        <div class="alert alert-danger">
+                            <p>Corrige los siguientes errores:</p>
+                            <ul>
+                                <% errors.forEach(error=>{%>
+                                    <li>
+                                        <%=error.msg%>
+                                    </li>
+                                    <% }) %>
+                            </ul>
                         </div>
+                        <% } %>
 
-                        <div class="password-box">
-                            <label class="l-password" for="password">Contraseña</label>
-                            <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
-                            <input class="text-input" type="password" name="password" id="password" required
-                                placeholder="Ingrese su contraseña">
-                        </div>
+                            <form action="/users/login" method="POST">
+                                <div class="email-box">
+                                    <label class="l-email" for="email">Correo</label>
+                                    <input class="text-input" type="text" name="email" id="email"
+                                        placeholder="Escriba aquí su correo">
+                                </div>
 
-                        <div class="keep-login">
-                            <label><input type="checkbox" name="remember-me" id="remember-me"
-                                    value="remember-me">Mantener sesión
-                                iniciada</label>
-                        </div>
+                                <div class="password-box">
+                                    <label class="l-password" for="password">Contraseña</label>
+                                    <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
+                                    <input class="text-input" type="password" name="password" id="password"
+                                        placeholder="Ingrese su contraseña">
+                                </div>
 
-                        <input class="button-submit" type="submit" value="Inciar sesión">
-                    </form>
+                                <div class="keep-login">
+                                    <label><input type="checkbox" name="rememberMe" id="remember-me"
+                                            value="remember-me">Mantener sesión
+                                        iniciada</label>
+                                </div>
 
-                    <p class="new-user">¿Eres un usuario nuevo? <a href="/users/register">Crear cuenta</a></p>
+                                <input class="button-submit" type="submit" value="Inciar sesión">
+                            </form>
+
+                            <p class="new-user">¿Eres un usuario nuevo? <a href="/users/register">Crear cuenta</a>
+                            </p>
                 </div>
             </div>
 

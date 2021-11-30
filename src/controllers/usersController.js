@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
+const { validationResult } = require('express-validator');
+
+
 
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
@@ -15,22 +18,37 @@ const usersController = {
     res.render("./users/register");
   },
   newLogin: (req, res) => {
-    const { email, password } = req.body;
-    const user = users.find(user => user.email === email);
-    if (!user) {
-      return res.render("./users/login", {
-        error: "Usuario no encontrado"
+    let validations = validationResult(req);
+    if (validations.isEmpty()) {
+      const { email, password } = req.body;
+      const user = users.find(user => user.email === email);
+      if (!user) {
+        validations.errors.push({ msg: 'El usuario no existe' });
+        return res.render("./users/login", {
+          errors: validations.errors,
+        });
+      } else {
+        if (!bcrypt.compareSync(password, user.password)) {
+          validations.errors.push({ msg: 'La contraseña es incorrecta' });
+          return res.render("./users/login", {
+            errors: validations.errors,
+          });
+        } else {
+          req.session.user = user.email;
+          if (req.body.rememberMe !== undefined) {
+            res.cookie('user', user.email, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+          }
+          res.redirect("/");
+        }
+      }
+    } else {
+      res.render("./users/login", {
+        errors: validations.errors
       });
     }
-    if (!bcrypt.compareSync(password, user.password)) {
-      return res.render("./users/login", {
-        error: "Contraseña incorrecta"
-      });
-    }
-    req.session.user = user;
-    res.redirect("/");
   },
   newUser: (req, res) => {
+    let validations = validationResult(req);
     if (req.file != undefined) {
       userImage = req.file.filename;
     } else {
@@ -71,7 +89,14 @@ const usersController = {
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
     res.redirect('/users/edit/' + updateId);
   },
+  logged: (req, res) => {
+    if (req.session.user) {
+      res.send(req.session.user);
+    } else {
+      res.send('No estas logeado');
+    }
 
+  }
 };
 
 

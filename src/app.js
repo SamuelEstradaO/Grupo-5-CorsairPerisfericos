@@ -8,6 +8,9 @@ const app = express();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
+const logMiddleware = require('./middlewares/logMid');
+const rememberMiddleware = require('./middlewares/rememberMid');
+
 const PUERTO = 3030;
 
 const publicPath = path.resolve(__dirname, "../public");
@@ -21,6 +24,8 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({ secret: "Corsecreto", resave: false, saveUninitialized: false }));
 
+app.use(logMiddleware);
+app.use(rememberMiddleware);
 
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
