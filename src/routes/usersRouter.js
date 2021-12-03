@@ -5,6 +5,11 @@ const multer = require("multer");
 const path = require("path");
 const { check } = require("express-validator");
 
+
+const checkLoginMid = require("../middlewares/checkLoginMid");
+
+
+
 //Validaciones
 const validarLogin = [
     check("email").isEmail().withMessage("El email no es valido"),
@@ -14,7 +19,14 @@ const validarLogin = [
 const validarRegistro = [
     check("firstName").notEmpty().withMessage("El nombre no puede estar vacio"),
     check("lastName").notEmpty().withMessage("El apellido no puede estar vacio"),
-    check("email").isEmail().withMessage("El email no es valido"),
+    check("email").isEmail().withMessage("El email no es valido"),/*.bail()
+         .custom((value) => {
+            let user = users.find(value);
+            if (user != undefined) {
+                throw new Error("El email ya esta registrado")
+            }
+            return true;
+        }), */
     check("password").isLength({ min: 6 }).withMessage("El password debe tener al menos 6 caracteres"),
     check("confirmPassword").custom((value, { req }) => {
         if (value !== req.body.password) {
@@ -40,10 +52,10 @@ const uploadFile = multer({ storage });
 router.get("/login", usersController.login);
 router.post("/login", validarLogin, usersController.newLogin);
 router.get("/register", usersController.register);
-router.post("/register", validarRegistro, uploadFile.single('avatar'), usersController.newUser);
+router.post("/register", uploadFile.single('avatar'), validarRegistro, usersController.newUser);
 router.delete("/:id", usersController.delete);
-router.get("/edit/:id", usersController.edit);
-router.put("/edit/:id", uploadFile.single('avatar'), usersController.update);
+router.get("/edit/:id", checkLoginMid, usersController.edit);
+router.put("/edit/:id", checkLoginMid, uploadFile.single('avatar'), usersController.update);
 
 //comprobar login iniciado
 router.get("/logged", usersController.logged);

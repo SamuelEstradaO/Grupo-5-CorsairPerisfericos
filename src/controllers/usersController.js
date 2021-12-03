@@ -5,8 +5,6 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 
-
-
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -49,23 +47,31 @@ const usersController = {
   },
   newUser: (req, res) => {
     let validations = validationResult(req);
-    if (req.file != undefined) {
-      userImage = req.file.filename;
+    if (validations.isEmpty()) {
+      if (req.file != undefined) {
+        userImage = req.file.filename;
+      } else {
+        userImage = "default.svg";
+      }
+      let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+      const newUser = {
+        id: users.length + 1,
+        name: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: passEncriptada,
+        userImage: userImage,
+      };
+      users.push(newUser);
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+      res.redirect('/users/login');
     } else {
-      userImage = "default.svg";
+
+      res.render("./users/register", {
+        errors: validations.errors
+      });
     }
-    let passEncriptada = bcrypt.hashSync(req.body.password, 10);
-    const newUser = {
-      id: users.length + 1,
-      name: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: passEncriptada,
-      userImage: userImage,
-    };
-    users.push(newUser);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    res.redirect('/users/login');
+
   },
   delete: (req, res) => {
     let deleteId = req.params.id;
@@ -96,7 +102,8 @@ const usersController = {
       res.send('No estas logeado');
     }
 
-  }
+  },
+
 };
 
 

@@ -15,49 +15,61 @@
                 <div class="box-register">
 
                     <h2>Crear cuenta</h2>
-
-                    <form action="/users/register" method="POST" enctype="multipart/form-data">
-
-                        <div class="full-name">
-
-                            <div class="name">
-                                <label class="l-name" for="user-name">Nombre(s)</label>
-                                <input class="text-input" type="text" name="firstName" id="user-name"
-                                    placeholder="Escriba su nombre(s)">
-                            </div>
-
-                            <div class="last-name">
-                                <label class="l-name" for="user-last-name">Apellido</label>
-                                <input class="text-input" type="text" name="lastName" id="user-last-name"
-                                    placeholder="Escriba su apellido">
-                            </div>
+                    <%if(locals && locals.errors){%>
+                        <div class="alert alert-danger">
+                            <p>Corrige los siguientes errores:</p>
+                            <ul>
+                                <% errors.forEach(error=>{%>
+                                    <li>
+                                        <%=error.msg%>
+                                    </li>
+                                    <% }) %>
+                            </ul>
                         </div>
-                        <div class="email-box">
-                            <label for="avatar">Seleccione su imagen de perfil</label>
-                            <input type="file" name="avatar" id="avatar">
-                        </div>
-                        <div class="email-box">
-                            <label class="l-email" for="user-email">Correo</label>
-                            <input class="text-input" type="email" name="email" id="user-email"
-                                placeholder="Escriba aquí su correo">
-                        </div>
+                        <% } %>
 
-                        <div class="password-box">
-                            <label class="l-password" for="user-password">Contraseña</label>
-                            <input class="text-input" type="password" name="password" id="user-password"
-                                placeholder="Ingrese su contraseña">
-                        </div>
+                            <form action="/users/register" method="POST" enctype="multipart/form-data">
 
-                        <div class="confirm-password-box">
-                            <label class="l-password" for="confirm-user-password">Confirmar contraseña</label>
-                            <input class="text-input" type="password" name="confirm-password" id="confirm-user-password"
-                                placeholder="Vuelva a ingresar su contraseña">
-                        </div>
+                                <div class="full-name">
 
-                        <input class="button-submit" type="submit" value="Crear cuenta">
-                    </form>
+                                    <div class="name">
+                                        <label class="l-name" for="user-name">Nombre(s)</label>
+                                        <input class="text-input" type="text" name="firstName" id="user-name"
+                                            placeholder="Escriba su nombre(s)">
+                                    </div>
 
-                    <a class="login" href="/users/login">¿Ya tienes una cuenta?</a>
+                                    <div class="last-name">
+                                        <label class="l-name" for="user-last-name">Apellido</label>
+                                        <input class="text-input" type="text" name="lastName" id="user-last-name"
+                                            placeholder="Escriba su apellido">
+                                    </div>
+                                </div>
+                                <div class="email-box">
+                                    <label for="avatar">Seleccione su imagen de perfil</label>
+                                    <input type="file" name="avatar" id="avatar">
+                                </div>
+                                <div class="email-box">
+                                    <label class="l-email" for="user-email">Correo</label>
+                                    <input class="text-input" type="email" name="email" id="user-email"
+                                        placeholder="Escriba aquí su correo">
+                                </div>
+
+                                <div class="password-box">
+                                    <label class="l-password" for="user-password">Contraseña</label>
+                                    <input class="text-input" type="password" name="password" id="user-password"
+                                        placeholder="Ingrese su contraseña">
+                                </div>
+
+                                <div class="confirm-password-box">
+                                    <label class="l-password" for="confirm-user-password">Confirmar contraseña</label>
+                                    <input class="text-input" type="password" name="confirmPassword"
+                                        id="confirm-user-password" placeholder="Vuelva a ingresar su contraseña">
+                                </div>
+
+                                <input class="button-submit" type="submit" value="Crear cuenta">
+                            </form>
+
+                            <a class="login" href="/users/login">¿Ya tienes una cuenta?</a>
                 </div>
             </div>
 
