@@ -1,0 +1,36 @@
+<% productos.forEach(producto=>{ %>
+    <article class="box-cart">
+        <div class="main__article--img">
+            <img src="\images\<%= producto.img %>" alt="<%= producto.img %>" />
+        </div>
+        <div class="main__article--description">
+            <h4>
+                <%= producto.titulo %>
+            </h4>
+            <p>
+                <%= producto.descripcion %>
+            </p>
+            <div>
+                <ul class="main__article--list">
+                    <li><a href="#">Borrar</a></li>
+                    <li><a href="#">Ir a local</a></li>
+                    <li><a href="#">Guardar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main__article--option">
+            <select name="" id="">
+                <option value="" disabled selected>Cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <p>4 Disponibles</p>
+            <p>
+                <%= producto.precio %>
+            </p>
+        </div>
+    </article>
+    <% })%>

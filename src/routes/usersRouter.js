@@ -7,6 +7,7 @@ const { check } = require("express-validator");
 
 
 const checkLoginMid = require("../middlewares/checkLoginMid");
+const guestOnlyMid = require("../middlewares/guestOnlyMid");
 
 
 
@@ -49,11 +50,11 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage });
 
-router.get("/login", usersController.login);
-router.post("/login", validarLogin, usersController.newLogin);
-router.get("/register", usersController.register);
-router.post("/register", uploadFile.single('avatar'), validarRegistro, usersController.newUser);
-router.delete("/:id", usersController.delete);
+router.get("/login", guestOnlyMid, usersController.login);
+router.post("/login", guestOnlyMid, validarLogin, usersController.newLogin);
+router.get("/register", guestOnlyMid, usersController.register);
+router.post("/register", guestOnlyMid, uploadFile.single('avatar'), validarRegistro, usersController.newUser);
+router.delete("/:id", checkLoginMid, usersController.delete);
 router.get("/edit/:id", checkLoginMid, usersController.edit);
 router.put("/edit/:id", checkLoginMid, uploadFile.single('avatar'), usersController.update);
 
