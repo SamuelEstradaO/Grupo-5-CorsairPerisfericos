@@ -5,6 +5,8 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 
@@ -51,6 +53,11 @@ header  img.img__perfil--header {
   height: 50px;
   border-radius: 3px;
 }
+
+header form.header__logout {
+  width: 25%;
+}
+
 .header__loginCart {
   display: flex;
   justify-content: space-around;

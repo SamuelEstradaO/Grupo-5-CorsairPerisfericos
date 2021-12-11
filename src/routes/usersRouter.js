@@ -57,6 +57,7 @@ router.post("/register", guestOnlyMid, uploadFile.single('avatar'), validarRegis
 router.delete("/:id", checkLoginMid, usersController.delete);
 router.get("/edit/:id", checkLoginMid, usersController.edit);
 router.put("/edit/:id", checkLoginMid, uploadFile.single('avatar'), usersController.update);
+router.delete("/logout", usersController.logout);
 
 //comprobar login iniciado
 router.get("/logged", usersController.logged);

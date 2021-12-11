@@ -20,21 +20,24 @@ const productsController = {
     res.render("products/allProducts", {
       products,
       toThousand,
+      user: req.loggedUser 
     });
   },
 
   product: (req, res) => {
     const id = req.params.id;
     let product = products.find((product) => product.id === id);
-    res.render("./products/detail", { product, products });
+    res.render("./products/detail", { product, products,
+      user: req.loggedUser  });
   },
 
   cart: (req, res) => {
-    res.render("./products/cart");
+    res.render("./products/cart", { user: req.loggedUser });
   },
 
   create: (req, res) => {
-    res.render("./products/create", { categorias });
+    res.render("./products/create", { categorias,
+      user: req.loggedUser  });
   },
 
   newProduct: (req, res) => {
@@ -56,7 +59,8 @@ const productsController = {
   edit: (req, res) => {
     const id = req.params.id;
     let product = products.find((product) => product.id === id);
-    res.render("./products/edit", { product, categorias });
+    res.render("./products/edit", { product, categorias,
+      user: req.loggedUser  });
   },
 
   update: (req, res) => {

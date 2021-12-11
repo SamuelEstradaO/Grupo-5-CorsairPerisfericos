@@ -9,16 +9,22 @@
         <button class="btn btn-primary"><i class="fas fa-search"></i></button>
       </div>
       <div class="header__loginCart">
-        <a href="/users/login">
-          <button class="btn">Login</button><i class="fas fa-user"></i>
-        </a>
-        <a href="/users/register">
-          <button class="btn">Register</button><i class="fas fa-address-book"></i>
-        </a>
-        <a href="">
-          <img class="img__perfil--header" src="/images/users/messi.jpg" alt="">
-        </a>
-        <a href="/products/cart"><i class="fas fa-dolly"></i></a>
+        <% if(locals && locals.user){ %>
+          <a href="/users/edit/<%= user.id %> ">
+            <img class="img__perfil--header" src="/images/users/<%= user.userImage %>" alt="<%= user.userImage %>">
+          </a>
+          <form class="header__logout" action="/users/logout?_method=DELETE" method="POST">
+            <button type="submit" class="btn">Logout</button>
+          </form>
+          <% }else{ %>
+            <a href="/users/login">
+              <button class="btn">Login</button><i class="fas fa-user"></i>
+            </a>
+            <a href="/users/register">
+              <button class="btn">Register</button><i class="fas fa-address-book"></i>
+            </a>
+            <% } %>
+              <a href="/products/cart"><i class="fas fa-dolly"></i></a>
       </div>
     </div>
   </section>

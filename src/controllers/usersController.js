@@ -4,9 +4,9 @@ const bcrypt = require('bcryptjs');
 
 const { validationResult } = require('express-validator');
 
-
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 
 const usersController = {
   login: (req, res) => {
@@ -23,13 +23,13 @@ const usersController = {
       if (!user) {
         validations.errors.push({ msg: 'El usuario no existe' });
         return res.render("./users/login", {
-          errors: validations.errors,
+          errors: validations.errors, user: req.loggedUser
         });
       } else {
         if (!bcrypt.compareSync(password, user.password)) {
           validations.errors.push({ msg: 'La contraseña es incorrecta' });
           return res.render("./users/login", {
-            errors: validations.errors,
+            errors: validations.errors, user: req.loggedUser
           });
         } else {
           req.session.user = user.email;
@@ -41,7 +41,7 @@ const usersController = {
       }
     } else {
       res.render("./users/login", {
-        errors: validations.errors
+        errors: validations.errors, user: req.loggedUser
       });
     }
   },
@@ -68,7 +68,7 @@ const usersController = {
     } else {
 
       res.render("./users/register", {
-        errors: validations.errors
+        errors: validations.errors, user: req.loggedUser
       });
     }
 
@@ -102,6 +102,14 @@ const usersController = {
       res.send('No estas logeado');
     }
 
+  },
+
+  logout: (req, res) => {
+    //delete cookie and session
+
+    res.clearCookie('user');
+    req.session = null;
+    res.redirect('/');
   },
 
 };
