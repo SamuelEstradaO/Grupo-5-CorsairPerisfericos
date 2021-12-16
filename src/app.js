@@ -24,8 +24,8 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({ secret: "Corsecreto", resave: false, saveUninitialized: false }));
 
-app.use(logMiddleware);
 app.use(rememberMiddleware);
+app.use(logMiddleware);
 
 app.use("/", mainRouter);
 app.use("/users", usersRouter);

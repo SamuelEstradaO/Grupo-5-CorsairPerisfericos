@@ -8,6 +8,7 @@ const { check } = require("express-validator");
 
 const checkLoginMid = require("../middlewares/checkLoginMid");
 const guestOnlyMid = require("../middlewares/guestOnlyMid");
+const logoutMid = require("../middlewares/logoutMid");
 
 
 
@@ -57,7 +58,7 @@ router.post("/register", guestOnlyMid, uploadFile.single('avatar'), validarRegis
 router.delete("/:id", checkLoginMid, usersController.delete);
 router.get("/edit/:id", checkLoginMid, usersController.edit);
 router.put("/edit/:id", checkLoginMid, uploadFile.single('avatar'), usersController.update);
-router.delete("/logout", usersController.logout);
+router.get("/logout", logoutMid, usersController.logout);
 
 //comprobar login iniciado
 router.get("/logged", usersController.logged);

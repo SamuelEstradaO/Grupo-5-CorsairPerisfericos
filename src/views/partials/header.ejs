@@ -13,9 +13,7 @@
           <a href="/users/edit/<%= user.id %> ">
             <img class="img__perfil--header" src="/images/users/<%= user.userImage %>" alt="<%= user.userImage %>">
           </a>
-          <form class="header__logout" action="/users/logout?_method=DELETE" method="POST">
-            <button type="submit" class="btn">Logout</button>
-          </form>
+          <a href="/users/logout"> <button class="btn">Logout</button></a>
           <% }else{ %>
             <a href="/users/login">
               <button class="btn">Login</button><i class="fas fa-user"></i>

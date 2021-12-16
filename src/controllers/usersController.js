@@ -106,10 +106,10 @@ const usersController = {
 
   logout: (req, res) => {
     //delete cookie and session
-
     res.clearCookie('user');
-    req.session = null;
-    res.redirect('/');
+    req.session.destroy();
+
+    return res.redirect('/');
   },
 
 };
