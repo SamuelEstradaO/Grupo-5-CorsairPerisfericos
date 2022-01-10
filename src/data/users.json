@@ -469,5 +469,13 @@
   "email": "syeoyars@gmail.com",
   "password": "$2a$10$5ttx5ESwH4OLqbD/oKpoFerNx83D5WsSkpBKGWl3lPSFmezddJtIa",
   "userImage": "1639202748759_img_.png"
+ },
+ {
+  "id": 60,
+  "name": "Sam",
+  "lastName": "Estra",
+  "email": "syeoyars@gmail.com",
+  "password": "$2a$10$vxMQ2DCkRanrogNprBcMMuRcdaYT5./982CKQ0cNIV9FiadgvMnpS",
+  "userImage": "default.svg"
  }
 ]

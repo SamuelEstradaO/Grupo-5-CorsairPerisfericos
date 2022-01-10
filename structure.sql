@@ -49,7 +49,7 @@ CREATE TABLE `usuarios` (
   `name` varchar(100) NOT NULL,
   `lastName` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `userImage` varchar(100),
   `isAdmin` tinyint unsigned default 0,
   `created_at` timestamp NULL DEFAULT NULL,
