@@ -23,7 +23,7 @@ CREATE TABLE `productos` (
   `img` varchar(100) ,
   `precio` int(11) NOT NULL,
   `caracteristicas` text,
-  `stock` int,
+  `stock` int default 0,
   `categoria_id` int(11) unsigned default NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,

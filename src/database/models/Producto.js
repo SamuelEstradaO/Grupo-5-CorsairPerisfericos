@@ -21,15 +21,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     img: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
+      type: DataTypes.STRING(100)
     },
     caracteristicas: {
       type: DataTypes.TEXT(),
     },
     stock: {
       type: DataTypes.INT(11),
-      allowNull: false,
+      defaultValue: 0
     },
     isRecommended: {
       type: DataTypes.INTEGER(1).UNSIGNED,
@@ -52,11 +51,18 @@ module.exports = (sequelize, DataTypes) => {
   Producto.associate = (models) => {
     Producto.belongsToMany(models.Usuario, {
       as: "usuarios",
-      through: "carts",
+      through: "cart",
       foreignKey: "producto_id",
       otherKey: "usuario_id",
       timestamps: false,
     });
+
+    Producto.belongsTo(models.Categoria, {
+        as: "categoria",
+        foreignKey: "categoria_id",
+        timestamps: false,
+    });
   };
+
   return Producto;
 };
