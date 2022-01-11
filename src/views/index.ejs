@@ -59,8 +59,7 @@
       <!-- Productos a mostrar -->
       <section class="productosDestacados__main">
         <h2>Productos destacados</h2>
-        <% let productosDestacados= products.filter(producto=>
-        producto.recomendado) %> <% productosDestacados.forEach(producto=> { %>
+        <% products.forEach(producto=> { %>
         <%- include('./partials/product', {producto})%> <% });%>
 
         <!-- Section con video -->

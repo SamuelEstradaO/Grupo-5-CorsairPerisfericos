@@ -1,6 +1,6 @@
 <div class="similar-items">
     <% let similar %>
-        <% if( locals && locals.category){ similar=products.filter(product=> product.categoria === category); %>
+        <% if( locals && locals.category){ similar=products.filter(product=> product.categoria_id === category); %>
             <h3>Productos similares</h3>
             <% let length=similar.length>= 4 ? 4 : similar.length %>
                 <% for(let i=0; i < length; i++){ %>

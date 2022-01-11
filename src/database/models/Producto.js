@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT(11).UNSIGNED,
       primaryKey: true,
       allowNull: false,
-      autoIncrememt: true,
-      unique: true,
+      autoIncrement: true,
+      unique: true
     },
     titulo: {
       type: DataTypes.STRING(100),
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT(),
     },
     precio: {
-      type: DataTypes.INT(11),
+      type: DataTypes.INTEGER(11),
       allowNull: false,
     },
     img: {
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT(),
     },
     stock: {
-      type: DataTypes.INT(11),
+      type: DataTypes.INTEGER(11),
       defaultValue: 0
     },
     isRecommended: {
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
   let config = {
     timestamps: true,
     createdAt: "created_at",
-    updateAt: "update_at",
+    updatedAt: "updated_at",
     deteledAt: false,
   };
 

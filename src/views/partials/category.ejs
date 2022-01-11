@@ -5,6 +5,6 @@
         checked = category;
     } %> 
     <% categorias.forEach(categoria => { %>
-        <label class="l-email"><input type="radio"  name="category" id="<%= categoria %>" value="<%= categoria %>" <%= checked === categoria ? 'checked' : ''  %> > <%= categoria %></label>
+        <label class="l-email"><input type="radio"  name="category" id="<%= categoria.titulo %>" value="<%= categoria.id %>" <%= checked === categoria.id ? 'checked' : ''  %> > <%= categoria.titulo %></label>
     <% }); %> 
 </div>

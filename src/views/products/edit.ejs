@@ -35,7 +35,7 @@
                                 <input class="text-input" type="file" name="imgProduct" id="imgProduct">
                             </div>
                             
-                            <%- include('../partials/category', { category: product.categoria }) %> 
+                            <%- include('../partials/category', { category: product.categoria_id }) %> 
 
                             <div class="email-box">
                                 <label class="l-email" for="price">Precio</label>
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="email-box">
-                                <label class="l-email" for="popular">Producto destacado<input type="checkbox" name="popular" id="popular" <%= product.recomendado ? 'checked' : '' %> ></label>
+                                <label class="l-email" for="popular">Producto destacado<input type="checkbox" name="popular" id="popular" <%= product.isRecommended ? 'checked' : '' %> ></label>
                             </div>
 
                             <input class="button-submit" type="submit" value="Confirmar cambios">
