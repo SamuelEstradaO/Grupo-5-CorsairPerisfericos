@@ -137,6 +137,7 @@ const productsController = {
     // get img multer
 
     let imgProduct
+    console.log(req.file);
     if (!req.file) {
       imgProduct = 'dummy.png';
     } else {
