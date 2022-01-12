@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Inicio de head -->
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- Inicio de header -->
+        <%- include('../partials/header') %>
+
+            <!-- Productos a mostrar -->
+            <section class="productosDestacados__main">
+                <h2>Resultados de su busqueda: "<%= product %>"</h2>
+                <% if( result ) {%> 
+                <% products.forEach(producto=> { %>
+                    <%- include('../partials/product', {producto})%>
+
+                        <% })} else {%>
+                        <p class='no-results'>No hay resultados para su busqueda</p>
+                        <% } %>
+
+
+            </section>
+            <!-- Inicio del footer -->
+            <%- include('../partials/footer.ejs') %>
+
+
+
+
+
+    </body>
+
+</html>

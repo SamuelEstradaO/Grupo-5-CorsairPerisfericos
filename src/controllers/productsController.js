@@ -29,10 +29,11 @@ const productsController = {
         include: ['categoria']
       })
       .then((products) => {
+        console.log(products);
         res.render("products/allProducts", {
           products,
           toThousand,
-          categorias,
+          // categorias,
           user: req.loggedUser,
         });
       })
@@ -69,6 +70,35 @@ const productsController = {
             res.send(error);
           });
       })
+  },
+
+  search: (req, res) => {
+    let { product } = req.query;
+    db.Producto
+      .findAll({
+        where: {
+          titulo: {
+            [Op.like]: `%${product}%`
+          }
+        },
+        order: [["titulo", "ASC"],
+        ["precio", "ASC"]],
+        // limit: 9
+      })
+      .then((products) => {
+        let result = products.length > 0 ? true : false;
+        
+        res.render('products/search', {
+          products,
+          toThousand,
+          product,
+          result,
+          user: req.loggedUser,
+        })
+      })
+      .catch((error) => {
+        res.send(error);
+      });
   },
 
   cart: (req, res) => {

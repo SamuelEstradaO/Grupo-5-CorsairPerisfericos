@@ -20,6 +20,7 @@ const uploadFile = multer({ storage });
 
 router.get("/", productsController.products);
 router.get("/detail/:id", productsController.product);
+router.get("/search", productsController.search);
 router.get("/cart", productsController.cart);
 router.get("/create", checkLoginMid, productsController.create);
 router.post("/", checkLoginMid, uploadFile.single('imgProduct'), productsController.newProduct);
