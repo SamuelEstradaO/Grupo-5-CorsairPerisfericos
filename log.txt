@@ -1197,3 +1197,11 @@ Se ingreso a la pagina /
 Se ingreso a la pagina /products/create
 Se ingreso a la pagina /products
 Se ingreso a la pagina /products/detail/105
+Se ingreso a la pagina /
+Se ingreso a la pagina /favicon.ico
+Se ingreso a la pagina /
+Se ingreso a la pagina /
+Se ingreso a la pagina /products/detail/5
+Se ingreso a la pagina /
+Se ingreso a la pagina /products/detail/74
+Se ingreso a la pagina /products

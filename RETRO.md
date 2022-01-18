@@ -101,3 +101,19 @@ La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprin
     - Dejar pasar los primeros dias del Sprint sin encontrarnos.
 
 ---
+
+## SPRINT 6:
+
+1. Comenzar a hacer: 
+    - Planificar previamente los encuentros en los que se codea.
+2. Hacer más: 
+    - Compartir aun mas cantidad de stickers por WhatsApp.
+
+3. Continuar haciendo: 
+    - Que participe o codee más aquel integrante que se le dificulte más, para poder practicar y adquirir fortaleza en ese tema.
+4. Hacer menos: 
+    -
+5. Dejar de hacer: 
+    - Dejar pasar los primeros dias del Sprint sin encontrarnos.
+
+---

@@ -1,7 +1,7 @@
-module.exports ={
+module.exports = {
   "development": {
     "username": "root",
-    "password": "12345",
+    "password": "",
     "database": "corsair_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
