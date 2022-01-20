@@ -17,10 +17,8 @@ body {
 }
 
 .logo {
-  width: 80%;
+
   display: block;
-  margin: 0 auto;
-  margin-top: 20px;
 }
 .search__header {
   display: flex;
@@ -78,7 +76,6 @@ header form.header__logout {
   color: #e6b900;
 }
 
-
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -102,7 +99,6 @@ nav ul a {
   border: 1px solid rgba(0,0,0,0.1);
   border-radius:4px ;
 }
-
 
 /* Css de los producto a mostrar */
 a{
@@ -151,7 +147,7 @@ article div p {
   margin-bottom: 0px;
   font-size: 1.07rem;
 }
-main .btn {
+main .btn, article .btn {
   background-color: white;
   border: 1PX solid #69c2bd;
   color: #69c2bd;
@@ -169,6 +165,7 @@ article:hover .btn {
   color: white;
   border-radius: 0.5rem;
 }
+
 
 /* css de video */
 .videoProducto__main {
@@ -194,6 +191,7 @@ article:hover .btn {
 }
 footer h3 {
   margin-top: 40px;
+  width: 100%;
 }
 footer h3, p{
   text-align: center;
@@ -224,8 +222,6 @@ footer h3, p{
     margin-left: 10px;
   }
   
-  
-
   .productosDestacados__main {
     display: flex;
     flex-direction: row;
@@ -233,9 +229,7 @@ footer h3, p{
     justify-content: space-around;
     margin-top: 80px;
   }
-  p {
-    margin: 0;
-  }
+ 
   .productosDestacados__main article {
     margin-bottom: 65px;
     width: 80%;
@@ -300,12 +294,15 @@ footer h3, p{
   }
 
   .header__loginCart {
-    margin-top: 20px;
+    margin-top: 30px;
   }
-
+  nav a{
+    padding: 10px;
+  }
   nav a:hover {
     text-decoration: none;
-    text-shadow: 0px 0px 2px #000000;
+    border-radius: 0.5rem;
+    border: 1PX solid #e6b900;
     color: #000000;
   }
   .header__loginCart a button{
@@ -314,6 +311,7 @@ footer h3, p{
   .header__loginCart .fa-user, .header__loginCart .fa-address-book{
     display: none;
   }
+  
   .carousel__main {
     display: block;
     height: 75%;
