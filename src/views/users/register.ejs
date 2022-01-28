@@ -27,8 +27,17 @@
                             </ul>
                         </div>
                         <% } %>
+                            <div class="errores alert alert-danger" style="display: none;">
+                                <p>
+                                    Corrige los siguientes errores:
+                                </p>
+                                <ul id="errores">
 
-                            <form action="/users/register" method="POST" enctype="multipart/form-data">
+                                </ul>
+                            </div>
+
+                            <form action="/users/register" method="POST" enctype="multipart/form-data"
+                                id="formRegister">
 
                                 <div class="full-name">
 
@@ -50,10 +59,9 @@
                                 </div>
                                 <div class="email-box">
                                     <label class="l-email" for="user-email">Correo</label>
-                                    <input class="text-input" type="email" name="email" id="user-email"
+                                    <input class="text-input" type="text" name="email" id="user-email"
                                         placeholder="Escriba aquí su correo">
                                 </div>
-
                                 <div class="password-box">
                                     <label class="l-password" for="user-password">Contraseña</label>
                                     <input class="text-input" type="password" name="password" id="user-password"
@@ -75,6 +83,11 @@
 
             <!-- Inicio del footer -->
             <%- include('../partials/footer.ejs') %>
+
+
+
     </body>
+
+    <script src="/js/registerValidation.js"></script>
 
 </html>

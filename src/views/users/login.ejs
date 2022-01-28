@@ -26,7 +26,16 @@
                         </div>
                         <% } %>
 
-                            <form action="/users/login" method="POST">
+                            <div class="errores alert alert-danger" style="display: none;">
+                                <p>
+                                    Corrige los siguientes errores:
+                                </p>
+                                <ul id="errores">
+
+                                </ul>
+                            </div>
+
+                            <form action="/users/login" method="POST" id="formLogin">
                                 <div class="email-box">
                                     <label class="l-email" for="email">Correo</label>
                                     <input class="text-input" type="text" name="email" id="email"
@@ -57,5 +66,7 @@
             <!-- Inicio del footer -->
             <%- include('../partials/footer.ejs') %>
     </body>
+
+    <script src="/js/loginValidation.js"></script>
 
 </html>
