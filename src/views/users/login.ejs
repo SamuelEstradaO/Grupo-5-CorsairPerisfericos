@@ -1,72 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Inicio del head -->
+  <%- include('../partials/head') %>
 
-<!-- Inicio del head -->
-<%- include('../partials/head') %>
+  <body>
+    <!-- Inicio de header -->
+    <%- include('../partials/header') %>
 
-    <body>
-        <!-- Inicio de header -->
-        <%- include('../partials/header') %>
+    <!-- Inicio de div principal -->
+    <div class="box">
+      <div class="box-login">
+        <h2>Iniciar sesión</h2>
+        <%- include('../partials/errors') %>
 
-            <!-- Inicio de div principal -->
-            <div class="box">
-                <div class="box-login">
+        <form action="/users/login" method="POST" id="formLogin">
+          <div class="email-box">
+            <label class="l-email" for="email">Correo</label>
+            <input
+              class="text-input"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Escriba aquí su correo"
+            />
+          </div>
 
-                    <h2>Iniciar sesión</h2>
-                    <%if(locals && locals.errors){%>
-                        <div class="alert alert-danger">
-                            <p>Corrige los siguientes errores:</p>
-                            <ul>
-                                <% errors.forEach(error=>{%>
-                                    <li>
-                                        <%=error.msg%>
-                                    </li>
-                                    <% }) %>
-                            </ul>
-                        </div>
-                        <% } %>
+          <div class="password-box">
+            <label class="l-password" for="password">Contraseña</label>
+            <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
+            <input
+              class="text-input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Ingrese su contraseña"
+            />
+          </div>
 
-                            <div class="errores alert alert-danger" style="display: none;">
-                                <p>
-                                    Corrige los siguientes errores:
-                                </p>
-                                <ul id="errores">
+          <div class="keep-login">
+            <label
+              ><input
+                type="checkbox"
+                name="rememberMe"
+                id="remember-me"
+                value="remember-me"
+              />Mantener sesión iniciada</label
+            >
+          </div>
 
-                                </ul>
-                            </div>
+          <input class="button-submit" type="submit" value="Inciar sesión" />
+        </form>
 
-                            <form action="/users/login" method="POST" id="formLogin">
-                                <div class="email-box">
-                                    <label class="l-email" for="email">Correo</label>
-                                    <input class="text-input" type="text" name="email" id="email"
-                                        placeholder="Escriba aquí su correo">
-                                </div>
+        <p class="new-user">
+          ¿Eres un usuario nuevo? <a href="/users/register">Crear cuenta</a>
+        </p>
+      </div>
+    </div>
 
-                                <div class="password-box">
-                                    <label class="l-password" for="password">Contraseña</label>
-                                    <a href="/passwordRecovery">¿Olvidaste tu contraseña?</a>
-                                    <input class="text-input" type="password" name="password" id="password"
-                                        placeholder="Ingrese su contraseña">
-                                </div>
+    <!-- Inicio del footer -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
 
-                                <div class="keep-login">
-                                    <label><input type="checkbox" name="rememberMe" id="remember-me"
-                                            value="remember-me">Mantener sesión
-                                        iniciada</label>
-                                </div>
-
-                                <input class="button-submit" type="submit" value="Inciar sesión">
-                            </form>
-
-                            <p class="new-user">¿Eres un usuario nuevo? <a href="/users/register">Crear cuenta</a>
-                            </p>
-                </div>
-            </div>
-
-            <!-- Inicio del footer -->
-            <%- include('../partials/footer.ejs') %>
-    </body>
-
-    <script src="/js/loginValidation.js"></script>
-
+  <script src="/js/loginValidation.js"></script>
 </html>

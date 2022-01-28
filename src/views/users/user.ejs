@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Inicio del head -->
+  <%- include('../partials/head') %>
 
-<!-- Inicio del head -->
-<%- include('../partials/head') %>
+  <body>
+    <!-- Inicio de header -->
+    <%- include('../partials/header') %>
 
-    <body>
-        <!-- Inicio de header -->
-        <%- include('../partials/header') %>
+    <!-- Inicio del div principal -->
+    <div class="box">
+      <div class="box-register">
+        <h2>Perfil</h2>
+        <%- include('../partials/errors') %>
 
-            <!-- Inicio del div principal -->
-            <div class="box">
-
-                <div class="box-register">
-
-                    <h2>Perfil</h2>
-                    <%- include('../partials/errors') %>
-
-                        <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST">
-
-                            <div class="full-name">
-
-                                <div class="name">
-                                    <label class="l-name" for="user-name">Nombre(s)</label>
-                                    <input class="text-input" type="text" name="firstName" id="user-name" required
-                                        value="<%= user.name %>">
-                                </div>
-
-                                <div class="last-name">
-                                    <label class="l-name" for="user-last-name">Apellido</label>
-                                    <input class="text-input" type="text" name="lastName" id="user-last-name" required
-                                        value="<%= user.lastName %>">
-                                </div>
-
-                            </div>
-                            <div class="email-box">
-                                <label for="avatar">Seleccione su imagen de perfil</label>
-                                <input type="file" name="avatar" id="avatar">
-                            </div>
-
-                            <div class="password-box">
-                                <label class="l-password" for="user-password">Contraseña</label>
-                                <input class="text-input" type="password" name="password" id="user-password"
-                                    placeholder="Ingrese su nueva contraseña">
-                            </div>
-
-                            <div class="confirm-password-box">
-                                <label class="l-password" for="confirm-user-password">Confirmar contraseña</label>
-                                <input class="text-input" type="password" name="confirm-user-password"
-                                    id="confirm-user-password" placeholder="Vuelva a ingresar su nueva contraseña">
-                            </div>
-
-                            <input class="button-submit" type="submit" value="Guardar cambios">
-                        </form>
-
-                        <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-                            <input class="button-submit" type="submit" value="Eliminar cuenta">
-                        </form>
-                </div>
-
+        <form
+          action="/users/edit/<%= user.id %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+          id="formEditUser"
+        >
+          <div class="full-name">
+            <div class="name">
+              <label class="l-name" for="user-name">Nombre(s)</label>
+              <input
+                class="text-input"
+                type="text"
+                name="firstName"
+                id="user-name"
+                value="<%= user.name %>"
+              />
             </div>
 
-            <!-- Inicio del footer -->
-            <%- include('../partials/footer.ejs') %>
-    </body>
+            <div class="last-name">
+              <label class="l-name" for="user-last-name">Apellido</label>
+              <input
+                class="text-input"
+                type="text"
+                name="lastName"
+                id="user-last-name"
+                value="<%= user.lastName %>"
+              />
+            </div>
+          </div>
+          <div class="email-box">
+            <label for="avatar">Seleccione su imagen de perfil</label>
+            <input type="file" name="avatar" id="avatar" />
+          </div>
 
+          <div class="password-box">
+            <label class="l-password" for="user-password">Contraseña</label>
+            <input
+              class="text-input"
+              type="password"
+              name="password"
+              id="user-password"
+              placeholder="Ingrese su nueva contraseña"
+            />
+          </div>
+
+          <div class="confirm-password-box">
+            <label class="l-password" for="confirm-user-password"
+              >Confirmar contraseña</label
+            >
+            <input
+              class="text-input"
+              type="password"
+              name="confirm-user-password"
+              id="confirm-user-password"
+              placeholder="Vuelva a ingresar su nueva contraseña"
+            />
+          </div>
+
+          <input class="button-submit" type="submit" value="Guardar cambios" />
+        </form>
+
+        <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+          <input class="button-submit" type="submit" value="Eliminar cuenta" />
+        </form>
+      </div>
+    </div>
+
+    <!-- Inicio del footer -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+  <script src="/js/userUpdateValidation.js"></script>
 </html>

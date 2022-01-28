@@ -1,20 +1,14 @@
 <%if(locals && locals.errors){%>
-    <div class="alert alert-danger">
-        <p>Corrige los siguientes errores:</p>
-        <ul>
-            <% errors.forEach(error=>{%>
-                <li>
-                    <%=error.msg%>
-                </li>
-                <% }) %>
-        </ul>
-    </div>
-    <% } %>
-        <div class="errores alert alert-danger" style="display: none;">
-            <p>
-                Corrige los siguientes errores:
-            </p>
-            <ul id="errores">
-
-            </ul>
-        </div>
+<div class="alert alert-danger">
+  <p>Corrige los siguientes errores:</p>
+  <ul>
+    <% errors.forEach(error=>{%>
+    <li><%=error.msg%></li>
+    <% }) %>
+  </ul>
+</div>
+<% } %>
+<div class="errores alert alert-danger" style="display: none">
+  <p>Corrige los siguientes errores:</p>
+  <ul id="errores"></ul>
+</div>
