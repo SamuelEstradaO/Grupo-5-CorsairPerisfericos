@@ -1,7 +1,8 @@
 const { check } = require("express-validator");
+const req = require("express/lib/request");
 const path = require("path");
 
-const validarRegistro = [
+const validarUpdate = [
     check("firstName").isLength({ min: 2 }).withMessage("El nombre debe tener al menos 2 caracteres."),
     check("lastName").isLength({ min: 2 }).withMessage("El apellido debe tener al menos 2 caracteres."),
     check("avatar").custom((value, { req }) => {
@@ -12,16 +13,16 @@ const validarRegistro = [
         return true;
 
     }),
-    check("email").isEmail().withMessage("El email no es valido"),/*.bail()
-         .custom((value) => {
-            let user = users.find(value);
-            if (user != undefined) {
-                throw new Error("El email ya esta registrado")
-            }
-            return true;
-        }), */
-    check("password").isLength({ min: 6 }).withMessage("El password debe tener al menos 6 caracteres"),
-    check("confirmPassword").custom((value, { req }) => {
+    check("password").custom((value, { req }) => {
+        console.log(value);
+        if (value && value.length < 6) {
+            throw new Error("El password debe tener al menos 6 caracteres");
+        }
+        return true;
+
+    }),
+
+    check("confirm-user-password").custom((value, { req }) => {
         if (value !== req.body.password) {
             throw new Error("Las contraseñas no coinciden");
         }
@@ -30,6 +31,4 @@ const validarRegistro = [
 
 ]
 
-module.exports = validarRegistro;
-
-//Preguntar a Nacho sobre: como evitar que si el archivo no es una imagen, no se guarde en la base de datos.
+module.exports = validarUpdate;

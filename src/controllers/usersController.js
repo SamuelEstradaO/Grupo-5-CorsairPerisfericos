@@ -91,19 +91,33 @@ const usersController = {
       }
       let passEncriptada = bcrypt.hashSync(req.body.password, 10);
       db.Usuario
-        .create({
-          name: req.body.firstName,
-          lastName: req.body.lastName,
-          email: req.body.email,
-          password: passEncriptada,
-          userImage: userImage,
+        .findOne({
+          where: { email: req.body.email }
         })
-        .then(() => {
-          res.redirect("/users/login");
+        .then(user => {
+          if (user) {
+            validations.errors.push({ msg: "El usuario ya existe." });
+            res.render("./users/register", {
+              errors: validations.errors, user: req.loggedUser
+            })
+          } else {
+            db.Usuario
+              .create({
+                name: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: passEncriptada,
+                userImage: userImage,
+              })
+              .then(() => {
+                res.redirect("/users/login");
+              })
+              .catch(error => {
+                res.send(error)
+              });
+          }
         })
-        .catch(error => {
-          res.send(error)
-        });
+
 
       // const newUser = {
       //   id: users.length + 1,
@@ -155,6 +169,7 @@ const usersController = {
       });
   },
   update: (req, res) => {
+
     let updateId = req.params.id;
     // let index = users.findIndex(user => user.id === parseInt(updateId));
     // users[index].name = req.body.firstName;
@@ -164,28 +179,36 @@ const usersController = {
     // }
     // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
     // res.redirect('/users/edit/' + updateId);
-    
-    db.Usuario
-      .findByPk(updateId)
-      .then(user => {
-        let password;
-        if (req.body.password != '') {
-          password = bcrypt.hashSync(req.body.password, 10);
-        } else {
-          password = user.password;
-        }
-        user.update({
-          name: req.body.firstName,
-          lastName: req.body.lastName,
-          password: password
+    let validations = validationResult(req);
+    if (validations.isEmpty()) {
+      db.Usuario
+        .findByPk(updateId)
+        .then(user => {
+          let password;
+          if (req.body.password != '') {
+            password = bcrypt.hashSync(req.body.password, 10);
+          } else {
+            password = user.password;
+          }
+          user.update({
+            name: req.body.firstName,
+            lastName: req.body.lastName,
+            password: password
+          })
+            .then(() => {
+              res.redirect('/users/edit/' + updateId);
+            })
+            .catch(error => {
+              res.send(error);
+            });
         })
-        .then( () => {
-          res.redirect('/users/edit/' + updateId);
-        })
-        .catch(error => {
-          res.send(error);
-        });
-      })
+    } else {
+      res.render("./users/user", {
+        errors: validations.errors, user: req.loggedUser
+      });
+    }
+
+
   },
   logged: (req, res) => {
     if (req.session.user) {

@@ -6,6 +6,7 @@ window.onload = function () {
 
         let firstName = document.getElementById("user-name");
         let lastName = document.getElementById("user-last-name");
+        let avatar = document.getElementById("avatar");
         let email = document.getElementById("user-email");
         let password = document.getElementById("user-password");
         let confirmPassword = document.getElementById("confirm-user-password");
@@ -14,6 +15,7 @@ window.onload = function () {
         let clasesAlert = ["border", "border-danger"];
 
         let mailformat = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+        let regex = new RegExp("(.*?).(png|jpg|jpeg)$");
 
         if (firstName.value < 2) {
             errors.push("El nombre debe tener al menos 2 caracteres.");
@@ -28,6 +30,12 @@ window.onload = function () {
         } else {
             lastName.classList.remove(...clasesAlert);
         };
+        if (avatar.value != "" && !regex.test(avatar.value)) {
+            errors.push("Debe seleccionar un formato de imagen válido (png/jpg/jpeg).");
+            avatar.classList.add(...clasesAlert);
+        } else {
+            avatar.classList.remove(...clasesAlert);
+        }
         if (email.value == "") {
             errors.push("El email no puede estar vacio.");
             email.classList.add(...clasesAlert);
