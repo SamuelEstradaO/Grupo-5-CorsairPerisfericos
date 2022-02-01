@@ -8,6 +8,7 @@ window.onload = function () {
     let productDescription = document.getElementById("productDescription");
     let imgProduct = document.getElementById("imgProduct");
     let categorias = document.getElementsByName("category");
+    let caracteristicas = document.getElementById("productFeatures")
     let price = document.getElementById("price");
 
     let errors = [];
@@ -23,7 +24,7 @@ window.onload = function () {
       productName.classList.remove(...clasesAlert);
     }
     console.log(errors);
-    if (productDescription.value < 20) {
+    if (productDescription.value.length < 20) {
       errors.push("La descripción debe tener al menos 20 caracteres.");
       productDescription.classList.add(...clasesAlert);
     } else {
@@ -36,6 +37,12 @@ window.onload = function () {
       imgProduct.classList.add(...clasesAlert);
     } else {
       imgProduct.classList.remove(...clasesAlert);
+    }
+    if (caracteristicas.value.length < 40) {
+      errors.push("Las caracteristicas deben tener al menos 40 caracteres.");
+      caracteristicas.classList.add(...clasesAlert);
+    } else {
+      caracteristicas.classList.remove(...clasesAlert);
     }
     for (let i = 0; i < categorias.length; i++) {
       //   console.log(categorias[i]);

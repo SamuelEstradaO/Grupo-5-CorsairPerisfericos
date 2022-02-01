@@ -130,6 +130,13 @@ const usersController = {
       // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
       // res.redirect('/users/login');
     } else {
+      fs.unlink(path.join(__dirname, "../../public/images/users/", req.file.filename),
+        (err) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+        })
       res.render("./users/register", {
         errors: validations.errors,
         user: req.loggedUser,
@@ -234,6 +241,13 @@ const usersController = {
           });
       });
     } else {
+      fs.unlink(path.join(__dirname, "../../public/images/users/", req.file.filename),
+        (err) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+        })
       res.render("./users/user", {
         errors: validations.errors,
         user: req.loggedUser,

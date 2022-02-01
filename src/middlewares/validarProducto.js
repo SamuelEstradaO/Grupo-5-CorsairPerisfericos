@@ -21,6 +21,9 @@ const validarProducto = [
     }
     return true;
   }),
+  check("productFeatures")
+    .isLength({ min: 40 })
+    .withMessage("La característica debe tener al menos 40 caracteres."),
   check("price").notEmpty().withMessage("El precio es obligatorio."),
   check("category").notEmpty().withMessage("La categoria es obligatoria."),
 ];

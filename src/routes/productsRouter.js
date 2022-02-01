@@ -25,6 +25,7 @@ router.put(
   "/:id",
   checkLoginMid,
   uploadFile.single("imgProduct"),
+  validarProducto,
   productsController.update
 );
 router.delete("/:id", checkLoginMid, productsController.delete);
