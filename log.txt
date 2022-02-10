@@ -2320,3 +2320,7 @@ Se ingreso a la pagina /api/users
 Se ingreso a la pagina /api/users
 Se ingreso a la pagina /favicon.ico
 Se ingreso a la pagina /api/users
+Se ingreso a la pagina /api/users/1
+Se ingreso a la pagina /api/users/1
+Se ingreso a la pagina /api/users/
+Se ingreso a la pagina /api/users/1

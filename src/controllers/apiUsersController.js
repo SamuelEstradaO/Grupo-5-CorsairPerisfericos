@@ -10,7 +10,11 @@ const apiUsersController = {
                 data.count = users.length;
                 usuarios = [];
                 users.map(({id, name, email})=>{
-                    usuarios.push({id, name, email});
+                    usuarios.push({id,
+                        name,
+                        email,
+                        detail: `/api/users/${id}`
+                    });
                 })
                 data.users = usuarios;
                 res.json(data);
@@ -18,7 +22,21 @@ const apiUsersController = {
     },
 
     user: (req, res) => {
-
+        let data = {};
+        let id = req.params.id;
+        db.Usuario
+            .findByPk(id)
+            .then(({id, name, lastName, email, userImage}) => {
+                let user ={
+                    id,
+                    name,
+                    lastName,
+                    email,
+                    userImage
+                }
+                data.user = user;
+                res.json(data);
+            })
     }
 };
 
