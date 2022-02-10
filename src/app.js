@@ -1,13 +1,15 @@
 const express = require("express");
 const path = require("path");
-const usersRouter = require("./routes/usersRouter");
-const productsRouter = require("./routes/productsRouter");
-const mainRouter = require("./routes/mainRouter");
 const methodOverride = require("method-override");
 const app = express();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
+const usersRouter = require("./routes/usersRouter");
+const productsRouter = require("./routes/productsRouter");
+const mainRouter = require("./routes/mainRouter");
+const apiProductsRouter = require("./routes/apiProductsRouter");
+const apiUsersRouter = require("./routes/apiUsersRouter");
 const logMiddleware = require('./middlewares/logMid');
 const rememberMiddleware = require('./middlewares/rememberMid');
 
@@ -30,6 +32,8 @@ app.use(logMiddleware);
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/api/users", apiUsersRouter);
+app.use("/api/products", apiProductsRouter);
 
 
 
