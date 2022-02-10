@@ -2316,3 +2316,7 @@ Se ingreso a la pagina /users/edit/4
 Se ingreso a la pagina /
 Se ingreso a la pagina /products/edit/3
 Se ingreso a la pagina /
+Se ingreso a la pagina /api/users
+Se ingreso a la pagina /api/users
+Se ingreso a la pagina /favicon.ico
+Se ingreso a la pagina /api/users
