@@ -117,3 +117,20 @@ La retrospectiva se centra en mejorar como equipo. Luego de nuestro primer Sprin
     - Dejar pasar los primeros dias del Sprint sin encontrarnos.
 
 ---
+## SPRINT 7:
+
+1. Comenzar a hacer: 
+    - Planificar previamente los encuentros en los que se codea.
+    - Optimizar el tiempo de las rooms durante las clases.
+2. Hacer más: 
+    - 
+
+3. Continuar haciendo: 
+    - Que participe o codee más aquel integrante que se le dificulte más, para poder practicar y adquirir fortaleza en ese tema.
+    - Terminando unos dias antes de las entregas, para poder revisar o descansar.
+4. Hacer menos: 
+    - 
+5. Dejar de hacer: 
+    - Dejar pasar los primeros dias del Sprint sin encontrarnos.
+
+---
