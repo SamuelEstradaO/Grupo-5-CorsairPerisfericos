@@ -1,16 +1,18 @@
 const db = require("../database/models");
 const { Op } = require("sequelize");
+const path = require("path");
 
 const apiUsersController = {
     index: (req, res) => {
         let data = {};
         db.Usuario
             .findAll()
-            .then(users=>{
+            .then(users => {
                 data.count = users.length;
                 usuarios = [];
-                users.map(({id, name, email})=>{
-                    usuarios.push({id,
+                users.map(({ id, name, email }) => {
+                    usuarios.push({
+                        id,
                         name,
                         email,
                         detail: `/api/users/${id}`
@@ -19,6 +21,9 @@ const apiUsersController = {
                 data.users = usuarios;
                 res.json(data);
             })
+            .catch(err => {
+                res.json({ err });
+            })
     },
 
     user: (req, res) => {
@@ -26,16 +31,30 @@ const apiUsersController = {
         let id = req.params.id;
         db.Usuario
             .findByPk(id)
-            .then(({id, name, lastName, email, userImage}) => {
-                let user ={
+            .then(({ id, name, lastName, email }) => {
+                let user = {
                     id,
                     name,
                     lastName,
                     email,
-                    userImage
+                    userImage: `/api/users/${id}/image`,
                 }
                 data.user = user;
                 res.json(data);
+            })
+            .catch(err => {
+                res.json({ err });
+            })
+    },
+    avatar: (req, res) => {
+        let id = req.params.id;
+        db.Usuario
+            .findByPk(id)
+            .then(({ userImage }) => {
+                res.sendFile(path.join(__dirname, `../../public/images/users/${userImage}`));
+            })
+            .catch(err => {
+                res.json({ err });
             })
     }
 };

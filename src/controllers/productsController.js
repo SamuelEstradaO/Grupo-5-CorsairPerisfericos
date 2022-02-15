@@ -67,7 +67,10 @@ const productsController = {
         .catch((error) => {
           res.send(error);
         });
-    });
+    })
+      .catch((error) => {
+        res.send(error);
+      });
   },
 
   search: (req, res) => {
