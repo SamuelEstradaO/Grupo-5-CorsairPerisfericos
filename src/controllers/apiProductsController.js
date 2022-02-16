@@ -1,31 +1,91 @@
 const db = require("../database/models");
-const { Op } = require("sequelize");
+const sequelize = require("sequelize");
 const path = require("path");
+const { group } = require("console");
 
 const apiProductsController = {
-    index: (req, res) => {
+    index: async (req, res) => {
         let data = {};
-        db.Producto
-            .findAll({ include: ["categoria"] })
-            .then(products => {
-                data.count = products.length;
-                productos = [];
-                products.map(({ id, titulo, precio, descripcion, categoria }) => {
-                    productos.push({
-                        id,
-                        titulo,
-                        precio,
-                        descripcion,
-                        categoria,
-                        detail: `/api/products/${id}`,
-                    })
-                })
-                data.products = productos;
-                res.json(data);
+        products = await db.Producto.findAll({
+            include: ["categoria"],
+            // attributes: ['categoria_id', [sequelize.fn("COUNT", "titulo"), "titulo_count"]],
+            // group: 'categoria_id'
+        })
+        // .then(products => {
+        categories = await db.Producto.findAll({
+            include: ["categoria"],
+            attributes: ['categoria_id', [sequelize.fn("COUNT", "titulo"), "titulo_count"]],
+            group: 'categoria_id'
+        });
+        productos = [];
+        products.map(({ id, titulo, precio, descripcion, categoria }) => {
+            productos.push({
+                id,
+                titulo,
+                precio,
+                descripcion,
+                categoria,
+                detail: `/api/products/${id}`,
             })
-            .catch(err => {
-                res.json({ err });
+        })
+        let count = 0
+        categories.map( ({dataValues}) => {
+            let { titulo_count } = dataValues;
+            count += titulo_count
+        })
+        data.count = count;
+        category = [];
+        categories.map(({ dataValues }) => {
+            let { categoria, titulo_count } = dataValues;
+            category.push({
+                category: categoria,
+                quantity: titulo_count,
             })
+        })
+        data.countByCategory = category;
+        data.products = productos;
+        res.json(data);
+
+        // console.log(data);
+
+        //     productos = [];
+        //     products.map(({ id, titulo, precio, descripcion, categoria }) => {
+        //         productos.push({
+        //             id,
+        //             titulo,
+        //             precio,
+        //             descripcion,
+        //             categoria,
+        //             detail: `/api/products/${id}`,
+        //         })
+        //     })
+
+
+        // console.log(products);
+        //     data.products = productos;
+        //     return products.findAll({
+        //         attributes: ['categoria_id', [sequelize.fn("COUNT", "titulo"), "titulo_count"]],
+        //         group: 'categoria_id'
+        //     })
+        // })
+        // .then(categories => {
+        //     let count = 0
+        //     categories.map(({ dataValues }) => {
+        //         count += dataValues.titulo_count
+        //     })
+        //     data.count = count;
+        //     category = [];
+        //     categories.map(({ dataValues }) => {
+        //         category.push({
+        //             category: dataValues.categoria,
+        //             quantity: dataValues.titulo_count,
+        //         })
+        //     })
+        //     data.countByCategory = category;
+        // })
+        // .catch(err => {
+        //     res.json({ err });
+        // })
     },
     detail: (req, res) => {
         let data = {};
