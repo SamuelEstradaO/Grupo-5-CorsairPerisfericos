@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Inicio del head -->
-  <%- include('../partials/head') %>
+<!-- Inicio del head -->
+<%- include('../partials/head') %>
 
   <body>
     <!-- Inicio de header -->
     <%- include('../partials/header') %>
 
-    <!-- Inicio del detalle de producto -->
-    <main>
-      <div class="box-pd">
-        <%- include('../partials/similarItems.ejs', { category: product.categoria_id, products }) %>
+      <!-- Inicio del detalle de producto -->
+      <main>
+        <div class="box-pd">
+          <%- include('../partials/similarItems.ejs', { category: product.categoria_id, products }) %>
 
-        <article class="item">
-          <div class="product-image">
-            <img src="/images/<%= product.img%>" alt="<%= product.img%>" />
-          </div>
-          <div class="item-details">
-            <h3><%= product.titulo %></h3>
-            <p><%= product.descripcion%></p>
-            <h4>$<%= product.precio%></h4>
-            <button class="add-item btn" name="anadirAlCarro">
-              Agregar<i class="fas fa-dolly"></i>
-            </button>
-          </div>
-        </article>
+            <article class="item">
+              <div class="product-image">
+                <img src="/images/<%= product.img%>" alt="<%= product.img%>" />
+              </div>
+              <div class="item-details">
+                <h3>
+                  <%= product.titulo %>
+                </h3>
+                <p>
+                  <%= product.descripcion%>
+                </p>
+                <h4>$<%= product.precio%>
+                </h4>
+                <div class="flex__btn--detail">
+                  <button class="add-item btn" name="anadirAlCarro">
+                    Agregar<i class="fas fa-dolly"></i>
+                  </button>
+                  <a href="/products/edit/<%= product.id  %> ">
+                    <button class="add-item btn">
+                      Editar<i class="fas fa-edit"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </article>
 
-        <section class="specifications">
-          <h3>Características</h3>
-          <img src="/images/<%= product.img%>" alt="<%= product.img%>" />
-          <p>
-            <%= product.caracteristicas %>
-          </p>
-        </section>
-      </div>
-    </main>
+            <section class="specifications">
+              <h3>Características</h3>
+              <img src="/images/<%= product.img%>" alt="<%= product.img%>" />
+              <p>
+                <%= product.caracteristicas %>
+              </p>
+            </section>
+        </div>
+      </main>
 
-    <!-- Inicio del footer -->
-    <%- include('../partials/footer') %>
+      <!-- Inicio del footer -->
+      <%- include('../partials/footer') %>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
   </body>
+
 </html>

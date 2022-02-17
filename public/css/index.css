@@ -163,7 +163,7 @@ main .btn, article .btn {
   box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
 }
 
-article:hover .btn {
+article:hover .btn__agregar {
   background-color: #80e9e4;
   border: 1px solid #80e9e4;
   color: white;
