@@ -50,24 +50,25 @@ const productsController = {
     //   user: req.loggedUser  });
     db.Producto.findByPk(id, {
       include: [{ association: "categoria" }],
-    }).then((product) => {
-      db.Producto.findAll({
-        where: {
-          categoria_id: product.categoria_id,
-        },
-        include: ["categoria"],
-      })
-        .then((products) => {
-          res.render("products/detail", {
-            product,
-            products,
-            user: req.loggedUser,
-          });
-        })
-        .catch((error) => {
-          res.send(error);
-        });
     })
+      .then((product) => {
+        db.Producto.findAll({
+          where: {
+            categoria_id: product.categoria_id,
+          },
+          include: ["categoria"],
+        })
+          .then((products) => {
+            res.render("products/detail", {
+              product,
+              products,
+              user: req.loggedUser,
+            });
+          })
+          .catch((error) => {
+            res.send(error);
+          });
+      })
       .catch((error) => {
         res.send(error);
       });
@@ -123,8 +124,14 @@ const productsController = {
   },
 
   newProduct: (req, res) => {
-    let { productName, productDescription, price, category, productFeatures, popular } =
-      req.body;
+    let {
+      productName,
+      productDescription,
+      price,
+      category,
+      productFeatures,
+      popular,
+    } = req.body;
     // let product = {
     //   id: products.length + 1,
     //   titulo: productName,
@@ -141,7 +148,6 @@ const productsController = {
     let imgProduct;
     let validations = validationResult(req);
     if (validations.isEmpty()) {
-
       if (!req.file) {
         imgProduct = "dummy.png";
       } else {
@@ -162,16 +168,16 @@ const productsController = {
         .catch((error) => {
           res.send(error);
         });
-
     } else {
-
-      fs.unlink(path.join(__dirname, "../../public/images/", req.file.filename),
+      fs.unlink(
+        path.join(__dirname, "../../public/images/", req.file.filename),
         (err) => {
           if (err) {
             console.log(err);
             return;
           }
-        })
+        }
+      );
       db.Categoria.findAll()
         .then((categorias) => {
           res.render("products/create", {
@@ -188,6 +194,7 @@ const productsController = {
 
   edit: (req, res) => {
     const id = req.params.id;
+    console.log(req.referer);
     // let product = products.find((product) => product.id === id);
     // res.render("./products/edit", {
     //   product, categorias,
@@ -216,30 +223,33 @@ const productsController = {
     let validations = validationResult(req);
     const id = req.params.id;
     if (validations.isEmpty()) {
-      db.Producto.findByPk(id)
-        .then((product) => {
-          const { productName, price, category, productDescription, productFeatures, popular } =
-            req.body;
-          if (req.file != undefined) {
-            if (product.img != "dummy.png") {
-              fs.unlink(
-                path.join(
-                  __dirname,
-                  `../../public/images/${product.img}`
-                ),
-                (err) => {
-                  if (err) {
-                    console.log(err);
-                    return;
-                  }
+      db.Producto.findByPk(id).then((product) => {
+        const {
+          productName,
+          price,
+          category,
+          productDescription,
+          productFeatures,
+          popular,
+        } = req.body;
+        if (req.file != undefined) {
+          if (product.img != "dummy.png") {
+            fs.unlink(
+              path.join(__dirname, `../../public/images/${product.img}`),
+              (err) => {
+                if (err) {
+                  console.log(err);
+                  return;
                 }
-              );
-            }
-            productImage = req.file.filename;
-          } else {
-            productImage = product.img;
+              }
+            );
           }
-          product.update({
+          productImage = req.file.filename;
+        } else {
+          productImage = product.img;
+        }
+        product
+          .update({
             titulo: productName,
             precio: price,
             descripcion: productDescription,
@@ -248,21 +258,23 @@ const productsController = {
             isRecommended: popular === "on" ? 1 : 0,
             img: productImage,
           })
-            .then((product) => {
-              res.redirect(`/products/detail/${product.id}`);
-            })
-            .catch((error) => {
-              res.send(error);
-            });
-        })
+          .then((product) => {
+            res.redirect(`/products/detail/${product.id}`);
+          })
+          .catch((error) => {
+            res.send(error);
+          });
+      });
     } else {
-      fs.unlink(path.join(__dirname, "../../public/images/", req.file.filename),
+      fs.unlink(
+        path.join(__dirname, "../../public/images/", req.file.filename),
         (err) => {
           if (err) {
             console.log(err);
             return;
           }
-        })
+        }
+      );
       db.Producto.findByPk(id)
         .then((product) => {
           db.Categoria.findAll()
@@ -283,7 +295,6 @@ const productsController = {
         });
     }
 
-
     // let index = products.findIndex((product) => product.id == id);
     // products[index].titulo = productName;
     // products[index].precio = price;
@@ -292,7 +303,6 @@ const productsController = {
     // products[index].recomendado = popular === "on";
     // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     // res.redirect(`/products/edit/${id}`);
-
   },
 
   delete: (req, res) => {
@@ -301,30 +311,27 @@ const productsController = {
     // products.splice(index, 1);
     // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     // res.redirect("/products");
-    db.Producto.findByPk(id)
-      .then((product) => {
-        if (product.img != "dummy.png") {
-          fs.unlink(
-            path.join(
-              __dirname,
-              `../../public/images/${product.img}`
-            ),
-            (err) => {
-              if (err) {
-                console.log(err);
-                return;
-              }
+    db.Producto.findByPk(id).then((product) => {
+      if (product.img != "dummy.png") {
+        fs.unlink(
+          path.join(__dirname, `../../public/images/${product.img}`),
+          (err) => {
+            if (err) {
+              console.log(err);
+              return;
             }
-          );
-        }
-        product.destroy()
-          .then(() => {
-            res.redirect("/products");
-          })
-          .catch((error) => {
-            res.send(error);
-          });
-      })
+          }
+        );
+      }
+      product
+        .destroy()
+        .then(() => {
+          res.redirect("/products");
+        })
+        .catch((error) => {
+          res.send(error);
+        });
+    });
   },
 };
 
