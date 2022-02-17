@@ -1,7 +1,9 @@
 const db = require("../database/models");
 const sequelize = require("sequelize");
+const {Op} = require("sequelize")
 const path = require("path");
 const { group } = require("console");
+const { search } = require("../routes/apiProductsRouter");
 
 const apiProductsController = {
     index: async (req, res) => {
@@ -121,6 +123,35 @@ const apiProductsController = {
             .catch(err => {
                 res.json({ err });
             })
+    },
+    search: (req, res) => {
+        let key = req.query.key;
+        console.log(key);
+        db.Producto
+            .findAll({
+                include: ["categoria"],
+                where: {
+                    titulo: {[Op.like]: `%${key}%`}
+                }
+            })
+            .then(products => {
+                let productos = [];
+                products.map(({ id, titulo, precio, descripcion, categoria }) => {
+                    productos.push({
+                        id,
+                        titulo,
+                        precio,
+                        descripcion,
+                        categoria,
+                        detail: `/api/products/${id}`,
+                    })
+                })
+                res.json(productos);
+            })
+            .catch(err => {
+                res.json({ err });
+            }
+            )
     }
 }
 
