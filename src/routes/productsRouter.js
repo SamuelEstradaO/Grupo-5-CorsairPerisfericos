@@ -31,4 +31,6 @@ router.put(
 );
 router.delete("/:id", checkLoginMid, checkAdminMid, productsController.delete);
 
+router.get("/*", (req, res) => res.render("notFound"));
+
 module.exports = router;

@@ -4,4 +4,6 @@ const router = express.Router();
 
 router.get("/", mainController.index);
 
+router.get("/*", (req, res) => res.render("notFound"));
+
 module.exports = router;

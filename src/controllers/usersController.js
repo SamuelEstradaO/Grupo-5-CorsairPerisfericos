@@ -53,7 +53,7 @@ const usersController = {
           }
         })
         .catch((error) => {
-          res.send(error);
+          res.render("notFound")
         });
 
       // const user = users.find(user => user.email === email);
@@ -83,6 +83,8 @@ const usersController = {
       });
     }
   },
+
+  /* Volver a ver los .catch */
   newUser: (req, res) => {
     let validations = validationResult(req);
     if (validations.isEmpty()) {
@@ -113,7 +115,7 @@ const usersController = {
               res.redirect("/users/login");
             })
             .catch((error) => {
-              res.send(error);
+              res.render("notFound")
             });
         }
       });
@@ -171,7 +173,7 @@ const usersController = {
             res.redirect("/");
           })
           .catch((error) => {
-            res.send(error);
+            res.render("notFound")
           });
       }
     });
@@ -185,7 +187,7 @@ const usersController = {
         res.render("./users/user", { user: user });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       });
   },
   update: (req, res) => {
@@ -237,7 +239,7 @@ const usersController = {
             res.redirect("/users/edit/" + updateId);
           })
           .catch((error) => {
-            res.send(error);
+            res.render("notFound")
           });
       });
     } else {

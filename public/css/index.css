@@ -70,13 +70,13 @@ header form.header__logout {
   padding-top: 5px;
   margin-left: 2px;
 }
-.header__loginCart a button{
-  display: none;
-}
+
 .header__loginCart a i{
   color: #e6b900;
 }
-
+.ocultar__btn{
+  display: none;
+}
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -117,6 +117,7 @@ a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 main section article {
   margin: 20px 0;
@@ -128,7 +129,7 @@ main section article {
 }
 .productosDestacados__main h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .article__hover {
   width: 80%;
@@ -151,7 +152,7 @@ article div p {
   margin-bottom: 0px;
   font-size: 1.07rem;
 }
-main .btn, article .btn {
+main .btn, article .btn, .btn__crear {
   background-color: white;
   border: 1PX solid #69c2bd;
   color: #69c2bd;
@@ -163,11 +164,22 @@ main .btn, article .btn {
   box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
 }
 
-article:hover .btn__agregar {
+article:hover .btn__agregar , .btn__crear:hover{
   background-color: #80e9e4;
   border: 1px solid #80e9e4;
   color: white;
   border-radius: 0.5rem;
+}
+
+/* Css de boton en todos los productos de ADM */
+.btn__crear--flex{
+  display:flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0 70px 20px 0 ;
+}
+.btn__crear{
+  margin-bottom: 20px;
 }
 
 
@@ -212,6 +224,14 @@ footer h3, p{
   justify-content: center;
 }
 
+/* Css de la vista notFound */
+.notFound{
+  display: flex;
+  justify-content: center;
+}
+.notFound iframe{
+  border-radius: 8px;
+}
 
 /* css de tablet */
 @media (min-width: 425px) {
@@ -227,7 +247,11 @@ footer h3, p{
   .header__loginCart a i{
     margin-left: 10px;
   }
-  
+ 
+  .btn__crear--flex{
+    margin: 0 40px 10px 0 ;
+  }
+
   .productosDestacados__main {
     display: flex;
     flex-direction: row;
@@ -328,6 +352,9 @@ footer h3, p{
     margin: auto;
   }
 
+  .btn__crear--flex{
+    margin: 0 30px 10px 0 ;
+  }
   .productosDestacados__main h2 {
     width: 100%;
   }

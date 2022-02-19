@@ -7,13 +7,21 @@
         <!-- Inicio de header -->
         <%- include('../partials/header') %>
 
+
             <!-- Productos a mostrar -->
             <section class="productosDestacados__main">
-                <h2>Todos los productos</h2>
-                <% products.forEach(producto=> { %>
-                    <%- include('../partials/product', {producto})%>
 
-                        <% });%>
+                <h2>Todos los productos</h2>
+                <% if(locals && locals.user && user.isAdmin) {%>
+                    <div class="btn__crear--flex ">
+                        <a href="/products/create"><button class="btn btn__crear">Agregar <i
+                                    class="far fa-plus-square"></i></button></a>
+                    </div>
+                    <% } %>
+                        <% products.forEach(producto=> { %>
+                            <%- include('../partials/product', {producto})%>
+
+                                <% });%>
 
 
             </section>

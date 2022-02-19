@@ -13,13 +13,13 @@
           <a href="/users/edit/<%= user.id %> ">
             <img class="img__perfil--header" src="/images/users/<%= user.userImage %>" alt="<%= user.userImage %>">
           </a>
-          <a href="/users/logout"> <button class="btn">Logout</button></a>
+          <a href="/users/logout"> <button class="btn header__logout">Logout</button></a>
           <% }else{ %>
             <a href="/users/login">
-              <button class="btn">Login</button><i class="fas fa-user"></i>
+              <button class="btn ocultar__btn">Login</button><i class="fas fa-user"></i>
             </a>
             <a href="/users/register">
-              <button class="btn">Register</button><i class="fas fa-address-book"></i>
+              <button class="btn ocultar__btn">Register</button><i class="fas fa-address-book"></i>
             </a>
             <% } %>
               <a href="/products/cart"><i class="fas fa-dolly"></i></a>

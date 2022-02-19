@@ -27,7 +27,7 @@ const mainController = {
         });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       }
       );
   },

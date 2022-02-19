@@ -25,6 +25,7 @@ router.get("/logout", logoutMid, usersController.logout);
 //comprobar login iniciado
 router.get("/logged", usersController.logged);
 
+router.get("/*", (req, res) => res.render("notFound"));
 
 
 

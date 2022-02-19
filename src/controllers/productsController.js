@@ -39,7 +39,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       });
   },
 
@@ -66,11 +66,11 @@ const productsController = {
             });
           })
           .catch((error) => {
-            res.send(error);
+            res.render("notFound")
           });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       });
   },
 
@@ -100,7 +100,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       });
   },
 
@@ -119,7 +119,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       });
   },
 
@@ -166,7 +166,7 @@ const productsController = {
           res.redirect(`/products/detail/${product.id}`);
         })
         .catch((error) => {
-          res.send(error);
+          res.render("notFound")
         });
     } else {
       fs.unlink(
@@ -187,7 +187,7 @@ const productsController = {
           });
         })
         .catch((error) => {
-          res.send(error);
+          res.render("notFound")
         });
     }
   },
@@ -211,11 +211,11 @@ const productsController = {
             });
           })
           .catch((error) => {
-            res.send(error);
+            res.render("notFound")
           });
       })
       .catch((error) => {
-        res.send(error);
+        res.render("notFound")
       });
   },
 
@@ -262,7 +262,7 @@ const productsController = {
             res.redirect(`/products/detail/${product.id}`);
           })
           .catch((error) => {
-            res.send(error);
+            res.render("notFound")
           });
       });
     } else {
@@ -287,11 +287,11 @@ const productsController = {
               });
             })
             .catch((error) => {
-              res.send(error);
+              res.render("notFound")
             });
         })
         .catch((error) => {
-          res.send(error);
+          res.render("notFound")
         });
     }
 
@@ -329,7 +329,7 @@ const productsController = {
           res.redirect("/products");
         })
         .catch((error) => {
-          res.send(error);
+          res.render("notFound")
         });
     });
   },
