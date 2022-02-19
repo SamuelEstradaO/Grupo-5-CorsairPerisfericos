@@ -225,12 +225,20 @@ footer h3, p{
 }
 
 /* Css de la vista notFound */
+.textError{
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  
+  /* margin-top: 50px;   */
+}
 .notFound{
   display: flex;
   justify-content: center;
 }
 .notFound iframe{
   border-radius: 8px;
+  display: block;
 }
 
 /* css de tablet */

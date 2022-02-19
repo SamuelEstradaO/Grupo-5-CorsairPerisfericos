@@ -39,7 +39,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.render("notFound")
+        res.render("notFound", {error: "No se pudieron cargar los productos"});
       });
   },
 
@@ -48,9 +48,10 @@ const productsController = {
     // let product = products.find((product) => product.id === id);
     // res.render("./products/detail", { product, products,
     //   user: req.loggedUser  });
-    db.Producto.findByPk(id, {
-      include: [{ association: "categoria" }],
-    })
+    db.Producto
+      .findByPk(id, {
+        include: [{ association: "categoria" }],
+      })
       .then((product) => {
         db.Producto.findAll({
           where: {
@@ -66,28 +67,29 @@ const productsController = {
             });
           })
           .catch((error) => {
-            res.render("notFound")
+            res.render("notFound", {error: "No se encontró el producto"})
           });
       })
       .catch((error) => {
-        res.render("notFound")
+        res.render("notFound", {error: "No se encontró el producto"})
       });
   },
 
   search: (req, res) => {
     let { product } = req.query;
-    db.Producto.findAll({
-      where: {
-        titulo: {
-          [Op.like]: `%${product}%`,
+    db.Producto
+      .findAll({
+        where: {
+          titulo: {
+            [Op.like]: `%${product}%`,
+          },
         },
-      },
-      order: [
-        ["titulo", "ASC"],
-        ["precio", "ASC"],
-      ],
-      // limit: 9
-    })
+        order: [
+          ["titulo", "ASC"],
+          ["precio", "ASC"],
+        ],
+        // limit: 9
+      })
       .then((products) => {
         let result = products.length > 0 ? true : false;
 
@@ -100,7 +102,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.render("notFound")
+        res.render("notFound", {error: "Ocurrió un error al buscar el producto"})
       });
   },
 
@@ -111,7 +113,8 @@ const productsController = {
   create: (req, res) => {
     // res.render("./products/create", { categorias,
     //   user: req.loggedUser  });
-    db.Categoria.findAll()
+    db.Categoria
+      .findAll()
       .then((categorias) => {
         res.render("products/create", {
           categorias,
@@ -119,7 +122,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.render("notFound")
+        res.render("notFound", {error: "No se pudieron cargar las categorias, intente más tarde"});
       });
   },
 
@@ -153,20 +156,21 @@ const productsController = {
       } else {
         imgProduct = req.file.filename;
       }
-      db.Producto.create({
-        titulo: productName,
-        descripcion: productDescription,
-        precio: price,
-        img: imgProduct,
-        caracteristicas: productFeatures,
-        categoria_id: category,
-        isRecommended: popular === "on" ? 1 : 0,
-      })
+      db.Producto
+        .create({
+          titulo: productName,
+          descripcion: productDescription,
+          precio: price,
+          img: imgProduct,
+          caracteristicas: productFeatures,
+          categoria_id: category,
+          isRecommended: popular === "on" ? 1 : 0,
+        })
         .then((product) => {
           res.redirect(`/products/detail/${product.id}`);
         })
         .catch((error) => {
-          res.render("notFound")
+          res.render("notFound", {error: "Ocurrió un error al crear el producto"});
         });
     } else {
       fs.unlink(
@@ -178,7 +182,8 @@ const productsController = {
           }
         }
       );
-      db.Categoria.findAll()
+      db.Categoria
+        .findAll()
         .then((categorias) => {
           res.render("products/create", {
             errors: validations.errors,
@@ -187,7 +192,7 @@ const productsController = {
           });
         })
         .catch((error) => {
-          res.render("notFound")
+          res.render("notFound", { error: "No se pudieron cargar las categorias, intente más tarde" });
         });
     }
   },
@@ -200,8 +205,10 @@ const productsController = {
     //   product, categorias,
     //   user: req.loggedUser
     // });
-    db.Producto.findByPk(id)
+    db.Producto
+      .findByPk(id)
       .then((product) => {
+        if(product){
         db.Categoria.findAll()
           .then((categorias) => {
             res.render("products/edit", {
@@ -211,11 +218,14 @@ const productsController = {
             });
           })
           .catch((error) => {
-            res.render("notFound")
+            res.render("notFound", {error: "No se pudieron cargar las categorias, intente más tarde"});
           });
+        } else {
+          res.render("notFound", {error: "No se encontró el producto"});
+        }
       })
       .catch((error) => {
-        res.render("notFound")
+        res.render("notFound", { error: "Ocurrió un error al editar el producto" });
       });
   },
 
@@ -223,48 +233,53 @@ const productsController = {
     let validations = validationResult(req);
     const id = req.params.id;
     if (validations.isEmpty()) {
-      db.Producto.findByPk(id).then((product) => {
-        const {
-          productName,
-          price,
-          category,
-          productDescription,
-          productFeatures,
-          popular,
-        } = req.body;
-        if (req.file != undefined) {
-          if (product.img != "dummy.png") {
-            fs.unlink(
-              path.join(__dirname, `../../public/images/${product.img}`),
-              (err) => {
-                if (err) {
-                  console.log(err);
-                  return;
+      db.Producto
+        .findByPk(id)
+        .then((product) => {
+          const {
+            productName,
+            price,
+            category,
+            productDescription,
+            productFeatures,
+            popular,
+          } = req.body;
+          if (req.file != undefined) {
+            if (product.img != "dummy.png") {
+              fs.unlink(
+                path.join(__dirname, `../../public/images/${product.img}`),
+                (err) => {
+                  if (err) {
+                    console.log(err);
+                    return;
+                  }
                 }
-              }
-            );
+              );
+            }
+            productImage = req.file.filename;
+          } else {
+            productImage = product.img;
           }
-          productImage = req.file.filename;
-        } else {
-          productImage = product.img;
-        }
-        product
-          .update({
-            titulo: productName,
-            precio: price,
-            descripcion: productDescription,
-            caracteristicas: productFeatures,
-            categoria_id: category,
-            isRecommended: popular === "on" ? 1 : 0,
-            img: productImage,
-          })
-          .then((product) => {
-            res.redirect(`/products/detail/${product.id}`);
-          })
-          .catch((error) => {
-            res.render("notFound")
-          });
-      });
+          product
+            .update({
+              titulo: productName,
+              precio: price,
+              descripcion: productDescription,
+              caracteristicas: productFeatures,
+              categoria_id: category,
+              isRecommended: popular === "on" ? 1 : 0,
+              img: productImage,
+            })
+            .then((product) => {
+              res.redirect(`/products/detail/${product.id}`);
+            })
+            .catch((error) => {
+              res.render("notFound", { error: "Ocurrió un error al actualizar el producto" });
+            });
+        })
+        .catch((error) => {
+          res.render("notFound", { error: "Ocurrió un error al actualizar el producto" });
+        });
     } else {
       fs.unlink(
         path.join(__dirname, "../../public/images/", req.file.filename),
@@ -275,7 +290,8 @@ const productsController = {
           }
         }
       );
-      db.Producto.findByPk(id)
+      db.Producto
+        .findByPk(id)
         .then((product) => {
           db.Categoria.findAll()
             .then((categorias) => {
@@ -287,11 +303,11 @@ const productsController = {
               });
             })
             .catch((error) => {
-              res.render("notFound")
+              res.render("notFound", { error: "Ocurrió un error al actualizar el producto, intente de nuevo más tarde" })
             });
         })
         .catch((error) => {
-          res.render("notFound")
+          res.render("notFound", { error: "Ocurrió un error al actualizar el producto, intente de nuevo más tarde" });
         });
     }
 
@@ -311,27 +327,32 @@ const productsController = {
     // products.splice(index, 1);
     // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     // res.redirect("/products");
-    db.Producto.findByPk(id).then((product) => {
-      if (product.img != "dummy.png") {
-        fs.unlink(
-          path.join(__dirname, `../../public/images/${product.img}`),
-          (err) => {
-            if (err) {
-              console.log(err);
-              return;
+    db.Producto
+      .findByPk(id)
+      .then((product) => {
+        if (product.img != "dummy.png") {
+          fs.unlink(
+            path.join(__dirname, `../../public/images/${product.img}`),
+            (err) => {
+              if (err) {
+                console.log(err);
+                return;
+              }
             }
-          }
-        );
-      }
-      product
-        .destroy()
-        .then(() => {
-          res.redirect("/products");
-        })
-        .catch((error) => {
-          res.render("notFound")
+          );
+        }
+        product
+          .destroy()
+          .then(() => {
+            res.redirect("/products");
+          })
+          .catch((error) => {
+            res.render("notFound", { error: "Ocurrió un error al eliminar el producto, intente de nuevo más tarde" });
+          });
+      })
+      .catch((error) => {
+        res.render("notFound",{error: "Ocurrió un error al eliminar el producto, intente de nuevo más tarde"});
         });
-    });
   },
 };
 

@@ -21,11 +21,12 @@ const usersController = {
     if (validations.isEmpty()) {
       const { email, password } = req.body;
 
-      db.Usuario.findOne({
-        where: {
-          email: email,
-        },
-      })
+      db.Usuario
+        .findOne({
+          where: {
+            email: email,
+          },
+        })
         .then((user) => {
           if (!user) {
             validations.errors.push({ msg: "El usuario no existe" });
@@ -53,7 +54,7 @@ const usersController = {
           }
         })
         .catch((error) => {
-          res.render("notFound")
+          res.render("notFound", { error: "Ocurrio un error al iniciar sesión, intente de nuevo más tarde" });
         });
 
       // const user = users.find(user => user.email === email);
@@ -94,31 +95,34 @@ const usersController = {
         userImage = "default.svg";
       }
       let passEncriptada = bcrypt.hashSync(req.body.password, 10);
-      db.Usuario.findOne({
-        where: { email: req.body.email },
-      }).then((user) => {
-        if (user) {
-          validations.errors.push({ msg: "El usuario ya existe." });
-          res.render("./users/register", {
-            errors: validations.errors,
-            user: req.loggedUser,
-          });
-        } else {
-          db.Usuario.create({
-            name: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: passEncriptada,
-            userImage: userImage,
-          })
-            .then(() => {
-              res.redirect("/users/login");
-            })
-            .catch((error) => {
-              res.render("notFound")
+      db.Usuario
+        .findOne({
+          where: { email: req.body.email },
+        })
+        .then((user) => {
+          if (user) {
+            validations.errors.push({ msg: "El usuario ya existe." });
+            res.render("./users/register", {
+              errors: validations.errors,
+              user: req.loggedUser,
             });
-        }
-      });
+          } else {
+            return db.Usuario.create({
+              name: req.body.firstName,
+              lastName: req.body.lastName,
+              email: req.body.email,
+              password: passEncriptada,
+              userImage: userImage,
+            })
+
+          }
+        })
+        .then(() => {
+          res.redirect("/users/login");
+        })
+        .catch((error) => {
+          res.render("notFound", { error: "Ocurrio un error al registrar el usuario, intente de nuevo más tarde" });
+        });
 
       // const newUser = {
       //   id: users.length + 1,
@@ -150,33 +154,35 @@ const usersController = {
     // users = users.filter(user => user.id != deleteId);
     // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
     // res.redirect('/');
-    db.Usuario.findByPk(deleteId).then((user) => {
-      console.log(user);
-      if (user) {
-        if (user.userImage != "default.svg") {
-          fs.unlink(
-            path.join(__dirname, `../../public/images/users/${user.userImage}`),
-            (err) => {
-              if (err) {
-                console.log(err);
-                return;
+    db.Usuario
+      .findByPk(deleteId)
+      .then((user) => {
+        if (user) {
+          if (user.userImage != "default.svg") {
+            fs.unlink(
+              path.join(__dirname, `../../public/images/users/${user.userImage}`),
+              (err) => {
+                if (err) {
+                  console.log(err);
+                  return;
+                }
               }
-            }
-          );
-        }
-        return db.Usuario.destroy({
-          where: {
-            id: deleteId,
-          },
-        })
-          .then(() => {
-            res.redirect("/");
+            );
+          }
+          return db.Usuario.destroy({
+            where: {
+              id: deleteId,
+            },
           })
-          .catch((error) => {
-            res.render("notFound")
-          });
-      }
-    });
+
+        }
+      })
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch((error) => {
+        res.render("notFound", { error: "Ocurrio un error al eliminar el usuario, intente de nuevo más tarde" });
+      });
   },
   edit: (req, res) => {
     let editId = req.params.id;
@@ -187,7 +193,7 @@ const usersController = {
         res.render("./users/user", { user: user });
       })
       .catch((error) => {
-        res.render("notFound")
+        res.render("notFound", { error: "Ocurrio un error al acceder a la información, intente de nuevo más tarde" });
       });
   },
   update: (req, res) => {
@@ -202,46 +208,48 @@ const usersController = {
     // res.redirect('/users/edit/' + updateId);
     let validations = validationResult(req);
     if (validations.isEmpty()) {
-      db.Usuario.findByPk(updateId).then((user) => {
-        let password;
-        if (req.body.password != "") {
-          password = bcrypt.hashSync(req.body.password, 10);
-        } else {
-          password = user.password;
-        }
-        if (req.file != undefined) {
-          if (user.userImage != "default.svg") {
-            fs.unlink(
-              path.join(
-                __dirname,
-                `../../public/images/users/${user.userImage}`
-              ),
-              (err) => {
-                if (err) {
-                  console.log(err);
-                  return;
-                }
-              }
-            );
+      db.Usuario
+        .findByPk(updateId)
+        .then((user) => {
+          let password;
+          if (req.body.password != "") {
+            password = bcrypt.hashSync(req.body.password, 10);
+          } else {
+            password = user.password;
           }
-          userImage = req.file.filename;
-        } else {
-          userImage = user.userImage;
-        }
-        user
-          .update({
-            name: req.body.firstName,
-            lastName: req.body.lastName,
-            password: password,
-            userImage: userImage,
-          })
-          .then(() => {
-            res.redirect("/users/edit/" + updateId);
-          })
-          .catch((error) => {
-            res.render("notFound")
-          });
-      });
+          if (req.file != undefined) {
+            if (user.userImage != "default.svg") {
+              fs.unlink(
+                path.join(
+                  __dirname,
+                  `../../public/images/users/${user.userImage}`
+                ),
+                (err) => {
+                  if (err) {
+                    console.log(err);
+                    return;
+                  }
+                }
+              );
+            }
+            userImage = req.file.filename;
+          } else {
+            userImage = user.userImage;
+          }
+          user
+            .update({
+              name: req.body.firstName,
+              lastName: req.body.lastName,
+              password: password,
+              userImage: userImage,
+            })
+            .then(() => {
+              res.redirect("/users/edit/" + updateId);
+            })
+            .catch((error) => {
+              res.render("notFound", { error: "Ocurrio un error al actualizar el usuario, intente de nuevo más tarde" });
+            });
+        });
     } else {
       fs.unlink(path.join(__dirname, "../../public/images/users/", req.file.filename),
         (err) => {
