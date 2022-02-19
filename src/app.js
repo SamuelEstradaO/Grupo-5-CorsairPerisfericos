@@ -29,12 +29,12 @@ app.use(session({ secret: "Corsecreto", resave: false, saveUninitialized: false 
 app.use(rememberMiddleware);
 app.use(logMiddleware);
 
-app.use("/", mainRouter);
+
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/api/users", apiUsersRouter);
 app.use("/api/products", apiProductsRouter);
-
+app.use("/", mainRouter);
 
 
 app.set("view engine", "ejs");

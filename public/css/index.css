@@ -79,7 +79,7 @@ header form.header__logout {
 }
 nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
   padding: 20px;
   margin-top: 20px;

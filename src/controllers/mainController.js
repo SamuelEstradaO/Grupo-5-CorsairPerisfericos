@@ -31,6 +31,10 @@ const mainController = {
       }
       );
   },
-};
+  about: (req, res) => {
+    res.render("about", { user: req.loggedUser });
+  },
+}
+
 
 module.exports = mainController;
