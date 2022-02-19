@@ -152,6 +152,11 @@ div.product-image div {
   width: 100%;
   text-align: center;
 }
+.titulo__producto{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media (min-width: 426px) {
   .specifications img {
