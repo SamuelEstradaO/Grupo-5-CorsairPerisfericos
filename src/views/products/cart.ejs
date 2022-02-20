@@ -14,7 +14,9 @@
           <%- include('../partials/cartItem',{productos}) %>
             <% } %>
               <article class="box-cart">
-                <div class="main__article--img">
+
+                <!-- Cart anterior -->
+                <!-- <div class="main__article--img">
                   <img src="\images\mouse2.png" alt="keyboard" />
                 </div>
                 <div class="main__article--description">
@@ -42,12 +44,12 @@
                   </select>
                   <p>5 Disponibles</p>
                   <p>$9.500</p>
-                </div>
+                </div> -->
               </article>
 
               <article class="box-resumen">
                 <h3>Resumen</h3>
-                <div>
+                <!--  <div>
                   <p>
                     1 Teclado mecánico para juegos K65 RGB MINI 60% — CHERRY MX Red —
                     Blanco
@@ -58,9 +60,9 @@
                 <hr />
                 <div class="flex__resumen--total">
                   <p>Total: $26.500</p>
-                </div>
+                </div> -->
               </article>
-              <div class="flex__boton--postal">
+              <!--  <div class="flex__boton--postal">
                 <form action="#" method="POST">
                   <input type="text" id="codigoPostal" placeholder="Codigo Postal" />
                   <button class="btn">Calc. envío</button>
@@ -68,7 +70,7 @@
               </div>
               <div class="flex__boton--continuar">
                 <button class="btn continuar">Continuar compra</button>
-              </div>
+              </div> -->
 
               <article class="box-pd">
                 <%- include('../partials/similarItems.ejs') %>
@@ -77,6 +79,8 @@
 
       <!-- Inicio del footer -->
       <%- include('../partials/footer') %>
+
+        <script src="/js/cart.js"></script>
   </body>
 
 </html>

@@ -1,4 +1,4 @@
-<article class="article__hover">
+<article id="<%= producto.id %>" class="article__hover">
     <a href="/products/detail/<%= producto.id %>">
         <div>
             <img class="article__principal" src="/images/<%= producto.img %>" alt="<%= producto.img %>" />
@@ -10,6 +10,6 @@
             <p>$<%= producto.precio%>
             </p>
     </a>
-    <button class="btn btn__agregar">Agregar<i class="fas fa-dolly d-inline"></i></button>
+    <button id="btn__agregar" class="btn btn__agregar ">Agregar<i class="fas fa-dolly d-inline"></i></button>
     </div>
 </article>
