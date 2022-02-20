@@ -51,6 +51,7 @@
   border-radius: 8px;
 }
 .box-resumen h3 {
+  margin: auto;
   text-align: center;
 }
 .flex__resumen--total {

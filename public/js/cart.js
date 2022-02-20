@@ -1,26 +1,29 @@
+
+
 window.onload = function async() {
   let cartBox = document.querySelector(".box-cart");
+  let resumenCart = document.getElementById("resumenCart");
+
   //Local Storage
   let productos = obtenerProductos();
-  //update cart
-  const updateCart = (e) => {
-    console.log(e);
-    if (e.target.value) {
-      let cart = obtenerProductos();
-      let index = cart.findIndex((product) => product.id == e.target.id);
-      cart[index].cantidad = e.target.value;
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  }
+
+  let resumenTotal = document.getElementById("resumenTotal");
+  const sumatoria = [];
+
   for (const producto of productos) {
+    let total = 0;
+
+    console.log(resumenTotal.innerText)
     fetch(`/api/products/${producto.id}`)
       .then((response) => response.json())
       .then(({ product }) => {
-        // console.log(product);
+        sumatoria.push(product.precio * producto.cantidad);
+        console.log(sumatoria);
         let options = ""
         for (let i = 0; i < product.stock; i++) {
           options += `<option value="${i + 1}" ${producto.cantidad == i + 1 ? "selected" : ""}>${i + 1}</option>`;
         }
+        updateTotal((producto.cantidad * product.precio), producto.id);
         const article = document.createElement("article");
         article.classList.add("box-cart");
         article.innerHTML = `
@@ -33,7 +36,7 @@ window.onload = function async() {
                ${product.descripcion}
                </p>
                <div class="d-flex justify-content-center ">
-                 <button class="hover__btn btn ">Borrar</button>
+                 <button class="hover__btn btn" onclick="deleteProduct(${product.id})">Borrar</button>
                </div>
              </div>
              <div class="main__article--option ">
@@ -47,10 +50,21 @@ window.onload = function async() {
                <p class="flex__ubication">$${product.precio} por unidad</p>
              </div>`;
         cartBox.appendChild(article);
-        // document.querySelector(`select#${product.id}`).addEventListener("change", updateCart);
+
+        resumenCart.innerHTML += `<p>
+        ${producto.cantidad} x ${product.titulo} $${product.precio * producto.cantidad}
+      </p>
+      <hr />
+      `
+
+        total = sumatoria.reduce((total, valor) => total + valor);
+        resumenTotal.innerText = total;
       })
   }
 }
+
+
+
 function obtenerProductos() {
   let cart = JSON.parse(localStorage.getItem("cart"));
   if (cart == null) {
@@ -63,4 +77,24 @@ function changeValue(value, id) {
   let index = cart.findIndex((product) => product.id == id);
   cart[index].cantidad = value;
   localStorage.setItem("cart", JSON.stringify(cart));
+  location.reload();
 }
+
+function deleteProduct(id) {
+  let cart = obtenerProductos();
+  let index = cart.findIndex((product) => product.id == id);
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  location.reload();
+}
+
+function updateTotal(value, id) {
+  let cart = obtenerProductos();
+  let index = cart.findIndex((product) => product.id == id);
+  cart[index].total = value;
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+}
+
+
+
