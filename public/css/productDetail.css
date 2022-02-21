@@ -157,6 +157,18 @@ div.product-image div {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.btn__pagination{
+  width: 100%;
+ display: flex;
+ justify-content: center;
+ margin-top: 30px;
+}
+.btn__pagination a{
+  margin:0 20px;
+}
+.btn__pagination .btn{
+  width: 50px;
+}
 
 @media (min-width: 426px) {
   .specifications img {
@@ -167,6 +179,9 @@ div.product-image div {
   .specifications p {
     width: 45%;
     text-align: justify;
+  }
+  .btn__pagination{
+   margin-top: 0px;
   }
 }
 
@@ -216,6 +231,7 @@ div.product-image div {
     color: white;
     border-radius: 0.5rem;
   }
+  
 }
 
 /* css desde 1200px */

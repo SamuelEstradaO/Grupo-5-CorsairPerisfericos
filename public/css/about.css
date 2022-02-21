@@ -107,12 +107,13 @@
 .card2{
 	background-image: url("../images/about/about2.jfif");
 	background-size: cover;
-
+	
 }
 
 .card3{
-	background-image: url("../images/about/about3.jfif");
+	background-image: url("../images/about/about3.jpeg");
 	background-size: cover;
+	background-color: #90958e;
 	
 }
 

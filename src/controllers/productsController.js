@@ -26,20 +26,31 @@ const productsController = {
     //   toThousand,
     //   user: req.loggedUser
     // });
-    db.Producto.findAll({
+    const page = parseInt(req.query.page) || 1;
+
+
+
+    db.Producto.findAndCountAll({
       include: ["categoria"],
+      limit: 12,
+      offset: (page - 1) * 12,
     })
-      .then((products) => {
-        console.log(products);
+      .then(({ rows, count }) => {
+        const pages = Math.ceil(count / 12);
+        if (page > pages) {
+          res.redirect(`/products?page=${pages}`)
+        }
         res.render("products/allProducts", {
-          products,
+          products: rows,
           toThousand,
+          page,
+          pages,
           // categorias,
           user: req.loggedUser,
         });
       })
       .catch((error) => {
-        res.render("notFound", {error: "No se pudieron cargar los productos"});
+        res.render("notFound", { error: "No se pudieron cargar los productos" });
       });
   },
 
@@ -67,11 +78,11 @@ const productsController = {
             });
           })
           .catch((error) => {
-            res.render("notFound", {error: "No se encontró el producto"})
+            res.render("notFound", { error: "No se encontró el producto" })
           });
       })
       .catch((error) => {
-        res.render("notFound", {error: "No se encontró el producto"})
+        res.render("notFound", { error: "No se encontró el producto" })
       });
   },
 
@@ -102,7 +113,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.render("notFound", {error: "Ocurrió un error al buscar el producto"})
+        res.render("notFound", { error: "Ocurrió un error al buscar el producto" })
       });
   },
 
@@ -122,7 +133,7 @@ const productsController = {
         });
       })
       .catch((error) => {
-        res.render("notFound", {error: "No se pudieron cargar las categorias, intente más tarde"});
+        res.render("notFound", { error: "No se pudieron cargar las categorias, intente más tarde" });
       });
   },
 
@@ -170,7 +181,7 @@ const productsController = {
           res.redirect(`/products/detail/${product.id}`);
         })
         .catch((error) => {
-          res.render("notFound", {error: "Ocurrió un error al crear el producto"});
+          res.render("notFound", { error: "Ocurrió un error al crear el producto" });
         });
     } else {
       fs.unlink(
@@ -208,20 +219,20 @@ const productsController = {
     db.Producto
       .findByPk(id)
       .then((product) => {
-        if(product){
-        db.Categoria.findAll()
-          .then((categorias) => {
-            res.render("products/edit", {
-              product,
-              categorias,
-              user: req.loggedUser,
+        if (product) {
+          db.Categoria.findAll()
+            .then((categorias) => {
+              res.render("products/edit", {
+                product,
+                categorias,
+                user: req.loggedUser,
+              });
+            })
+            .catch((error) => {
+              res.render("notFound", { error: "No se pudieron cargar las categorias, intente más tarde" });
             });
-          })
-          .catch((error) => {
-            res.render("notFound", {error: "No se pudieron cargar las categorias, intente más tarde"});
-          });
         } else {
-          res.render("notFound", {error: "No se encontró el producto"});
+          res.render("notFound", { error: "No se encontró el producto" });
         }
       })
       .catch((error) => {
@@ -351,8 +362,8 @@ const productsController = {
           });
       })
       .catch((error) => {
-        res.render("notFound",{error: "Ocurrió un error al eliminar el producto, intente de nuevo más tarde"});
-        });
+        res.render("notFound", { error: "Ocurrió un error al eliminar el producto, intente de nuevo más tarde" });
+      });
   },
 };
 

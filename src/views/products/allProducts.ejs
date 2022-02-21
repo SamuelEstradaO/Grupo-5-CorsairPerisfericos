@@ -7,10 +7,8 @@
         <!-- Inicio de header -->
         <%- include('../partials/header') %>
 
-
             <!-- Productos a mostrar -->
             <section class="productosDestacados__main">
-
                 <h2>Todos los productos</h2>
                 <% if(locals && locals.user && user.isAdmin) {%>
                     <div class="btn__crear--flex ">
@@ -22,15 +20,22 @@
                             <%- include('../partials/product', {producto})%>
 
                                 <% });%>
-
-
             </section>
+            <!-- Paginacion -->
+            <div class="btn__pagination">
+
+                <%if(page> 1){ %>
+                    <a href="/products?page=<%= page-1  %> "><button class="btn">
+                            <i class="fas fa-angle-left"></i></button></a>
+                    <% } %>
+                        <% if(page < pages){ %>
+                            <a href="/products?page=<%= page+1  %> "><button class="btn">
+                                    <i class="fas fa-angle-right"></i></button></a>
+                            <% } %>
+
+            </div>
             <!-- Inicio del footer -->
             <%- include('../partials/footer.ejs') %>
-
-
-
-
 
     </body>
     <script src="/js/agregarProducto.js"></script>

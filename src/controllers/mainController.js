@@ -27,7 +27,7 @@ const mainController = {
         });
       })
       .catch((error) => {
-        res.render("notFound",{error: "No se pudieron cargar los productos"});
+        res.render("notFound", { error: "No se pudieron cargar los productos" });
       }
       );
   },

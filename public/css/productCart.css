@@ -58,25 +58,7 @@
   display: flex;
   justify-content: flex-end;
 }
-.flex__boton--postal {
-  display: flex;
-  justify-content: flex-start;
-  margin: 10px 0 20px 20px ;
-  width: 90%;
-  
-}
-.flex__boton--postal form {
-  width: 100%;
-}
-.flex__boton--postal input {
-  font-size: 18px;
-  height: 68%;
-  text-align: center;
- 
-}
-.flex__boton--postal input::placeholder{
-  color: rgba(0, 0, 0, 0.3);
-}
+
 
 .flex__boton--continuar {
   display: flex;
@@ -85,8 +67,7 @@
   width: 97%;
   margin-right: 15px;
 }
-.flex__boton--continuar .btn,
-.flex__boton--postal .btn {
+.flex__boton--continuar .btn {
   background-color: white;
   border: 1px solid #69c2bd;
   color: #69c2bd;
@@ -116,10 +97,7 @@ p {
 
 /* Media Queries tablet*/
 @media (min-width: 425px) {
-  .flex__boton--postal{
-    width: 90%;
-    margin: auto;
-  }
+  
 }
 
 /* Media Queries desktop */
@@ -143,8 +121,7 @@ p {
     align-items: center;
     position: relative;
   }
-  .flex__boton--continuar .btn,
-  .flex__boton--postal .btn {
+  .flex__boton--continuar .btn{
     width: 30%;
   }
   .similar-items {
@@ -174,7 +151,7 @@ p {
   .btn:focus {
     box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
   }
-  .flex__boton--postal .btn:hover,
+  
   .flex__boton--continuar .btn:hover {
     background-color: #80e9e4;
     border: 1px solid #80e9e4;

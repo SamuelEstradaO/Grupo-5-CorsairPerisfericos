@@ -152,7 +152,7 @@ article div p {
   margin-bottom: 0px;
   font-size: 1.07rem;
 }
-main .btn, article .btn, .btn__crear {
+main .btn, article .btn, .btn__crear, .btn__pagination .btn {
   background-color: white;
   border: 1PX solid #69c2bd;
   color: #69c2bd;
@@ -164,7 +164,7 @@ main .btn, article .btn, .btn__crear {
   box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
 }
 
-article:hover .btn__agregar , .btn__crear:hover{
+article:hover .btn__agregar , .btn__crear:hover, .btn__pagination .btn:hover {
   background-color: #80e9e4;
   border: 1px solid #80e9e4;
   color: white;
@@ -265,7 +265,7 @@ footer h3, p{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 80px;
+    margin-top: 50px;
   }
  
   .productosDestacados__main article {
