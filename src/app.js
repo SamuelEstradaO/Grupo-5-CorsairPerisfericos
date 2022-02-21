@@ -13,8 +13,6 @@ const apiUsersRouter = require("./routes/apiUsersRouter");
 const logMiddleware = require('./middlewares/logMid');
 const rememberMiddleware = require('./middlewares/rememberMid');
 
-const PUERTO = 3030;
-
 const publicPath = path.resolve(__dirname, "../public");
 
 
@@ -42,6 +40,6 @@ app.set("views", path.join(__dirname, "./views"));
 
 
 
-app.listen(process.env.PORT || PUERTO, () => {
-  console.log(`Servidor de Corsair corriendo en ${process.env.PORT || PUERTO}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor de Corsair corriendo en ${process.env.PORT}`);
 });
