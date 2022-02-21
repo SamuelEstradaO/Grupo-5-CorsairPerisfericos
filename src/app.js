@@ -42,6 +42,6 @@ app.set("views", path.join(__dirname, "./views"));
 
 
 
-app.listen(PUERTO, () => {
-  console.log(`Servidor de Corsair corriendo en ${PUERTO}`);
+app.listen(process.env.PORT || PUERTO, () => {
+  console.log(`Servidor de Corsair corriendo en ${process.env.PORT || PUERTO}`);
 });
