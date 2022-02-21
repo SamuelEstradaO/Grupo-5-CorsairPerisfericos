@@ -36,7 +36,13 @@
 
                   <div class="email-box">
                     <label class="l-email" for="price">Precio</label>
-                    <input class="text-input" type="text" name="price" id="price" value="<%= product.precio  %>" />
+                    <input class="text-input" type="number" name="price" id="price" value="<%= product.precio  %>" />
+                  </div>
+
+                  <div class="email-box">
+                    <label class="l-email" for="stock">Stock</label>
+                    <input class="text-input" type="number" name="stock" id="stock"
+                      placeholder="Escriba aquí las existencias" value="<%= product.stock %>"/>
                   </div>
 
                   <div class="email-box">

@@ -31,6 +31,9 @@ window.onload = function async() {
         sumatoria.push(product.precio * producto.cantidad);
         console.log(sumatoria);
         let options = ""
+        if(product.stock < producto.cantidad ){
+          changeValue(product.stock, product.id);
+        }
         for (let i = 0; i < product.stock; i++) {
           options += `<option value="${i + 1}" ${producto.cantidad == i + 1 ? "selected" : ""}>${i + 1}</option>`;
         }

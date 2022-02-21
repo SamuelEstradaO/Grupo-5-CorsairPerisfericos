@@ -10,6 +10,7 @@ window.onload = function () {
     let categorias = document.getElementsByName("category");
     let caracteristicas = document.getElementById("productFeatures")
     let price = document.getElementById("price");
+    let stock = document.getElementById("stock");
 
     let errors = [];
     let clasesAlert = ["border", "border-danger"];
@@ -61,6 +62,12 @@ window.onload = function () {
       price.classList.add(...clasesAlert);
     } else {
       price.classList.remove(...clasesAlert);
+    }
+    if (!stock.value) {
+      errors.push("El stock es obligatorio");
+      stock.classList.add(...clasesAlert);
+    } else {
+      stock.classList.remove(...clasesAlert);
     }
     if (errors.length > 0) {
       let ulErrors = document.getElementById("errores");

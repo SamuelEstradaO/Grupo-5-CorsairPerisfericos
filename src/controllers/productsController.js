@@ -145,6 +145,7 @@ const productsController = {
       category,
       productFeatures,
       popular,
+      stock
     } = req.body;
     // let product = {
     //   id: products.length + 1,
@@ -158,7 +159,15 @@ const productsController = {
     // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     // res.redirect(`/products/detail/${product.id}`);
     // get img multer
-
+    if(stock == ""){
+      stock = 0;
+    }
+    if (price < 0) {
+      price = 0;
+    }
+    if( stock < 0){
+      stock = 0;
+    }
     let imgProduct;
     let validations = validationResult(req);
     if (validations.isEmpty()) {
@@ -172,6 +181,7 @@ const productsController = {
           titulo: productName,
           descripcion: productDescription,
           precio: price,
+          stock: stock,
           img: imgProduct,
           caracteristicas: productFeatures,
           categoria_id: category,
@@ -184,15 +194,17 @@ const productsController = {
           res.render("notFound", { error: "Ocurrió un error al crear el producto" });
         });
     } else {
-      fs.unlink(
-        path.join(__dirname, "../../public/images/", req.file.filename),
-        (err) => {
-          if (err) {
-            console.log(err);
-            return;
+      if (req.file) {
+        fs.unlink(
+          path.join(__dirname, "../../public/images/", req.file.filename),
+          (err) => {
+            if (err) {
+              console.log(err);
+              return;
+            }
           }
-        }
-      );
+        )
+      }
       db.Categoria
         .findAll()
         .then((categorias) => {
@@ -247,14 +259,21 @@ const productsController = {
       db.Producto
         .findByPk(id)
         .then((product) => {
-          const {
+          let {
             productName,
             price,
             category,
             productDescription,
             productFeatures,
             popular,
+            stock
           } = req.body;
+          if (price < 0) {
+            price = 0;
+          }
+          if( stock < 0){
+            stock = 0;
+          }
           if (req.file != undefined) {
             if (product.img != "dummy.png") {
               fs.unlink(
@@ -275,6 +294,7 @@ const productsController = {
             .update({
               titulo: productName,
               precio: price,
+              stock: stock,
               descripcion: productDescription,
               caracteristicas: productFeatures,
               categoria_id: category,
@@ -292,15 +312,17 @@ const productsController = {
           res.render("notFound", { error: "Ocurrió un error al actualizar el producto" });
         });
     } else {
-      fs.unlink(
-        path.join(__dirname, "../../public/images/", req.file.filename),
-        (err) => {
-          if (err) {
-            console.log(err);
-            return;
+      if (req.file) {
+        fs.unlink(
+          path.join(__dirname, "../../public/images/", req.file.filename),
+          (err) => {
+            if (err) {
+              console.log(err);
+              return;
+            }
           }
-        }
-      );
+        );
+      }
       db.Producto
         .findByPk(id)
         .then((product) => {

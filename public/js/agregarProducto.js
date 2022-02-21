@@ -1,5 +1,6 @@
 window.onload = function () {
   const btnAgregar = document.getElementsByClassName("btn__agregar");
+  const notification = document.getElementById("notification");
   const snackbar = document.createElement("div");
   snackbar.innerText = "Producto agregado al carrito";
   snackbar.id = "snackbar";
@@ -20,7 +21,8 @@ window.onload = function () {
         cart.push({ id: producto.id, cantidad: 1 });
       }
       console.log(cart);
-
+      notification.classList.add("show");
+      notification.innerText = cart.length
       snackbar.className = "show";
       setTimeout(function () {
         snackbar.className = snackbar.className.replace("show", "");

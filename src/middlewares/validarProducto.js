@@ -24,7 +24,11 @@ const validarProducto = [
   check("productFeatures")
     .isLength({ min: 40 })
     .withMessage("La característica debe tener al menos 40 caracteres."),
-  check("price").notEmpty().withMessage("El precio es obligatorio."),
+  check("price").notEmpty().withMessage("El precio es obligatorio.").bail()
+    .isNumeric().withMessage("El precio debe ser un número."),
+  check("stock").notEmpty().withMessage("El stock es obligatorio.").bail()
+    .isNumeric().withMessage("El stock debe ser un número."),
+
   check("category").notEmpty().withMessage("La categoria es obligatoria."),
 ];
 
