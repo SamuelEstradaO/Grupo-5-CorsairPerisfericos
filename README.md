@@ -29,5 +29,10 @@ Elegimos estos sitios tanto por su estetica, funcionamiento en las ventas, porqu
 - link del [Trello sprint 3](https://trello.com/invite/b/2jbRidTc/696d5751e6a68ec75d64bae39705d526/sprint-3)
 - link del [Trello sprint 4](https://trello.com/invite/b/faGIBEZA/9d4a79ef9a6b809eea3cec388d6e8cb4/sprint-4)
 - link del [Trello sprint 5](https://trello.com/invite/b/609ngu9K/12fa07825fc2e40d4b7c6f9e7c1d22cf/sprint-5)
+- link del [Trello sprint 6](https://trello.com/invite/b/FPiBB5ky/ecf9d4891d08bd707005c18b458dcca3/sprint-6)
+- link del [Trello sprint 7](https://trello.com/invite/b/9AVipuCy/c85029aa373e753f86035d59c0de1d5e/sprint-7)
+- link del [Trello sprint 8](https://trello.com/invite/b/USfaSUf2/804d70e9ed93c1a3e6c339e1381ad870/sprint-8)
+
+
 - link de la [Retro](https://github.com/JoaquinSomoza/Grupo-5-CorsairPerisfericos/blob/master/RETRO.md)
 

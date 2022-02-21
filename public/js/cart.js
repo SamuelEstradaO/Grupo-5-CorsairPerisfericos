@@ -3,12 +3,23 @@
 window.onload = function async() {
   let cartBox = document.querySelector(".box-cart");
   let resumenCart = document.getElementById("resumenCart");
+  let eliminarProductos = document.getElementById("eliminarProductos");
 
-  //Local Storage
+  eliminarProductos.addEventListener("click", function () {
+    localStorage.removeItem("cart");
+    location.reload();
+
+  })
+
   let productos = obtenerProductos();
+  if (productos.length > 0) {
+    eliminarProductos.classList.add("show");
+  }
 
   let resumenTotal = document.getElementById("resumenTotal");
   const sumatoria = [];
+
+
 
   for (const producto of productos) {
     let total = 0;
@@ -61,6 +72,7 @@ window.onload = function async() {
         resumenTotal.innerText = total;
       })
   }
+
 }
 
 
@@ -93,7 +105,6 @@ function updateTotal(value, id) {
   let index = cart.findIndex((product) => product.id == id);
   cart[index].total = value;
   localStorage.setItem("cart", JSON.stringify(cart));
-
 }
 
 

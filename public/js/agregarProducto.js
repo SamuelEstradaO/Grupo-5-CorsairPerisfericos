@@ -1,5 +1,9 @@
 window.onload = function () {
   const btnAgregar = document.getElementsByClassName("btn__agregar");
+  const snackbar = document.createElement("div");
+  snackbar.innerText = "Producto agregado al carrito";
+  snackbar.id = "snackbar";
+  document.body.appendChild(snackbar);
   for (let i = 0; i < btnAgregar.length; i++) {
     btnAgregar[i].addEventListener("click", function () {
       let producto = btnAgregar[i].parentNode.parentNode;
@@ -17,8 +21,14 @@ window.onload = function () {
       }
       console.log(cart);
 
+      snackbar.className = "show";
+      setTimeout(function () {
+        snackbar.className = snackbar.className.replace("show", "");
+      }, 3000)
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert("Producto agregado al carrito");
+
+
     });
+
   }
 };
