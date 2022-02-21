@@ -188,6 +188,9 @@ const usersController = {
   },
   edit: (req, res) => {
     let editId = req.params.id;
+    if(req.loggedUser.id != editId){
+      res.redirect(`/users/edit/${req.loggedUser.id}`);
+    }
     // let user = users.find(user => user.id == editId);
     // res.render("./users/user", { user });
     db.Usuario.findByPk(editId)
