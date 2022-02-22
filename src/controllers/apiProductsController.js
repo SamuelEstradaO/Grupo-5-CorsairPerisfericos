@@ -1,12 +1,15 @@
 const db = require("../database/models");
 const sequelize = require("sequelize");
-const {Op} = require("sequelize")
+const { Op } = require("sequelize")
 const path = require("path");
 const { group } = require("console");
 const { search } = require("../routes/apiProductsRouter");
 
 const apiProductsController = {
     index: async (req, res) => {
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         let data = {};
         products = await db.Producto.findAll({
             include: ["categoria"],
@@ -31,7 +34,7 @@ const apiProductsController = {
             })
         })
         let count = 0
-        categories.map( ({dataValues}) => {
+        categories.map(({ dataValues }) => {
             let { titulo_count } = dataValues;
             count += titulo_count
         })
@@ -46,7 +49,8 @@ const apiProductsController = {
         })
         data.countByCategory = category;
         data.products = productos;
-        res.json(data);
+        
+        res.status(200).json(data);
 
         // console.log(data);
 
@@ -131,7 +135,7 @@ const apiProductsController = {
             .findAll({
                 include: ["categoria"],
                 where: {
-                    titulo: {[Op.like]: `%${key}%`}
+                    titulo: { [Op.like]: `%${key}%` }
                 }
             })
             .then(products => {
