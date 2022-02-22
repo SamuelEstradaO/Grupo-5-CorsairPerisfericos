@@ -5,6 +5,10 @@ const path = require("path");
 const apiUsersController = {
     index: (req, res) => {
         let data = {};
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         db.Usuario
             .findAll()
             .then(users => {
@@ -19,7 +23,7 @@ const apiUsersController = {
                     });
                 })
                 data.users = usuarios;
-                res.json(data);
+                res.status(200).json(data);
             })
             .catch(err => {
                 res.json({ err });
@@ -28,6 +32,10 @@ const apiUsersController = {
 
     user: (req, res) => {
         let data = {};
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         let id = req.params.id;
         db.Usuario
             .findByPk(id)
@@ -40,7 +48,7 @@ const apiUsersController = {
                     userImage: `/api/users/${id}/image`,
                 }
                 data.user = user;
-                res.json(data);
+                res.status(200).json(data);
             })
             .catch(err => {
                 res.json({ err });
@@ -48,10 +56,14 @@ const apiUsersController = {
     },
     avatar: (req, res) => {
         let id = req.params.id;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         db.Usuario
             .findByPk(id)
             .then(({ userImage }) => {
-                res.sendFile(path.join(__dirname, `../../public/images/users/${userImage}`));
+                res.status(200).sendFile(path.join(__dirname, `../../public/images/users/${userImage}`));
             })
             .catch(err => {
                 res.json({ err });

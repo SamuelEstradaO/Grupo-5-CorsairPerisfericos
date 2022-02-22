@@ -96,6 +96,10 @@ const apiProductsController = {
     },
     detail: (req, res) => {
         let data = {};
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE'); 
         let id = req.params.id;
         db.Producto
             .findByPk(id, { include: ["categoria"] })
@@ -112,7 +116,7 @@ const apiProductsController = {
                     imagen: `/api/products/${id}/image`,
                 }
                 data.product = product;
-                res.json(data);
+                res.status(200).json(data);
             })
             .catch(err => {
                 res.json({ err });
@@ -120,10 +124,14 @@ const apiProductsController = {
     },
     image: (req, res) => {
         let id = req.params.id;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         db.Producto
             .findByPk(id)
             .then(({ img }) => {
-                res.sendFile(path.join(__dirname, `../../public/images/${img}`));
+                res.status(200).sendFile(path.join(__dirname, `../../public/images/${img}`));
             })
             .catch(err => {
                 res.json({ err });
@@ -131,6 +139,10 @@ const apiProductsController = {
     },
     search: (req, res) => {
         let key = req.query.key;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        // res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
         console.log(key);
         db.Producto
             .findAll({
@@ -151,7 +163,7 @@ const apiProductsController = {
                         detail: `/api/products/${id}`,
                     })
                 })
-                res.json(productos);
+                res.status(200).json(productos);
             })
             .catch(err => {
                 res.json({ err });
